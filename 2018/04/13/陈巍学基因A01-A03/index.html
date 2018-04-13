@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.1.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.1.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="陈巍学基因A01-A03A01：查看基因组的信息 下载一个噬菌体的基因组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="陈巍学基因A01-A03">
+<meta property="og:url" content="http://yoursite.com/2018/04/13/陈巍学基因A01-A03/index.html">
+<meta property="og:site_name" content="读书笔记">
+<meta property="og:description" content="陈巍学基因A01-A03A01：查看基因组的信息 下载一个噬菌体的基因组">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-11-9.png">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-11-10.png">
+<meta property="og:updated_time" content="2018-04-13T09:46:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="陈巍学基因A01-A03">
+<meta name="twitter:description" content="陈巍学基因A01-A03A01：查看基因组的信息 下载一个噬菌体的基因组">
+<meta name="twitter:image" content="http://yoursite.com/pic/2017-03/2017-03-11-9.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/13/陈巍学基因A01-A03/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>陈巍学基因A01-A03 | 读书笔记</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">读书笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+    <a href="/schedule/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />Schedule</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/陈巍学基因A01-A03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kaige Dong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="读书笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">陈巍学基因A01-A03
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+                
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T17:44:34+08:00">2018-04-13</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="陈巍学基因A01-A03"><a href="#陈巍学基因A01-A03" class="headerlink" title="陈巍学基因A01-A03"></a>陈巍学基因A01-A03</h1><h2 id="A01：查看基因组的信息"><a href="#A01：查看基因组的信息" class="headerlink" title="A01：查看基因组的信息"></a>A01：查看基因组的信息</h2><blockquote>
+<p>下载一个噬菌体的基因组<br><a id="more"></a></p>
+</blockquote>
+<blockquote>
+<p>wget –no-check <a href="https://d28rh4a8wq0iu5.cloudfront.net/ads1/data/lambda_virus.fa" target="_blank" rel="noopener">https://d28rh4a8wq0iu5.cloudfront.net/ads1/data/lambda_virus.fa</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#encoding:utf-8</span><br><span class="line">def readGenome(filename):</span><br><span class="line">    genome = &apos;&apos;</span><br><span class="line">    with open(filename,&apos;r&apos;) as f:</span><br><span class="line">        for line in f:</span><br><span class="line">            if not line[0] == &apos;&gt;&apos;:</span><br><span class="line">                genome += line.rstrip()#rstrip是去除跟在字符串后面的空白</span><br><span class="line">    return genome</span><br><span class="line"></span><br><span class="line">genome = readGenome(&apos;lambda_virus.fa&apos;)</span><br><span class="line"></span><br><span class="line">print(&quot;the length of 噬菌体genome is:\n&quot;)</span><br><span class="line">print(len(genome))</span><br><span class="line"></span><br><span class="line">#统计碱基个数</span><br><span class="line"></span><br><span class="line">counts = &#123;&apos;A&apos;:0,&apos;C&apos;:0,&apos;T&apos;:0,&apos;G&apos;:0&#125;</span><br><span class="line">for base in genome:</span><br><span class="line">    counts[base] += 1</span><br><span class="line"></span><br><span class="line">print(counts)</span><br><span class="line"></span><br><span class="line">####使用模块计算####</span><br><span class="line">#Counter会遍历字符串中的每个字符，并且对每个字符出现次数进行计数</span><br><span class="line"></span><br><span class="line">import collections</span><br><span class="line">t=collections.Counter(genome)</span><br><span class="line"></span><br><span class="line">print(t)</span><br></pre></td></tr></table></figure>
+<h2 id="A02-查看fastq-的信息"><a href="#A02-查看fastq-的信息" class="headerlink" title="A02: 查看fastq 的信息"></a>A02: 查看fastq 的信息</h2><blockquote>
+<p>对于fastq文件，可以看到以四行为单位，<br>第一行以@符号开头，这是一个tag，是个哪个序列的名字。<br>第二行是DNA碱基的字符串<br>第三行是+号<br>第四行是read的质量序列</p>
+</blockquote>
+<blockquote>
+<p>下载一个fastq：<br>wget –no-check <a href="https://d28rh4a8wq0iu5.cloudfront.net/ads1/data/SRR835775_1.first1000.fastq" target="_blank" rel="noopener">https://d28rh4a8wq0iu5.cloudfront.net/ads1/data/SRR835775_1.first1000.fastq</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">#encoding:utf-8</span><br><span class="line"></span><br><span class="line">#将测序的结果及测序的质量分别放到俩数组里</span><br><span class="line">def readFastq(filename):</span><br><span class="line">    sequences = []</span><br><span class="line">    qualities = []</span><br><span class="line">    with open(filename) as fh:</span><br><span class="line">        while True:</span><br><span class="line">            fh.readline()</span><br><span class="line">            seq = fh.readline().rstrip()</span><br><span class="line">            fh.readline()</span><br><span class="line">            qual = fh.readline().rstrip()</span><br><span class="line">            if len(seq) == 0:</span><br><span class="line">                break</span><br><span class="line">            sequences.append(seq)</span><br><span class="line">            qualities.append(qual)</span><br><span class="line">    return sequences,qualities</span><br><span class="line"></span><br><span class="line">seqs,quals = readFastq(&apos;SRR835775_1.first1000.fastq&apos;)</span><br><span class="line"></span><br><span class="line">#将phred 33 编码转成数值的质量分数</span><br><span class="line">def phred33ToQ(qual):</span><br><span class="line">    return ord(qual) - 33</span><br><span class="line"></span><br><span class="line">def createHist(qualities):</span><br><span class="line">    hist = [0] * 50</span><br><span class="line">    for qual in qualities:</span><br><span class="line">        for phred in qual:</span><br><span class="line">            q = phred33ToQ(phred)</span><br><span class="line">            hist[q] += 1</span><br><span class="line">    return hist</span><br><span class="line"></span><br><span class="line">h = createHist(quals)</span><br><span class="line"></span><br><span class="line"># 使用matplotlib(一个Python上的图形化工具)来做(可视化)</span><br><span class="line"></span><br><span class="line">import matplotlib as mpl</span><br><span class="line">mpl.use(&apos;Agg&apos;)</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">plt.bar(range(len(h)),h)</span><br><span class="line">plt.savefig(&apos;1.png&apos;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>将phred 33 编码的值转成质量分数,也就是测序质量,将ASCII字符转变成质量分数<br>ord函数取一个字符，并把该字符的ASCII值编程数值<br>print(phred33ToQ(‘#’)) #得到2，说明测序质量很低。可信度比较低。<br>错误的可能性大概有30~32%,且’#’多出现在read的末尾，说明督导read的末尾时，确信度会下降</p>
+<p>最低为2，最高为44</p>
+</blockquote>
+<p><img src="/pic/2017-03/2017-03-11-9.png" alt=""></p>
+<blockquote>
+<p>从图形结果来看，分值为2的很多，说明这一部分是质量比较差的，可能原因是这一部分的碱基发出的荧光是四种颜色的混合，比较难确认。</p>
+</blockquote>
+<h3 id="matplotlib小代码"><a href="#matplotlib小代码" class="headerlink" title="matplotlib小代码"></a>matplotlib小代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import matplotlib as mpl</span><br><span class="line">mpl.use(&apos;Agg&apos;)</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">plt.bar(range(len(h)),h)</span><br><span class="line">plt.savefig(&apos;1.png&apos;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>必须关闭上个图形设备才能保存新画的图形：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fig = plt.figure(0) # 新图 0</span><br><span class="line">plt.savefig() # 保存</span><br><span class="line">plt. close(0) # 关闭图 0</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fig = plt.figure() # 新图 0</span><br><span class="line">plt.savefig() # 保存</span><br><span class="line">plt.close(&apos;all&apos;) # 关闭图 0</span><br></pre></td></tr></table></figure></p>
+<h2 id="A03：按碱基位置分析GC含量"><a href="#A03：按碱基位置分析GC含量" class="headerlink" title="A03：按碱基位置分析GC含量"></a>A03：按碱基位置分析GC含量</h2><p>不同的物种会有不同的GC含量，把整个read的GC做成图形，来看测序中是否有什么strange的事情发生。  </p>
+<p><img src="/pic/2017-03/2017-03-11-10.png" alt=""></p>
+<blockquote>
+<p>图的GC含量大概60~80% </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import collections</span><br><span class="line"> count = collections.Counter()</span><br><span class="line"> for seq in seqs:</span><br><span class="line">     count.update(seq)</span><br><span class="line"> print(count)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Counter({‘G’: 28742, ‘C’: 28272, ‘T’: 21836, ‘A’: 21132, ‘N’: 18})</p>
+<p>有一些N：当碱基判读程序对一个碱基的判读很不确定时，它就会读成”N”</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/13/开始建站/" rel="next" title="开始建站">
+                <i class="fa fa-chevron-left"></i> 开始建站
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/13/陈巍学基因A04-A06/" rel="prev" title="陈巍学基因A04-A06">
+                陈巍学基因A04-A06 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Kaige Dong</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#陈巍学基因A01-A03"><span class="nav-number">1.</span> <span class="nav-text">陈巍学基因A01-A03</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#A01：查看基因组的信息"><span class="nav-number">1.1.</span> <span class="nav-text">A01：查看基因组的信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A02-查看fastq-的信息"><span class="nav-number">1.2.</span> <span class="nav-text">A02: 查看fastq 的信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#matplotlib小代码"><span class="nav-number">1.2.1.</span> <span class="nav-text">matplotlib小代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A03：按碱基位置分析GC含量"><span class="nav-number">1.3.</span> <span class="nav-text">A03：按碱基位置分析GC含量</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kaige Dong</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.1.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

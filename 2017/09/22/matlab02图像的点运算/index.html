@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.1.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.1.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="MATLAB 图像的点运算灰度直方图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="matlab02图像的点运算">
+<meta property="og:url" content="http://yoursite.com/2017/09/22/matlab02图像的点运算/index.html">
+<meta property="og:site_name" content="读书笔记">
+<meta property="og:description" content="MATLAB 图像的点运算灰度直方图">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-16-1.jpg">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-16-2.png">
+<meta property="og:image" content="http://yoursite.com/2017/09/22/matlab02图像的点运算/pic/2017-03/2017-03-16-3.png">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-16-5.png">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-17-4.jpg">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-18-1.jpg">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-18-2.jpg">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-18-4.jpg">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-18-5.jpg">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-18-6.jpg">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-18-7.jpg">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-18-8.jpg">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-18-9.jpg">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-18-11.jpg">
+<meta property="og:updated_time" content="2017-09-22T12:35:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="matlab02图像的点运算">
+<meta name="twitter:description" content="MATLAB 图像的点运算灰度直方图">
+<meta name="twitter:image" content="http://yoursite.com/pic/2017-03/2017-03-16-1.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/22/matlab02图像的点运算/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>matlab02图像的点运算 | 读书笔记</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">读书笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+    <a href="/schedule/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />Schedule</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/22/matlab02图像的点运算/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kaige Dong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="读书笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">matlab02图像的点运算
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+                
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-22T18:34:53+08:00">2017-09-22</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="MATLAB-图像的点运算"><a href="#MATLAB-图像的点运算" class="headerlink" title="MATLAB 图像的点运算"></a>MATLAB 图像的点运算</h1><h2 id="灰度直方图"><a href="#灰度直方图" class="headerlink" title="灰度直方图"></a>灰度直方图</h2><p><img src="/pic/2017-03/2017-03-16-1.jpg" alt=""></p>
+<a id="more"></a>
+<ol>
+<li><p>原理：对不同灰度的点进行数量统计</p>
+</li>
+<li><p>编码实现:<code>imhist()</code>函数</p>
+<ul>
+<li>绘制直方图的一般方法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">imhist(I)</span><br><span class="line">imhist(I,n)</span><br><span class="line">[counts, x]=imhist(...)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>I 是需要计算灰度图像的图像。</p>
+<p>参数n是指定的灰度级数目，默认n等于256，也就是0~255。对于二值图像，n等于2</p>
+<p>返回值counts为直方图的数据向量。counts(i)也就是第i个灰度区间中的像素数目，x是保存了对应的灰度小区间的向量。若采用第三种形式，需要配合stem()函数手动绘制直方图。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">i = imread(&apos;2017-03-16-1.jpg&apos;)</span><br><span class="line">g = rgb2gray(i)</span><br><span class="line">figure</span><br><span class="line">subplot(121),imhist(g);</span><br><span class="line">subplot(122),imhist(g,64);</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-16-2.png" alt=""></p>
+<ul>
+<li><p>绘制归一化灰度直方图：像素出现的概率</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">i = imread(&apos;2017-03-16-1.jpg&apos;);</span><br><span class="line">i = rgb2gray(i);</span><br><span class="line">[m,n]=size(i);</span><br><span class="line">[counts1,x] = imhist(i,32)</span><br><span class="line">subplot(121),stem(x,counts1);</span><br><span class="line">counts2 = counts1/m/n;</span><br><span class="line">subplot(122), stem(x,counts2);</span><br></pre></td></tr></table></figure>
+<p><img src="pic/2017-03/2017-03-16-3.png" alt=""></p>
+<blockquote>
+<p>stem()是用来绘制针线图的函数</p>
+<p>易知，归一化直方图所有取值之和为1</p>
+<p>可用<code>sum(counts2)</code>进行查看</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>彩色图像的分量直方图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">i = imread(&apos;2017-03-16-4.jpeg&apos;);</span><br><span class="line">[x,y,z]=size(i);</span><br><span class="line"></span><br><span class="line">figure</span><br><span class="line">subplot(221),imshow(i);</span><br><span class="line">title(&apos;original image&apos;)</span><br><span class="line"></span><br><span class="line">%提取红色分量</span><br><span class="line">r=i;</span><br><span class="line">%r(:,:,1)=a(:,:,1);</span><br><span class="line">r(:,:,2)=zeros(x,y);</span><br><span class="line">r(:,:,3)=zeros(x,y);</span><br><span class="line">r=uint8(r);</span><br><span class="line">subplot(222),imshow(r);</span><br><span class="line">title(&apos;R-component-image&apos;)</span><br><span class="line"></span><br><span class="line">%提取绿色分量</span><br><span class="line">g=i;</span><br><span class="line">g(:,:,1)=zeros(x,y);</span><br><span class="line">%g(:,:,2)=a(:,:,2);</span><br><span class="line">g(:,:,3)=zeros(x,y);</span><br><span class="line">g=uint8(g);</span><br><span class="line">subplot(223),imshow(g);</span><br><span class="line">title(&apos;G-component-image&apos;)</span><br><span class="line"></span><br><span class="line">%提取蓝色分量</span><br><span class="line">b=i;</span><br><span class="line">b(:,:,1)=zeros(x,y);</span><br><span class="line">b(:,:,2)=zeros(x,y);</span><br><span class="line">%b(:,:,3)=a(:,:,3);</span><br><span class="line">b=uint8(b);</span><br><span class="line">subplot(224),imshow(b);</span><br><span class="line">title(&apos;B-component-image&apos;)</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-16-5.png" alt=""></p>
+<p>​</p>
+<p>彩色图像灰度化的方法：</p>
+<ul>
+<li><p>平均值法：每个像素的三原色值等于红、绿、蓝3个分量的平均值</p>
+</li>
+<li><p>最大值法</p>
+</li>
+<li><p>加权平均值法</p>
+<p>人眼对三原色的敏感度从高到低为绿、红、蓝。所以三原色权值取值关系也是这样。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><code>R=G=B=0.299R+0.587G+0.114B</code>时，能够得到最合理的灰度图像。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">i = imread(&apos;2017-03-16-4.jpeg&apos;);</span><br><span class="line">r=i(:,:,1);</span><br><span class="line">g=i(:,:,2);</span><br><span class="line">b=i(:,:,3);</span><br><span class="line">subplot(1,3,1),imhist(r),title(&apos;R component&apos;);</span><br><span class="line">subplot(1,3,2),imhist(g),title(&apos;G component&apos;);</span><br><span class="line">subplot(1,3,3),imhist(b),title(&apos;B component&apos;);</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-17-4.jpg" alt=""></p>
+<h2 id="灰度线性变换"><a href="#灰度线性变换" class="headerlink" title="灰度线性变换"></a>灰度线性变换</h2><p>利用线性公式进行一维变换：</p>
+<p><code>y=kx+d</code>(0&lt;=y&lt;=255)</p>
+<ol>
+<li><p>当k&gt;1时</p>
+<p>可用于增加图像对比度。在直方图中表现就是灰度分布被拉伸了。</p>
+</li>
+<li><p>当K=1时</p>
+<p>用于调节图像亮度。就是将图像的各个像素值都增加或者减少一定量。</p>
+<p>通过改变d值，达到增加或者减少图像亮度的目的。</p>
+</li>
+<li><p>当K&lt;1时</p>
+<p>图像的对比度和整体效果都被削弱了。K值越小，图像的灰度分布越窄，图像看起来越暗。</p>
+</li>
+<li><p>K&lt;0时</p>
+<p>图像较亮的地方区域会变暗，较暗的区域会变亮。k=-1，d=255时，可以让图像实现反色效果(或底片效果)</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">i=imread(&apos;2017-03-16-4.jpeg&apos;);</span><br><span class="line">i = im2double(rgb2gray(i));</span><br><span class="line">[m,n]=size(i);</span><br><span class="line"></span><br><span class="line">%增加对比对</span><br><span class="line">Fa=1.25;Fb=0;</span><br><span class="line">O = Fa.*i + Fb/255;</span><br><span class="line">figure(1),subplot(221),imshow(O);</span><br><span class="line">title(&apos;Fa = 1.25,Fb=0,Contrast increasing&apos;);</span><br><span class="line">figure(2),subplot(221),[H,x]=imhist(O,64);</span><br><span class="line">stem(x,(H/m/n),&apos;.&apos;);</span><br><span class="line">title(&apos;Fa=1.25,Fb=0,contrast increasing&apos;);</span><br><span class="line"></span><br><span class="line">%减小对比度</span><br><span class="line">Fa = 0.5;Fb=0;</span><br><span class="line">O=Fa.*i + Fb/255;</span><br><span class="line">figure(1),subplot(222),imshow(O);</span><br><span class="line">title(&apos;Fa = 0.5, Fb = 0, contrast decreasing&apos;);</span><br><span class="line">figure(2),subplot(222),[H,x]=imhist(O,64);</span><br><span class="line">stem(x,(H/m/n),&apos;.&apos;);</span><br><span class="line">title(&apos;Fa = 0.5,Fb=0,contrast decreasing&apos;);</span><br><span class="line"></span><br><span class="line">%线性亮度增加</span><br><span class="line">Fa=0.5;Fb=50;</span><br><span class="line">O=Fa.*i + Fb/255;</span><br><span class="line">figure(1),subplot(223),imshow(O);</span><br><span class="line">title(&apos;Fa=0.5,Fb=50,brightness control&apos;);</span><br><span class="line">figure(2),subplot(223),[H,x]=imhist(O,64);</span><br><span class="line">stem(x,(H/m/n),&apos;.&apos;);</span><br><span class="line">title(&apos;Fa=0.5,Fb=50,brightness control&apos;);</span><br><span class="line"></span><br><span class="line">%反相显示</span><br><span class="line">Fa = -1;Fb=255;</span><br><span class="line">O=Fa.*i+Fb/255;</span><br><span class="line">figure(1),subplot(224),imshow(O);</span><br><span class="line">title(&apos;Fa=-1,Fb=255,reversal processing&apos;);</span><br><span class="line">figure(2),subplot(224),[H,x]=imhist(O,64);</span><br><span class="line">stem(x,(H/m/n),&apos;.&apos;);</span><br><span class="line">title(&apos;Fa=-1,Fb=255,reversal processing&apos;);</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-18-1.jpg" alt=""></p>
+<p><img src="/pic/2017-03/2017-03-18-2.jpg" alt=""></p>
+<blockquote>
+<p>用其他软件进行线性变换：可以将256种灰度都先进性一次变换运算，结果保存在一个大小为256的数组中。这种方法对于任意图像都只进行了256次运算，大大提高了效率。</p>
+</blockquote>
+<h2 id="灰度非线性变换"><a href="#灰度非线性变换" class="headerlink" title="灰度非线性变换"></a>灰度非线性变换</h2><h3 id="1-灰度对数变换"><a href="#1-灰度对数变换" class="headerlink" title="1. 灰度对数变换"></a>1. 灰度对数变换</h3><p>   对数变换的基本形式为：y=(log(1+x))/b</p>
+<blockquote>
+<p>b为一个正常数，用以控制曲线的弯曲程度，b值越大，弯曲程度越小。x是原始灰度值，y是变换后的目标灰度值。在对数函数的曲线上，函数自变量较低时，曲线斜率很大；自变量较高时，曲线斜率变得很小。</p>
+<p>对数变换实现了图像灰度的拓展和压缩功能。拓展了低灰度值而压缩了高灰度值，让图像的灰度分布更加符合人的视觉特征。</p>
+</blockquote>
+<ul>
+<li><p>重要应用：用来增强图像中较暗部分的细节。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">i = imread(&apos;2017-03-16-4.jpeg&apos;);</span><br><span class="line">i = rgb2gray(i);</span><br><span class="line">i = double(i);</span><br><span class="line"></span><br><span class="line">out1 = log(1+i)/0.065;</span><br><span class="line">out2 = log(1+i)/0.035;</span><br><span class="line">out1(find(out1&gt;255)) = 255;</span><br><span class="line">out2(find(out2&gt;255)) = 255;</span><br><span class="line">out1 = uint8(out1);</span><br><span class="line">out2 = uint8(out2);</span><br><span class="line"></span><br><span class="line">subplot(221), imshow(out1),title(&apos;image, p = 0.065&apos;);</span><br><span class="line">subplot(222),imhist(out1),title(&apos;histgram p = 0.065&apos;);</span><br><span class="line">subplot(223),imshow(out2),title(&apos;image, p = 0.035&apos;);</span><br><span class="line">subplot(224),imhist(out2),title(&apos;histgram,p = 0.035&apos;);</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-18-4.jpg" alt=""></p>
+<blockquote>
+<p>亮的部分收缩在很小一部分区域，而暗的部分扩散的比较开。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-灰度幂次变换"><a href="#2-灰度幂次变换" class="headerlink" title="2. 灰度幂次变换"></a>2. 灰度幂次变换</h3><ol>
+<li><p>基本理论</p>
+<p>y = c(x的r次方)</p>
+<blockquote>
+<p>其中c、r均为正数。幂次变换将部分灰度变换映射到更宽的区域中。当r为1，幂次变换转变为线性变换。</p>
+<p>输出灰度会随着指数的增加迅速扩大。指数稍大时(r&gt;=2)整个变换曲线接近一条直线。就失去了变换的意义。</p>
+<p>在实际运用中对x和y进行约束，让他们的值在0~1之间。</p>
+</blockquote>
+<p><code>y=255c[(x/255)的r次方]</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">i = rgb2gray(imread(&apos;2017-03-16-4.jpeg&apos;));</span><br><span class="line">i = double(i);</span><br><span class="line">y1 = 255*(i/255).^2.5;</span><br><span class="line">y2 = 255*(i/255).^0.4;</span><br><span class="line">y1 = uint8(y1);</span><br><span class="line">y2 = uint8(y2);</span><br><span class="line">subplot(221),imshow(y1),title(&apos;p=2.5&apos;);</span><br><span class="line">subplot(222),imhist(y1),title(&apos;p=2.5&apos;);</span><br><span class="line">subplot(223),imshow(y2),title(&apos;p=0.4&apos;);</span><br><span class="line">subplot(224),imhist(y2),title(&apos;p=0.4&apos;);</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-18-5.jpg" alt=""></p>
+<blockquote>
+<p>上述变换互为伽马校正。</p>
+<p>在MATLAB中还提供了实现灰度变换的基本函数<code>imadjust()</code>.借助该函数，我们也可以进行伽马校正：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">J = imadjust(I,[low_in;high_in],[low_out;high_out])</span><br><span class="line">J = imadjust(I,[low_in;high_in],[low_out;high_out],gamma)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>该函数将图像I中的亮度值映射到J中的新值，即将low_in和high_in之间的值映射到low_out和high_out之间的值。而low_in之下，high_in之上被剪切掉。</p>
+<p>第二种语法，同样是将I中的亮度映射到J中的新值，但gamma制定了描述值I和J关系的曲线。如果gamma小于1，则映射被加权到更高的输出值，此时偏重更高数值(明亮)输出；如果gamma大于1，则映射被加权到更低输出值，此时偏重更低数值(灰暗)输出；省略参数则为线性映射。如果采用默认映射值对应范围，也就实现了伽马校正。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i = rgb2gray(imread(&apos;2017-03-16-4.jpeg&apos;));</span><br><span class="line">y1 = double(i);</span><br><span class="line">y1 = 255*(y1/255).^2.5;</span><br><span class="line">y2 = uint8(y1);</span><br><span class="line">y3 = imadjust(y2,[],[],0.4);</span><br><span class="line">subplot(131),imshow(i),title(&apos;original image&apos;);</span><br><span class="line">subplot(132),imshow(y2),title(&apos;power=2.5&apos;);</span><br><span class="line">subplot(133),imshow(y3),title(&apos;gamma=0.4&apos;);</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-18-6.jpg" alt=""></p>
+<blockquote>
+<p>可以看出，通过伽马校正，图像已经基本得到了复原。(图3在图2的基础上进行了校正，得到了原图)</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="3-灰度指数变换"><a href="#3-灰度指数变换" class="headerlink" title="3. 灰度指数变换"></a>3. 灰度指数变换</h3><ol>
+<li><p>基本理论</p>
+<p><code>y=b[c(x-a) - 1</code> (b的c(x-a)次方)</p>
+<blockquote>
+<p>b、c控制曲线形状，a控制曲线左、右位置。</p>
+<p>指数变换作用是拓展图像的高级灰度，同时压缩低灰度级。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">i = rgb2gray(imread(&apos;2017-03-16-4.jpeg&apos;));</span><br><span class="line">i = double(i);</span><br><span class="line"></span><br><span class="line">y1 = 1.5.^(i*0.070)-1;</span><br><span class="line">y2 = 1.5.^(i*0.050)-1;</span><br><span class="line">y1(find(y1&gt;255)) = 255;</span><br><span class="line">y2(find(y2&gt;255)) = 255;</span><br><span class="line">y1 = uint8(y1);</span><br><span class="line">y2 = uint8(y2);</span><br><span class="line"></span><br><span class="line">subplot(221),imshow(y1),title(&apos;c=0.070&apos;);</span><br><span class="line">subplot(222),imhist(y1),title(&apos;c=0.070&apos;);</span><br><span class="line">subplot(223),imshow(y2),title(&apos;c=0.050&apos;);</span><br><span class="line">subplot(224),imhist(y2),title(&apos;c=0.050&apos;);</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-18-7.jpg" alt=""></p>
+</li>
+</ol>
+<h2 id="灰度拉伸"><a href="#灰度拉伸" class="headerlink" title="灰度拉伸"></a>灰度拉伸</h2><h3 id="1-基本原理"><a href="#1-基本原理" class="headerlink" title="1. 基本原理"></a>1. 基本原理</h3><p>利用线性变换曲线建立映射，使集中于一较小区间的灰度拉伸至较大取值区间。</p>
+<p>灰度拉伸又叫做对比度拉伸，与线性变换类似，不同点在于灰度拉伸使用分段线性变换。</p>
+<p>y = {</p>
+<p>​     f1(x);(x&lt;x1)</p>
+<p>​     f2(x);(x1&lt;x&lt;x2)</p>
+<p>​     f3(x);(x&gt;x2)</p>
+<p>}</p>
+<ul>
+<li>中间线段斜率大于1：可以利用这类控制点进行灰度拉伸，增加图像对比度，加强整体显示效果</li>
+<li>中间线段斜率小于1：降低图像的对比度。</li>
+<li>中间线段斜率等于1：此时变换函数化为一个线性函数，将产生一个没有变化的图像。</li>
+<li>x2=x1,y1=0,y2=255：此时变换函数变成阈值函数，产生二值图像。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i = imread(&apos;2017-03-16-4.jpeg&apos;);</span><br><span class="line">i = rgb2gray(i);</span><br><span class="line">L = imadjust(i,[],[50/255;150/255]);</span><br><span class="line">J = imadjust(L,[50/255;150/255],[20/255;230/255]);</span><br><span class="line">subplot(221),imshow(L),title(&apos;low contrast&apos;);</span><br><span class="line">subplot(222),imhist(L),title(&apos;low contrast&apos;);</span><br><span class="line">subplot(223),imshow(J),title(&apos;high contrast&apos;);</span><br><span class="line">subplot(224),imhist(J),title(&apos;high contrast&apos;);</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-18-8.jpg" alt=""></p>
+<h2 id="灰度均衡"><a href="#灰度均衡" class="headerlink" title="灰度均衡"></a>灰度均衡</h2><p>灰度均衡又称直方图均衡化。以累计分布函数为基础的直方图修正法，可以产生一副灰度级分布概率均匀的图像。</p>
+<p>变换后，每一级灰度上像素点的数量相差不大，对应灰度直方图每一级灰度高度也差不多。</p>
+<p>可使用灰度均衡算法函数<code>histeq()</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[J,T] = histeq(I,n)</span><br><span class="line">J = histeq(I,n)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>I 表示原始图像，J是灰度均衡变化之后的输出图像，T是变换矩阵(即能将图像I的直方图变换成图像J的直方图的变换T)。参数n指定直方图均衡后的灰度级数，默认值为64</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">i = rgb2gray(imread(&apos;2017-03-16-4.jpeg&apos;));</span><br><span class="line">LC = imadjust(i,[],[50/255;150/255]);</span><br><span class="line">figure(1),subplot(221),imshow(LC);</span><br><span class="line">title(&apos;low contrast&apos;);</span><br><span class="line">figure(1),subplot(222),imhist(LC);</span><br><span class="line">title(&apos;low contrast&apos;);</span><br><span class="line">HE1 = histeq(LC);</span><br><span class="line">figure(1),subplot(223),imshow(HE1);</span><br><span class="line">title(&apos;histogram equalization&apos;);</span><br><span class="line">figure(1),subplot(224),imhist(HE1);</span><br><span class="line">title(&apos;histogram equalization&apos;);</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-18-9.jpg" alt=""></p>
+<blockquote>
+<p>直方图均衡化是图像增强的有效手段。</p>
+</blockquote>
+<h2 id="直方图规定化"><a href="#直方图规定化" class="headerlink" title="直方图规定化"></a>直方图规定化</h2><p>灰度均衡化可以自动确定灰度变换函数，从而获得拥有均匀直方图的输出图像。如果我们希望获得指定直方图的输出图像，就需要用到<code>直方图规定化</code>，又称为<code>直方图匹配</code>。</p>
+<p>需要用到函数<code>histeq()</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[J,T] = histeq(I,hgram)</span><br><span class="line">J = histeq(I,hgram)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>此时函数会讲原始图像I的直方图编程用户指定的hgram(也就是参考图像的直方图)。参数hgram的分量数目就是直方图的收集箱数目，对于double类型的图像，hgram中各元素的值域是[0,1]；对于uint8类型的图像，hgram中各元素取值范围为[0,255].</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">img = rgb2gray(imread(&apos;2017-03-16-4.jpeg&apos;));</span><br><span class="line">img_ref = rgb2gray(imread(&apos;2017-03-18-10.jpg&apos;));</span><br><span class="line">[hgram,x] = imhist(img_ref);</span><br><span class="line">J = histeq(img,hgram);</span><br><span class="line">subplot(2,3,1),imshow(img),title(&apos;original image&apos;);</span><br><span class="line">subplot(2,3,4),imhist(img),title(&apos;original image&apos;);</span><br><span class="line">subplot(2,3,2),imshow(img_ref),title(&apos;reference image&apos;);</span><br><span class="line">subplot(2,3,5),imhist(img_ref),title(&apos;reference image&apos;);</span><br><span class="line">subplot(2,3,3),imshow(J),title(&apos;output image&apos;);</span><br><span class="line">subplot(2,3,6),imhist(J),title(&apos;output image&apos;);</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-18-11.jpg" alt=""></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/22/matlab学习笔记01/" rel="next" title="matlab学习笔记01">
+                <i class="fa fa-chevron-left"></i> matlab学习笔记01
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/22/matlab03图像的几何变换/" rel="prev" title="matlab03图像的几何变换">
+                matlab03图像的几何变换 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Kaige Dong</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MATLAB-图像的点运算"><span class="nav-number">1.</span> <span class="nav-text">MATLAB 图像的点运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#灰度直方图"><span class="nav-number">1.1.</span> <span class="nav-text">灰度直方图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#灰度线性变换"><span class="nav-number">1.2.</span> <span class="nav-text">灰度线性变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#灰度非线性变换"><span class="nav-number">1.3.</span> <span class="nav-text">灰度非线性变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-灰度对数变换"><span class="nav-number">1.3.1.</span> <span class="nav-text">1. 灰度对数变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-灰度幂次变换"><span class="nav-number">1.3.2.</span> <span class="nav-text">2. 灰度幂次变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-灰度指数变换"><span class="nav-number">1.3.3.</span> <span class="nav-text">3. 灰度指数变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#灰度拉伸"><span class="nav-number">1.4.</span> <span class="nav-text">灰度拉伸</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-基本原理"><span class="nav-number">1.4.1.</span> <span class="nav-text">1. 基本原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#灰度均衡"><span class="nav-number">1.5.</span> <span class="nav-text">灰度均衡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直方图规定化"><span class="nav-number">1.6.</span> <span class="nav-text">直方图规定化</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kaige Dong</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.1.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

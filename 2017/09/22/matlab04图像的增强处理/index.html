@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.1.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.1.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="MATLAB04图像的增强处理两函数的傅里叶变换的乘积等于它们卷积后的傅里叶变换。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="matlab04图像的增强处理">
+<meta property="og:url" content="http://yoursite.com/2017/09/22/matlab04图像的增强处理/index.html">
+<meta property="og:site_name" content="读书笔记">
+<meta property="og:description" content="MATLAB04图像的增强处理两函数的傅里叶变换的乘积等于它们卷积后的傅里叶变换。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-20-2.jpg">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-20-4.jpg">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-20-5.jpg">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-20-6.jpg">
+<meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-20-7.jpg">
+<meta property="og:updated_time" content="2017-09-22T12:35:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="matlab04图像的增强处理">
+<meta name="twitter:description" content="MATLAB04图像的增强处理两函数的傅里叶变换的乘积等于它们卷积后的傅里叶变换。">
+<meta name="twitter:image" content="http://yoursite.com/pic/2017-03/2017-03-20-2.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/22/matlab04图像的增强处理/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>matlab04图像的增强处理 | 读书笔记</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">读书笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+    <a href="/schedule/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />Schedule</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/22/matlab04图像的增强处理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kaige Dong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="读书笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">matlab04图像的增强处理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+                
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-22T18:36:25+08:00">2017-09-22</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="MATLAB04图像的增强处理"><a href="#MATLAB04图像的增强处理" class="headerlink" title="MATLAB04图像的增强处理"></a>MATLAB04图像的增强处理</h1><p>两函数的傅里叶变换的乘积等于它们卷积后的傅里叶变换。</p>
+<a id="more"></a>
+<p>图像增强的基本方法有空域处理和频域处理两种。图像的平滑处理是图像增强的典型应用，其主要任务是既平滑掉噪声，又尽量保持图像的细节；在频域处理中，噪声和图像的细节部分都位于高频，所以如何在低通滤波的同时保持高频细节是处理时要考虑的问题。</p>
+<h2 id="卷积积分与邻域处理"><a href="#卷积积分与邻域处理" class="headerlink" title="卷积积分与邻域处理"></a>卷积积分与邻域处理</h2><h3 id="邻点和邻域"><a href="#邻点和邻域" class="headerlink" title="邻点和邻域"></a>邻点和邻域</h3><ol>
+<li><p>图像是由像素构成的，图像中的相邻像素构成邻域，邻域中的像素点互为邻点。对于任意像素，处于上下左右四个方向的像素点称为它的4邻点；加上角里的4个像素，就称为它的8邻点。同样的也能定义它的24邻点。</p>
+<p>像素的邻域可以看做是像素邻点的集合，在图像处理中也将中心像素和它的特定邻点合称为邻域。一般划定使用正方形。如3x3邻域、5x5邻域等。</p>
+</li>
+<li><p>邻域处理</p>
+<p>以包含中心像素的邻域为分析对象，处理得到的像素灰度来源于对邻域内像素灰度的计算。常用的邻域处理包括图像的平滑、图像的锐化、边缘检测。</p>
+</li>
+<li><p>卷积和模板</p>
+<p>在对图像进行卷积运算时，原始数据与结果数据分开保存，对原始数据分块处理，在处理过程中保持原始数据不变，最终得到完整的结果数据。用卷积对图像进行处理时，改变对原始图像各部分的处理顺序不会对处理结果造成影响。</p>
+</li>
+<li><p>卷积运算在处理中的使用</p>
+<p>图像的卷积运算实际上是通过模板在图像上的移动完成的。在图像处理中，不断在图像上移动模板的位置，每当模板中心对准一个像素时，就对此像素所在邻域内的像素灰度根据模板进行加权求和，得到的结果通常远大于原像素灰度，这就需要将球和结果除以一个比例因子(衰减因子)。最后将结果限制在0~255之间作为中心像素的灰度保存在结果中。</p>
+</li>
+</ol>
+<h3 id="运用模板实现邻域处理"><a href="#运用模板实现邻域处理" class="headerlink" title="运用模板实现邻域处理"></a>运用模板实现邻域处理</h3><p>在图像处理中，使用模板进行邻域处理，本质上就是执行二维卷积计算。MATLAB中已经提供了执行二维卷积计算的函数<code>conv2()</code>,还有基于卷积的图像滤波函数<code>filter()</code>，两者是等价的。还有一个<code>imfilter()</code>直接对多维矩阵(RGB图像)进行空间滤波，而<code>filter2</code>只能处理二维矩阵(灰度图像)。另外<code>conv2</code>所得图像大小将会发生改变，<code>imfilter()</code>系统会自动执行对于图像四边像素的处理而保持大小不变。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g=imfilter(f,w,option1,option2,...)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>f是要进行滤波操作的图像，w是滤波操作所使用的模板。</p>
+</blockquote>
+<ul>
+<li>参数表</li>
+</ul>
+<p>1、边界选项</p>
+<table>
+<thead>
+<tr>
+<th>合法值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X</code>(X代表一个具体的数值)</td>
+<td>用固定数值X填充虚拟边界，在默认情况下用0填充</td>
+</tr>
+<tr>
+<td><code>&#39;symmetric&#39;</code></td>
+<td>填充虚拟边界的内容是通过对靠近原始图像边缘的像素相对于原始图像边缘镜像得到的</td>
+</tr>
+<tr>
+<td><code>&#39;replicate&#39;</code></td>
+<td>填充虚拟边界的内容总是重复它最近的边缘像素</td>
+</tr>
+<tr>
+<td><code>&#39;circular&#39;</code></td>
+<td>认为原始图像模式具有周期性，从而周期性地填充虚拟边界的内容</td>
+</tr>
+</tbody>
+</table>
+<p>2、尺寸选项</p>
+<table>
+<thead>
+<tr>
+<th>合法取值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&#39;same&#39;</code></td>
+<td>输出图像g与输入图像f尺寸相同</td>
+</tr>
+<tr>
+<td><code>&#39;full&#39;</code></td>
+<td>输出图像g的尺寸为填充虚拟边界后图像f的尺寸</td>
+</tr>
+</tbody>
+</table>
+<p>3、模式选项</p>
+<table>
+<thead>
+<tr>
+<th>合法取值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&#39;corr&#39;</code></td>
+<td>滤波过程为相关</td>
+</tr>
+<tr>
+<td><code>&#39;conv&#39;</code></td>
+<td>滤波过程为卷积</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>用于滤波的模板可以自定义，也可以使用系统预设的模板。此时与imfilter()相配合的另一个函数是<code>fspecial()</code>    ,该函数用于创建一些预定义的二维滤波器(模板)来供imfilter()使用语法如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h = fspecial(type,parameters)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>type用于指定模板的类型，合法取值如下</p>
+</blockquote>
+<p>参数取值表：</p>
+<table>
+<thead>
+<tr>
+<th>合法取值</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&#39;average&#39;</code></td>
+<td>平均模板</td>
+</tr>
+<tr>
+<td><code>&#39;disk&#39;</code></td>
+<td>圆形邻域的平均模板</td>
+</tr>
+<tr>
+<td><code>&#39;gaussian&#39;</code></td>
+<td>高斯模板</td>
+</tr>
+<tr>
+<td><code>&#39;laplacian&#39;</code></td>
+<td>拉普拉斯模板</td>
+</tr>
+<tr>
+<td><code>&#39;log&#39;</code></td>
+<td>高斯-拉普拉斯模板</td>
+</tr>
+<tr>
+<td><code>&#39;prewitt&#39;</code></td>
+<td>prewitt水平边缘检测滤波器</td>
+</tr>
+<tr>
+<td><code>&#39;sobel&#39;</code></td>
+<td>sobel水平边缘检测滤波器</td>
+</tr>
+<tr>
+<td><code>&#39;unsharp&#39;</code></td>
+<td>unsharp对比度增强滤波器</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>参数parameters为可选选项，是和指定的模板相关的配置参数，如尺寸大小或者标准差等。该函数的返回值h为一个特定的模板。</p>
+</blockquote>
+<h2 id="图像的简单平滑"><a href="#图像的简单平滑" class="headerlink" title="图像的简单平滑"></a>图像的简单平滑</h2><p>图像的简单平滑是指通过邻域简单平均对图像进行平滑处理的方法，可以在一定程度上消除原始图像中的噪声、降低原始图像对比度的作用。</p>
+<p>简单平滑模板：</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>1</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>选取9作为衰减因子，就可以很容易的实现图像的简单平滑。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">i = imread(&apos;2017-03-20-1.jpg&apos;)</span><br><span class="line">%注意w和h1这两个模板是等价的</span><br><span class="line">w = [1 1 1;1 1 1;1 1 1]/9;</span><br><span class="line">h1 = fspecial(&apos;average&apos;,[3,3]);</span><br><span class="line">h2 = fspecial(&apos;average&apos;,[5,5]);</span><br><span class="line">h3 = fspecial(&apos;average&apos;,[7,7]);</span><br><span class="line">%执行图像的简单平滑</span><br><span class="line">g1 = imfilter(i,w,&apos;conv&apos;,&apos;replicate&apos;);</span><br><span class="line">g2 = imfilter(i,h2,&apos;conv&apos;,&apos;replicate&apos;);</span><br><span class="line">g3 = imfilter(i,h3,&apos;conv&apos;,&apos;replicate&apos;);</span><br><span class="line"></span><br><span class="line">subplot(1,3,1),imshow(g1),title(&apos;A&apos;);</span><br><span class="line">subplot(1,3,2),imshow(g2),title(&apos;B&apos;);</span><br><span class="line">subplot(1,3,3),imshow(g3),title(&apos;C&apos;);</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-20-2.jpg" alt=""></p>
+<blockquote>
+<p>增大平滑临边长的方法可以消除更多的噪声影响，同时图像的对比度也下降很多。使用简单平滑的方法进行噪声下消除往往以大幅降低图像清晰度为代价。</p>
+<p>简单平滑处理实质上并不能真正消除噪点，只是尽可能使人眼不易察觉到噪声的影响。</p>
+</blockquote>
+<h2 id="图像的高斯平滑"><a href="#图像的高斯平滑" class="headerlink" title="图像的高斯平滑"></a>图像的高斯平滑</h2><p>在图像的高斯平滑中，在对图像邻域进行平均时，不同位置的像素被赋予了不同的权值。</p>
+<p>在图像处理中把对邻域像素逐一处理的算法过程称为滤波器。</p>
+<p>平滑线性滤波器的工作原理是利用模板对邻域内像素灰度进行加权平均，因此平滑线性滤波器也被称为均值滤波器。平滑线性滤波器的衰减因子一般选用模板中所有权值的和，这样可以避免处理对图像整体属性的影响。</p>
+<p>高斯模板上的权值是由高斯分布函数确定的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">i = imread(&apos;2017-03-20-3.jpg&apos;);</span><br><span class="line">h = fspecial(&apos;gaussian&apos;,7,2);</span><br><span class="line">g = imfilter(i,h,&apos;conv&apos;);</span><br><span class="line">subplot(121),imshow(i),title(&apos;original image&apos;);</span><br><span class="line">subplot(122),imshow(g),title(&apos;gaussian smooth&apos;);</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-20-4.jpg" alt=""></p>
+<blockquote>
+<p>图像进行了7X7邻域高斯平滑处理的效果。标准差为2</p>
+</blockquote>
+<h2 id="图像的中值滤波"><a href="#图像的中值滤波" class="headerlink" title="图像的中值滤波"></a>图像的中值滤波</h2><p>是一种非线性的图像处理方法，通过对邻域内像素按灰度排序的结果决定中心像素的灰度。</p>
+<p>通过对采样窗口内的<code>奇数个像素</code>的灰度数值进行排序，并取出序列中位于中间位置的灰度作为中心像素的灰度。</p>
+<p>简单平滑和高斯平滑都是讲噪声分摊到整个邻域中的每个像素，以此来减小噪声点的影响，然而代价是图像清晰度的大量损失。</p>
+<p>中值滤波对消除离散型噪声点效果显著。</p>
+<p>MATLAB中提供了用以实现中值滤波的函数medfilt2(),该函数 <strong>只适用于处理灰度图片</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I2 = medfilt2(I1,[m n])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>I1是待处理图像的像素矩阵，m和n给出了中值滤波处理模板的大小，默认3x3。</p>
+<p>中值滤波在处理某些噪声有很大优势：如椒盐噪声(脉冲噪声)，常由图像传感器、传输信道、解码处理产生的黑白相间的亮暗点噪声。</p>
+</blockquote>
+<p>函数<code>imnoise()</code>来模拟图像受到噪声污染的过程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">J = imnoise(I,type,parameters);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>I 是原始图像，type指定了噪声的类型，合法取值是<code>gaussian</code> (高斯白噪声)或者<code>salt &amp; papper</code>（椒盐噪声）.</p>
+<p>高斯白噪声：如果噪声幅度服从高斯分布，就是高斯噪声，如果噪声功率谱密度是均匀分布的，则它是高斯白噪声。</p>
+<p>parameters控制噪声被加入的程度。如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; J = imnoise(I,&apos;gaussian&apos;,m,v)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>表示对原始图像中每个像素叠加一个服从均值为m方差为v的高斯分布产生的随机噪声。</p>
+</blockquote>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">i = rgb2gray(imread(&apos;2017-03-20-3.jpg&apos;));</span><br><span class="line">i_noise = imnoise(i,&apos;salt &amp; pepper&apos;);</span><br><span class="line">w1 = [1 2 1;2 4 2;1 2 1]/16;</span><br><span class="line">output1 = imfilter(i_noise,w1,&apos;conv&apos;,&apos;replicate&apos;);</span><br><span class="line">w2 = [1 1 1;1 1 1;1 1 1]/9;</span><br><span class="line">output2 = imfilter(i_noise,w2,&apos;conv&apos;,&apos;replicate&apos;);</span><br><span class="line">output3 = medfilt2(i_noise,[3,3]);</span><br><span class="line"></span><br><span class="line">subplot(2,2,1),imshow(i_noise),title(&apos;noise image&apos;);</span><br><span class="line">subplot(2,2,2),imshow(output1),title(&apos;gaussian filter&apos;);</span><br><span class="line">subplot(2,2,3),imshow(output2),title(&apos;average filter&apos;);</span><br><span class="line">subplot(2,2,4),imshow(output3),title(&apos;med filter&apos;);</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-20-5.jpg" alt=""></p>
+<blockquote>
+<p>中值滤波很好的解决了图像降噪的问题，然而对于细节较多的图像，中值滤波处理常常导致图像信息丢失。</p>
+</blockquote>
+<h2 id="图像的双边滤波"><a href="#图像的双边滤波" class="headerlink" title="图像的双边滤波"></a>图像的双边滤波</h2><p>双边滤波是一种非线性滤波方法，是结合图像的空间邻近度和像素值相似度的一种折中处理，同时考虑了空域信息和灰度相似性，从而力求在保持图像中边缘信息的同时，又实现降噪效果。</p>
+<p>在像素灰度过度和缓的区域，双边滤波有类似于高斯滤波的效果，而在图像边缘等梯度较大的地方，则有保持效果。</p>
+<p>对彩色图像和灰色图像在计算灰度差距时计算方法不同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">function B = bfilter2(A,w,sigma)</span><br><span class="line"></span><br><span class="line">%针对灰度图像或彩色图像选择应用不同的处理函数</span><br><span class="line">if size(A,3) == 1</span><br><span class="line">	B = bfltGray(A,w,sigma(1),sigma(2));</span><br><span class="line">else</span><br><span class="line">	B = bfltColor(A,w,sigma(1),sigma(2));</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">%对灰度图像进行双边滤波处理的函数</span><br><span class="line"></span><br><span class="line">function B = bfltGray(A,w,sigma_d,sigma_r)</span><br><span class="line"></span><br><span class="line">%计算高斯模板</span><br><span class="line">[X,Y] = meshgrid(-w:w,-w:w);</span><br><span class="line">G = exp(-(X.^2+Y.^2)/(2*sigma_d^2));</span><br><span class="line"></span><br><span class="line">%进行双边滤波</span><br><span class="line">dim = size(A);</span><br><span class="line">B = zeros(dim);</span><br><span class="line">for i = 1:dim(1)</span><br><span class="line">	for j = 1:dim(2)</span><br><span class="line">		%抽取一块局部区域，这与值域的大小相对应</span><br><span class="line">		iMin = max(i-w,1);</span><br><span class="line">		iMax = min(i+w,dim(1));</span><br><span class="line">		jMin = max(j-w,1);</span><br><span class="line">		jMax = min(j+w,dim(2));</span><br><span class="line">		I = A(iMin:iMax,jMin:jMax);</span><br><span class="line">		%计算该值域核，也就是灰度值的权值模板</span><br><span class="line">		H = exp(-(I-A(i,j)).^2/(2*sigma_r^2));</span><br><span class="line"></span><br><span class="line">		%计算双边滤波响应</span><br><span class="line">		F = H.*G((iMin:iMax)-i+w+1,(jMin:jMax)-j+w+1);</span><br><span class="line">		B(i,j) = sum(F(:).*I(:))/sum(F(:));</span><br><span class="line">	end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">%对彩色图像进行双边滤波处理的函数</span><br><span class="line">function B = bfltColor(A,w,sigma_d,sigma_r)</span><br><span class="line"></span><br><span class="line">%将输入的RGB图像转换到CIE颜色空间中</span><br><span class="line">if exist(&apos;applycform&apos;,&apos;file&apos;)</span><br><span class="line">	A = applycform(A,makecform(&apos;srgb2lab&apos;));</span><br><span class="line">else</span><br><span class="line">	A = colorspace(&apos;Lab&lt;-RGB&apos;,A);</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">[X,Y] = meshgrid(-w:w,-w:w);</span><br><span class="line">G = exp(-(X.^2+Y.^2)/(2*sigma_d^2));</span><br><span class="line">sigma_r = 100*sigma_r;</span><br><span class="line"></span><br><span class="line">%进行滤波处理</span><br><span class="line">dim = size(A);</span><br><span class="line">B = zeros(dim);</span><br><span class="line">for i = 1:dim(1)</span><br><span class="line">	for j = 1:dim(2)</span><br><span class="line">		iMin = max(i-w,1);</span><br><span class="line">		iMax = min(i+w,dim(1));</span><br><span class="line">		jMin = max(j-w,1);</span><br><span class="line">		jMax = min(j+w,dim(2))</span><br><span class="line">		I = A(iMin:iMax,jMin:jMax,:);</span><br><span class="line"></span><br><span class="line">		dL = I(:,:,1)-A(i,j,1);</span><br><span class="line">		da = I(:,:,2)-A(i,j,2);</span><br><span class="line">		db = I(:,:,3)-A(i,j,3);</span><br><span class="line">		H = exp(-(dL.^2+da.^2+db.^2)/(2*sigma_r^2));</span><br><span class="line"></span><br><span class="line">		F = H.*G((iMin:iMax)-i+w+1,(jMin:jMax)-j+w+1);</span><br><span class="line">		norm_F = sum(F(:));</span><br><span class="line">		B(i,j,1) = sum(sum(F.*I(:,:,1)))/norm_F;</span><br><span class="line">		B(i,j,2) = sum(sum(F.*I(:,:,2)))/norm_F;</span><br><span class="line">		B(i,j,2) = sum(sum(F.*I(:,:,3)))/norm_F;</span><br><span class="line"></span><br><span class="line">	end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">% 将滤波结果转回RGB色彩空间</span><br><span class="line">if exist(&apos;applycform&apos;,&apos;file&apos;)</span><br><span class="line">	B = applycform(B,makecform(&apos;lab2srgb&apos;));</span><br><span class="line">else</span><br><span class="line">	B = colorspace(&apos;RGB&lt;-Lab&apos;,B);</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>调用上面的函数，对一副灰度图像进行双边滤波处理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">I = imread(&apos;2017-03-20-3.jpg&apos;);</span><br><span class="line">I = double(I)/255;</span><br><span class="line"></span><br><span class="line">w = 5;</span><br><span class="line">sigma = [3 0.1];</span><br><span class="line">B = bfilter2(I,w,sigma);</span><br></pre></td></tr></table></figure>
+<h2 id="图像的拉普拉斯锐化"><a href="#图像的拉普拉斯锐化" class="headerlink" title="图像的拉普拉斯锐化"></a>图像的拉普拉斯锐化</h2><p>图像增强中，平滑是为了消除图像中的噪声干扰或降低图像对比度，与之相反的是为了增强图像的边缘和细节，需要对图像进行锐化以提高对比度。</p>
+<p>图形的锐化：目的是提高图像的对比度。可以提高邻域内像素的会督查来提高图像的对比度。</p>
+<p>像素锐化处理中，被增强的像素点应该是与邻域内其他像素有较大差异的，因此原始图像中灰度相同的区域不应受锐化处理的影响。</p>
+<p>基本思想：当邻域的中心像素灰度值低于它所在邻域内其他像素的灰度的平均值时，此中心像素的灰度应被进一步降低；当邻域的中心像素灰度值高于它所在邻域内其他像素的平均灰度值时，此中心像素的灰度应被进一步提高，以此实现图像的锐化处理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h = fspecial(&apos;unsharp&apos;,alpha)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>以上代码返回一个3x3的unsharp对比度增强滤波器，其实就是一个Laplacian锐化模板。参数alpha用来控制拉普拉斯模板的形状，它的取值范围介于0.0和1.0之间。缺省时，alpha默认值是<code>0.2</code>.</p>
+<p>unsharp滤波器是一个用来锐化图像的算子。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">I = imread(&apos;2017-03-20-3.jpg&apos;);</span><br><span class="line">H = fspecial(&apos;unsharp&apos;);</span><br><span class="line">sharpened = imfilter(I,H,&apos;replicate&apos;);</span><br><span class="line">subplot(121),imshow(I),title(&apos;original Image&apos;)</span><br><span class="line">subplot(122),imshow(sharpened);title(&apos;sharpened Image&apos;)</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-20-6.jpg" alt=""></p>
+<blockquote>
+<p>拉普拉斯锐化还是噪声敏感的，任何细小的噪声点都会在处理结果中清晰地显示出来。</p>
+</blockquote>
+<blockquote>
+<p>如果不使用unsharp 算子：imfilter()在识别所采用的的模板是unsharp算子时，其实所执行的操作并不仅仅是卷积，为了完成特普拉斯锐化，还需要与原始图像进行叠加，以下代码演示了其中的细小差别：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">I = imread(&apos;2017-03-20-3.jpg&apos;);</span><br><span class="line">I = rgb2gray(I);</span><br><span class="line">Laplace=[0 -1 0;-1 4 -1;0 -1 0];</span><br><span class="line">Data = double(I);</span><br><span class="line">LaplaceImage=conv2(Data,Laplace,&apos;same&apos;);</span><br><span class="line">%上面这句也可以携程下面这种形式，作用是相同的。</span><br><span class="line">%LaplaceImage=imfilter(Data,Laplace,&apos;conv&apos;,&apos;same&apos;);</span><br><span class="line">subplot(1,2,1);imshow(uint8(LaplaceImage));title(&apos;Laplace 图像&apos;);</span><br><span class="line"></span><br><span class="line">%原始图像与拉普拉斯图像的叠加</span><br><span class="line">DataLap = imadd(Data,LaplaceImage);</span><br><span class="line">subplot(1,2,2),imshow(uint8(DataLap));</span><br><span class="line">title(&apos;锐化增强后的图像&apos;);</span><br></pre></td></tr></table></figure>
+<p><img src="/pic/2017-03/2017-03-20-7.jpg" alt=""></p>
+<blockquote>
+<p>图像的锐化是与平滑处理恰好相反的一种图像增强手段。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/22/matlab03图像的几何变换/" rel="next" title="matlab03图像的几何变换">
+                <i class="fa fa-chevron-left"></i> matlab03图像的几何变换
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/22/同步服务器文件夹/" rel="prev" title="同步服务器文件夹">
+                同步服务器文件夹 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Kaige Dong</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MATLAB04图像的增强处理"><span class="nav-number">1.</span> <span class="nav-text">MATLAB04图像的增强处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积积分与邻域处理"><span class="nav-number">1.1.</span> <span class="nav-text">卷积积分与邻域处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#邻点和邻域"><span class="nav-number">1.1.1.</span> <span class="nav-text">邻点和邻域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运用模板实现邻域处理"><span class="nav-number">1.1.2.</span> <span class="nav-text">运用模板实现邻域处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像的简单平滑"><span class="nav-number">1.2.</span> <span class="nav-text">图像的简单平滑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像的高斯平滑"><span class="nav-number">1.3.</span> <span class="nav-text">图像的高斯平滑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像的中值滤波"><span class="nav-number">1.4.</span> <span class="nav-text">图像的中值滤波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像的双边滤波"><span class="nav-number">1.5.</span> <span class="nav-text">图像的双边滤波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像的拉普拉斯锐化"><span class="nav-number">1.6.</span> <span class="nav-text">图像的拉普拉斯锐化</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kaige Dong</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.1.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

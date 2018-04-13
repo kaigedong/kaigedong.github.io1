@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.1.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.1.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="tmux基本概念tmux的主要元素分为三层：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tmus指南">
+<meta property="og:url" content="http://yoursite.com/2018/04/13/tmus指南/index.html">
+<meta property="og:site_name" content="读书笔记">
+<meta property="og:description" content="tmux基本概念tmux的主要元素分为三层：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/pic/2017-09/figure_9.jpg">
+<meta property="og:image" content="http://yoursite.com/pic/2017-09/figure_10.png">
+<meta property="og:updated_time" content="2018-04-13T09:49:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="tmus指南">
+<meta name="twitter:description" content="tmux基本概念tmux的主要元素分为三层：">
+<meta name="twitter:image" content="http://yoursite.com/pic/2017-09/figure_9.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/13/tmus指南/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>tmus指南 | 读书笔记</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">读书笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+    <a href="/schedule/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />Schedule</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/tmus指南/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kaige Dong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="读书笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">tmus指南
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+                
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T17:48:49+08:00">2018-04-13</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="tmux基本概念"><a href="#tmux基本概念" class="headerlink" title="tmux基本概念"></a>tmux基本概念</h2><p>tmux的主要元素分为三层：</p>
+<p><img src="/pic/2017-09/figure_9.jpg" alt=""></p>
+<a id="more"></a>
+<ul>
+<li>Session 一组窗口的集合，通常用来概括同一个任务。session可以有自己的名字便于任务之间的切换。</li>
+<li>Window 单个可见窗口。Windows有自己的编号，也可以认为和ITerm2中的Tab类似。</li>
+<li>Pane 窗格，被划分成小块的窗口，类似于Vim中 C-w +v 后的效果。</li>
+</ul>
+<p>可以看到Session总在tmux的左下角显示, 而Window也会在最下方以一种Tab的形式展现。每个window都有自己的需要，也会以当前活动进程的名字命名。而Pane就比较好理解，即把单个窗口分割成若干个小块后的元素。</p>
+<h2 id="tmux的基本操作"><a href="#tmux的基本操作" class="headerlink" title="tmux的基本操作"></a>tmux的基本操作</h2><p>Prefix-Command前置操作：所有下面介绍的快捷键，都必须以前置操作开始。tmux默认的前置操作是<code>CTRL+b</code>。例如，我们想要新建一个窗体，就需要先在键盘上摁下<code>CTRL+b</code>(有些电脑是<code>CTRL+A</code>)，松开后再摁下n键。</p>
+<blockquote>
+<p>建议修改为<code>ctrl + a</code> 更好按。若要将快捷键前缀变更为 Ctrl-a ，请将以下配置加入到 Tmux 的配置文件 <code>~/.tmux.conf</code> 中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; unbind C-b</span><br><span class="line">&gt; set -g prefix C-a</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>只列出<strong>常用重要命令</strong></p>
+<h3 id="在-tmux-之外如何进行控制"><a href="#在-tmux-之外如何进行控制" class="headerlink" title="在 tmux 之外如何进行控制"></a>在 tmux 之外如何进行控制</h3><ul>
+<li><code>session</code> 会话： session是一个特定的终端组合。输入<code>tmux</code>就可以打开一个新的session.<ul>
+<li><code>tmux new -s blog</code> : 创建一个叫做blog的tmux session</li>
+<li><code>tmux ls</code> : 列出所有的 session</li>
+<li><code>tmux attach -t blog</code> ：重新开启叫做<code>blog</code>的 tmux session</li>
+</ul>
+</li>
+</ul>
+<h3 id="在-tmux-中直接控制"><a href="#在-tmux-中直接控制" class="headerlink" title="在 tmux 中直接控制"></a>在 tmux 中直接控制</h3><p>直接通过默认前缀<code>CTRL + b</code> 之后输入对应命令来操作，具体如下（这里只列出输入默认前缀之后需要输入的操作）：</p>
+<blockquote>
+<p> 会话基本操作</p>
+</blockquote>
+<ul>
+<li><code>d</code>  脱离当前会话,可暂时返回Shell界面</li>
+<li><code>s</code>  选择并切换会话；在同时开启了多个会话时使用</li>
+<li><code>$</code>  重命名当前Session</li>
+</ul>
+<blockquote>
+<p>窗口操作</p>
+</blockquote>
+<ul>
+<li><code>c</code> 创建新窗口</li>
+<li><code>&amp;</code> 关闭当前窗口</li>
+<li><code>[0-9]</code> 数字键切换到指定窗口</li>
+</ul>
+<blockquote>
+<p>面板操作</p>
+</blockquote>
+<ul>
+<li><code>&quot;</code> 将当前面板上下分屏</li>
+<li><code>%</code> 将当前面板左右分屏</li>
+<li><code>x</code> 关闭当前分屏</li>
+<li><code>o</code> 选择当前窗口中下一个面板</li>
+<li><code>方向键</code> 移动光标选择对应面板</li>
+<li><code>z</code> 最大化当前所在面板</li>
+</ul>
+<p>因为 iTerm2 的支持，很多切换的操作可以直接用鼠标进行，非常方便。具体大家可以自己尝试一下。</p>
+<h2 id="tmux的一些个性化定制"><a href="#tmux的一些个性化定制" class="headerlink" title="tmux的一些个性化定制"></a>tmux的一些个性化定制</h2><p>如果希望做一些美化和个性化配置的话，建议使用<a href="https://github.com/gpakosz/.tmux" target="_blank" rel="noopener">gpakosz的tmux配置</a>。它的本质是一个tmux配置文件，实现了以下功能：</p>
+<ul>
+<li>基于powerline的美化</li>
+<li>显示笔记本电池电量</li>
+<li>和Mac互通的剪切板</li>
+<li>和vim更相近的快捷键</li>
+</ul>
+<p>安装方式也很简单如下 (注意：如果想使用powerline美化需要先安装powerline。</p>
+<p>可达到如图效果：<br><img src="/pic/2017-09/figure_10.png" alt=""></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 安装美化</span><br><span class="line">pip install powerline</span><br><span class="line"><span class="meta">$</span> cd</span><br><span class="line"><span class="meta">$</span> rm -rf .tmux</span><br><span class="line"><span class="meta">$</span> git clone https://github.com/gpakosz/.tmux.git</span><br><span class="line"><span class="meta">$</span> ln -s .tmux/.tmux.conf</span><br><span class="line"><span class="meta">$</span> cp .tmux/.tmux.conf.local .</span><br></pre></td></tr></table></figure>
+<h2 id="高效的结对编程"><a href="#高效的结对编程" class="headerlink" title="高效的结对编程"></a>高效的结对编程</h2><p>你可以将 Tmux 会话的地址分享给他人，这样他们就可以通过 SSH 接入这个会话了。由于会话是建立在 SSH 之上的，所以不会产生额外的开销。通过使用高速的互联网，对于那些连接到远程会话上的用户而言，他们会觉得这个会话就是运行在本地的。</p>
+<h3 id="在Tmux-中使用-Tmate"><a href="#在Tmux-中使用-Tmate" class="headerlink" title="在Tmux 中使用 Tmate"></a>在Tmux 中使用 Tmate</h3><p>Tmate 是一个 Tmux 的管理工具，使用它不但能够轻松地创建 Tmux 会话而且还能够通过互联网把该会话共享给其他人。若要使用 Tmate 共享 Tmux 会话，请按照以下步骤操作：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 安装 Homebrew</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span> $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 安装 Tmate</span><br><span class="line"></span><br><span class="line">brew update &amp;&amp;brew tap nviennot/tmate &amp;&amp;</span><br><span class="line">brew install mate</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 使用 Tmate 开启一个新的会话</span><br><span class="line"></span><br><span class="line">tmate</span><br></pre></td></tr></table></figure>
+<p>从 Tmux 的会话中复制由 Tmate 产生的 SSH URL。请注意屏幕下方的信息<code>“[tmate] Remote session: ssh …”：</code></p>
+<p>利用刚刚复制下来的 URL 就可以邀请其他人通过 SSH 访问你的会话了。</p>
+<p>了解了如何利用 Tmux 的结对编程功能之后，还可以再利用您所喜爱的运营商提供的语音服务进一步加强会话交互性。</p>
+<h3 id="调整-Tmux-以增强其同-Vim-的集成度"><a href="#调整-Tmux-以增强其同-Vim-的集成度" class="headerlink" title="调整 Tmux 以增强其同 Vim 的集成度"></a>调整 Tmux 以增强其同 Vim 的集成度</h3><h4 id="调整背景的配色方案"><a href="#调整背景的配色方案" class="headerlink" title="调整背景的配色方案"></a>调整背景的配色方案</h4><p>当我第一次通过 Tmux 打开 Vim 时，我发现 Vim 的颜色没有正确显示。只有有字符的地方才有背景色。</p>
+<p>这个问题是因为通过 Tmux 运行 Vim 需要配置一个特殊的终端参数（term parameter）。请将下面这行配置添加以你的 ~/.vim 文件中。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if exists('$TMUX')</span><br><span class="line">set term=screen-256color</span><br><span class="line">endif</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在更新了配置文件 ~/.vimrc 以后，颜色应该就可以正确显示了。</p>
+</blockquote>
+<h4 id="调整光标的形状"><a href="#调整光标的形状" class="headerlink" title="调整光标的形状"></a>调整光标的形状</h4><p>在默认情况下，当通过 Tmux 运行 Vim 时，无论当前 Vim 是处于插入模式、可视模式还是其他模式，光标的形状都是一样的。这样就很难判断当前的 Vim 模式是什么。若要避免这个问题，就需要让 Tmux 通知 iTerm 更新光标的形状。为此，需要将以下配置加入到文件 ~/.vimrc 中。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if exists('$ITERM_PROFILE')</span><br><span class="line">if exists('$TMUX')</span><br><span class="line">let &amp;amp;t_SI = "&lt;Esc&gt;[3 q"</span><br><span class="line">let &amp;amp;t_EI = "&lt;Esc&gt;[0 q"</span><br><span class="line">else</span><br><span class="line">let &amp;amp;t_SI = "&lt;Esc&gt;]50;CursorShape=1x7"</span><br><span class="line">let &amp;amp;t_EI = "&lt;Esc&gt;]50;CursorShape=0x7"</span><br><span class="line">endif</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h4 id="调整粘贴时的文本缩进"><a href="#调整粘贴时的文本缩进" class="headerlink" title="调整粘贴时的文本缩进"></a>调整粘贴时的文本缩进</h4><p>在 Vim 中粘贴文本时可能会遇到这样的问题，有时文本的缩进会发生变化，特别是在粘贴大量的文本时，这个问题会更加明显。虽然可以通过在粘贴前执行 :set nopaste 来解决这个问题，但是这里还有一种更好的解决方法。就是把下面这段配置加入到配置文件 ~/.vimrc 中，这样 Vim 就会自动地阻止粘贴文本时的自动缩进。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">" for tmux to automatically set paste and nopaste mode at the time pasting (as happens in VIM UI)</span><br><span class="line"></span><br><span class="line">function! WrapForTmux(s)</span><br><span class="line"></span><br><span class="line">if !exists('$TMUX')</span><br><span class="line"></span><br><span class="line">return a:s</span><br><span class="line"></span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">let tmux_start = "&lt;Esc&gt;Ptmux;"</span><br><span class="line"></span><br><span class="line">let tmux_end = "&lt;Esc&gt;"</span><br><span class="line"></span><br><span class="line">return tmux_start . substitute(a:s, "&lt;Esc&gt;", "&lt;Esc&gt;&lt;Esc&gt;", 'g') . tmux_end</span><br><span class="line"></span><br><span class="line">endfunction</span><br><span class="line"></span><br><span class="line">let &amp;amp;t_SI .= WrapForTmux("&lt;Esc&gt;[?2004h")</span><br><span class="line"></span><br><span class="line">let &amp;amp;t_EI .= WrapForTmux("&lt;Esc&gt;[?2004l")</span><br><span class="line"></span><br><span class="line">function! XTermPasteBegin()</span><br><span class="line"></span><br><span class="line">set pastetoggle=&lt;Esc&gt;[201~</span><br><span class="line"></span><br><span class="line">set paste</span><br><span class="line"></span><br><span class="line">return ""</span><br><span class="line"></span><br><span class="line">endfunction</span><br><span class="line"></span><br><span class="line">inoremap &lt;special&gt; &lt;expr&gt; &lt;Esc&gt;[200~ XTermPasteBegin()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/13/陈巍学基因A07-A09/" rel="next" title="陈巍学基因A07-A09">
+                <i class="fa fa-chevron-left"></i> 陈巍学基因A07-A09
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/13/items2技巧/" rel="prev" title="items2技巧">
+                items2技巧 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Kaige Dong</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tmux基本概念"><span class="nav-number">1.</span> <span class="nav-text">tmux基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tmux的基本操作"><span class="nav-number">2.</span> <span class="nav-text">tmux的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-tmux-之外如何进行控制"><span class="nav-number">2.1.</span> <span class="nav-text">在 tmux 之外如何进行控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-tmux-中直接控制"><span class="nav-number">2.2.</span> <span class="nav-text">在 tmux 中直接控制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tmux的一些个性化定制"><span class="nav-number">3.</span> <span class="nav-text">tmux的一些个性化定制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高效的结对编程"><span class="nav-number">4.</span> <span class="nav-text">高效的结对编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在Tmux-中使用-Tmate"><span class="nav-number">4.1.</span> <span class="nav-text">在Tmux 中使用 Tmate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调整-Tmux-以增强其同-Vim-的集成度"><span class="nav-number">4.2.</span> <span class="nav-text">调整 Tmux 以增强其同 Vim 的集成度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#调整背景的配色方案"><span class="nav-number">4.2.1.</span> <span class="nav-text">调整背景的配色方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调整光标的形状"><span class="nav-number">4.2.2.</span> <span class="nav-text">调整光标的形状</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调整粘贴时的文本缩进"><span class="nav-number">4.2.3.</span> <span class="nav-text">调整粘贴时的文本缩进</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kaige Dong</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.1.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

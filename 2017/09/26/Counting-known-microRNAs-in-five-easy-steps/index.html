@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.1.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.1.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Counting known microRNAs in five easy steps翻译自这里 假设，当你来到这里，你应该是知道microRNAs是什么. 或许有人看过我的演讲UK Next-generation sequencing ,标题为21 ‐ 23 facts; the devil in the detail of microRNA‐Seq.  对于这一小类的RNA, 它们肯定是有很大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Counting known microRNAs in five easy steps">
+<meta property="og:url" content="http://yoursite.com/2017/09/26/Counting-known-microRNAs-in-five-easy-steps/index.html">
+<meta property="og:site_name" content="读书笔记">
+<meta property="og:description" content="Counting known microRNAs in five easy steps翻译自这里 假设，当你来到这里，你应该是知道microRNAs是什么. 或许有人看过我的演讲UK Next-generation sequencing ,标题为21 ‐ 23 facts; the devil in the detail of microRNA‐Seq.  对于这一小类的RNA, 它们肯定是有很大">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-26T02:52:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Counting known microRNAs in five easy steps">
+<meta name="twitter:description" content="Counting known microRNAs in five easy steps翻译自这里 假设，当你来到这里，你应该是知道microRNAs是什么. 或许有人看过我的演讲UK Next-generation sequencing ,标题为21 ‐ 23 facts; the devil in the detail of microRNA‐Seq.  对于这一小类的RNA, 它们肯定是有很大">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/26/Counting-known-microRNAs-in-five-easy-steps/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Counting known microRNAs in five easy steps | 读书笔记</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">读书笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+    <a href="/schedule/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />Schedule</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/26/Counting-known-microRNAs-in-five-easy-steps/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kaige Dong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="读书笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Counting known microRNAs in five easy steps
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+                
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-26T10:08:04+08:00">2017-09-26</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Counting-known-microRNAs-in-five-easy-steps"><a href="#Counting-known-microRNAs-in-five-easy-steps" class="headerlink" title="Counting known microRNAs in five easy steps"></a>Counting known microRNAs in five easy steps</h1><p>翻译自<a href="http://www.ark-genomics.org/events-online-training/counting-known-micrornas-five-easy-steps" target="_blank" rel="noopener">这里</a></p>
+<p>假设，当你来到这里，你应该是知道<a href="https://en.wikipedia.org/wiki/MicroRNA" target="_blank" rel="noopener">microRNAs</a>是什么. 或许有人看过我的演讲<a href="http://www.nottingham.ac.uk/deepseq/documents/ngs2011finalagenda.pdf" target="_blank" rel="noopener">UK Next-generation sequencing</a> ,标题为<code>21 ‐ 23 facts; the devil in the detail of microRNA‐Seq</code>.  对于这一小类的RNA, 它们肯定是有很大的影响，现在已有大量的生物信息学工具来处理microRNA 测序数据(microRNA-seq). 然而，基本的工作来数已知的microRNA 是非常的简单的，每个人都能做，只用简单的Unix 技巧（下面使用<code>Novoalign</code>这个很酷的工具）。下面的代码假设你在路径中有<code>Novoalign</code>. 这事怎么做的：</p>
+<blockquote>
+<p>5个小步骤来统计human 中的microRNAs</p>
+</blockquote>
+<h2 id="1-获取一个示例的数据集"><a href="#1-获取一个示例的数据集" class="headerlink" title="1. 获取一个示例的数据集"></a>1. 获取一个示例的数据集</h2><p>这个数据集来自发表在<em>Genome Research</em>上的人类研究：</p>
+<p>Morin RD, O’Connor MD, Griffith M, Kuchenbauer F, Delaney A, Prabhu AL, Zhao Y, McDonald H, Zeng T, Hirst M, Eaves CJ, Marra MA. (2008) Application of massively parallel sequencing to microRNA profiling and discovery in human embryonic stem cells. Genome Res. 18(4):610-21. [<a href="http://genome.cshlp.org/content/18/4/610.abstract" target="_blank" rel="noopener">link</a>]</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR026/SRR026762/SRR026762.fastq.gz</span><br></pre></td></tr></table></figure>
+<h2 id="2-获取当前miRBase-的成熟序列"><a href="#2-获取当前miRBase-的成熟序列" class="headerlink" title="2. 获取当前miRBase 的成熟序列"></a>2. 获取当前miRBase 的成熟序列</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget ftp://mirbase.org/pub/mirbase/CURRENT/mature.fa.gz</span><br></pre></td></tr></table></figure>
+<h2 id="3-只提取human-microRNAs-为了方便，将尿嘧啶转为胸腺嘧啶"><a href="#3-只提取human-microRNAs-为了方便，将尿嘧啶转为胸腺嘧啶" class="headerlink" title="3. 只提取human microRNAs, 为了方便，将尿嘧啶转为胸腺嘧啶"></a>3. 只提取human microRNAs, 为了方便，将<strong>尿嘧啶转为胸腺嘧啶</strong></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zcat  mature.fa.gz | grep -A 1 "^&gt;hsa" | grep -v "^-" | sed 's/U/T/g' &gt; human_mature.fa</span><br></pre></td></tr></table></figure>
+<h2 id="4-创建-Novoalign-inde-Novoalign-是免费的，可从http-www-novocraft-com-得到"><a href="#4-创建-Novoalign-inde-Novoalign-是免费的，可从http-www-novocraft-com-得到" class="headerlink" title="4. 创建 Novoalign inde. Novoalign 是免费的，可从http://www.novocraft.com 得到"></a>4. 创建 Novoalign inde. Novoalign 是免费的，可从<a href="http://www.novocraft.com" target="_blank" rel="noopener">http://www.novocraft.com</a> 得到</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">novoindex human_mature.nidx human_mature.fa</span><br></pre></td></tr></table></figure>
+<h2 id="5-通过一行命令搜索并计算："><a href="#5-通过一行命令搜索并计算：" class="headerlink" title="5. 通过一行命令搜索并计算："></a>5. 通过一行命令搜索并计算：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">novoalign -f SRR026762.fastq.gz -F STDFQ -d human_mature.nidx -l 18 -s 1 -a -R 0 -r Random -t 0 \</span><br><span class="line">                 | grep "^@" | awk '$9 != "" &#123;print $9&#125;' \</span><br><span class="line">                 | sort | uniq -c | sort -n -r &gt; counts.txt</span><br></pre></td></tr></table></figure>
+<p><strong>下面看一下结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">head counts.txt</span><br><span class="line">#  126476 &gt;hsa-miR-92a-3p</span><br><span class="line">#  120762 &gt;hsa-miR-103b</span><br><span class="line">#  120576 &gt;hsa-miR-103a-3p</span><br><span class="line">#   62704 &gt;hsa-miR-25-3p</span><br><span class="line">#   53155 &gt;hsa-miR-92b-3p</span><br><span class="line">#   49215 &gt;hsa-miR-372</span><br><span class="line">#   42536 &gt;hsa-miR-378a-3p</span><br><span class="line">#   37287 &gt;hsa-miR-140-3p</span><br><span class="line">#   36178 &gt;hsa-miR-21-5p</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>文章中的一个结论是『最丰富的miRNA是miR-103 』.</p>
+<p>从结果看他们漏掉了一个（我猜hsa-miR-92a-3p是2008年之后发现的）</p>
+</blockquote>
+<p>现在我们完成了。运行平台Scientific Linux 5 using Novoalign V2.07.18. 如果你有问题,<a href="mick.watson@roslin.ed.ac.uk">e-mail me</a>. 请注意awk 中使用的<strong><code>$9</code></strong>可能根据你的<code>reads identifier</code> 而改变， 所以<strong>检查一下运行Novoalign时，放到了标识符哪一列。</strong></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/25/Adapter-and-quality-trimming-of-illumina-data/" rel="next" title="Adapter and quality trimming of illumina data">
+                <i class="fa fa-chevron-left"></i> Adapter and quality trimming of illumina data
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/26/R极客的情人节/" rel="prev" title="R极客的情人节">
+                R极客的情人节 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Kaige Dong</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Counting-known-microRNAs-in-five-easy-steps"><span class="nav-number">1.</span> <span class="nav-text">Counting known microRNAs in five easy steps</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-获取一个示例的数据集"><span class="nav-number">1.1.</span> <span class="nav-text">1. 获取一个示例的数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-获取当前miRBase-的成熟序列"><span class="nav-number">1.2.</span> <span class="nav-text">2. 获取当前miRBase 的成熟序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-只提取human-microRNAs-为了方便，将尿嘧啶转为胸腺嘧啶"><span class="nav-number">1.3.</span> <span class="nav-text">3. 只提取human microRNAs, 为了方便，将尿嘧啶转为胸腺嘧啶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-创建-Novoalign-inde-Novoalign-是免费的，可从http-www-novocraft-com-得到"><span class="nav-number">1.4.</span> <span class="nav-text">4. 创建 Novoalign inde. Novoalign 是免费的，可从http://www.novocraft.com 得到</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-通过一行命令搜索并计算："><span class="nav-number">1.5.</span> <span class="nav-text">5. 通过一行命令搜索并计算：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kaige Dong</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.1.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
