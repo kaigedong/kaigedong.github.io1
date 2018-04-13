@@ -99,20 +99,24 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="读书笔记">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="从零开始建站笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开始建站">
+<meta property="og:url" content="http://yoursite.com/2018/04/13/开始建站/index.html">
 <meta property="og:site_name" content="读书笔记">
+<meta property="og:description" content="从零开始建站笔记">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-13T08:46:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="读书笔记">
+<meta name="twitter:title" content="开始建站">
+<meta name="twitter:description" content="从零开始建站笔记">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/13/开始建站/"/>
 
 
 
@@ -122,7 +126,7 @@
   };
 </script>
 
-  <title>读书笔记</title>
+  <title>开始建站 | 读书笔记</title>
   
 
 
@@ -169,8 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -210,7 +213,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
     <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
   </li>
@@ -270,9 +273,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -304,11 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/13/开始建站/" itemprop="url">
-                  开始建站
-                </a>
+          <h1 class="post-title" itemprop="name headline">开始建站
               
             
           </h1>
@@ -364,16 +363,18 @@
       
 
       
-        
-          <h1 id="从零开始建站笔记"><a href="#从零开始建站笔记" class="headerlink" title="从零开始建站笔记"></a>从零开始建站笔记</h1>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/13/开始建站/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="从零开始建站笔记"><a href="#从零开始建站笔记" class="headerlink" title="从零开始建站笔记"></a>从零开始建站笔记</h1><a id="more"></a>
+<h2 id="1-初始化blog文件夹"><a href="#1-初始化blog文件夹" class="headerlink" title="1. 初始化blog文件夹"></a>1. 初始化blog文件夹</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mkdir HexoBlog</span><br><span class="line">cd HexoBlog</span><br><span class="line">hexo init</span><br><span class="line">npm install # 安装依赖包</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line"># 发一篇新文章：</span><br><span class="line">hexo new &apos;test&apos;</span><br><span class="line">hexo s -g</span><br></pre></td></tr></table></figure>
+<h2 id="2-1-GitHub信息配置"><a href="#2-1-GitHub信息配置" class="headerlink" title="2.1 GitHub信息配置"></a>2.1 GitHub信息配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 创建github repo：kaigedong.github.io,并复制Repository的地址（ssh格式） </span><br><span class="line"># 打开_config.yml文件并修改：</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:kaigedong/kaigedong.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line"></span><br><span class="line"># 生成ssh文件：</span><br><span class="line">ssh-keygen -t rsa -C &quot;dongkaige@gmail.com&quot;</span><br><span class="line">ssh-agent -s</span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line"># 添加到GitHub：</span><br><span class="line">复制~/.ssh/id_rsa.pub 内容 -- “Settings” -- &quot;SSH and GPG keys&quot; -- 填写</span><br><span class="line"></span><br><span class="line"># 验证：</span><br><span class="line">ssh -T git@github.com</span><br><span class="line">&gt;&gt;&gt;Hi kaigedong! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+<h2 id="2-2-发布到GitHub"><a href="#2-2-发布到GitHub" class="headerlink" title="2.2 发布到GitHub"></a>2.2 发布到GitHub</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">开始部署：</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">&gt;&gt;&gt;ERROR Deployer not found: git</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="2-3-安装NexT主题"><a href="#2-3-安装NexT主题" class="headerlink" title="2.3 安装NexT主题"></a>2.3 安装NexT主题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br><span class="line">更改主目录下_config.yml:</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+<h2 id="2-4-hexo-支持更简单的命令格式了，比如："><a href="#2-4-hexo-支持更简单的命令格式了，比如：" class="headerlink" title="2.4 hexo 支持更简单的命令格式了，比如："></a>2.4 hexo 支持更简单的命令格式了，比如：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo g ==  hexo generate</span><br><span class="line">hexo d ==  hexo deploy</span><br><span class="line">hexo s ==  hexo server</span><br><span class="line">hexo n ==  hexo new</span><br></pre></td></tr></table></figure>
+<h2 id="2-5-站点配置Tips"><a href="#2-5-站点配置Tips" class="headerlink" title="2.5 站点配置Tips"></a>2.5 站点配置Tips</h2><p>1.如何设置「阅读全文」？</p>
+<blockquote>
+<p>在文章中使用 <!-- more --> 手动进行截断，Hexo 提供的方式 <strong>推荐</strong></p>
+</blockquote>
+<p>2.</p>
+
       
     </div>
 
@@ -393,12 +394,12 @@
       
 
       
+      
+      
 
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -408,14 +409,19 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -436,8 +442,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -482,6 +497,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#从零开始建站笔记"><span class="nav-number">1.</span> <span class="nav-text">从零开始建站笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-初始化blog文件夹"><span class="nav-number">1.1.</span> <span class="nav-text">1. 初始化blog文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-GitHub信息配置"><span class="nav-number">1.2.</span> <span class="nav-text">2.1 GitHub信息配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-发布到GitHub"><span class="nav-number">1.3.</span> <span class="nav-text">2.2 发布到GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-安装NexT主题"><span class="nav-number">1.4.</span> <span class="nav-text">2.3 安装NexT主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-hexo-支持更简单的命令格式了，比如："><span class="nav-number">1.5.</span> <span class="nav-text">2.4 hexo 支持更简单的命令格式了，比如：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-站点配置Tips"><span class="nav-number">1.6.</span> <span class="nav-text">2.5 站点配置Tips</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -616,6 +647,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
 
   
 
