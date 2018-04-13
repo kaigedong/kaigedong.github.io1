@@ -99,12 +99,12 @@
 
 
 
-  <meta name="description" content="应用Boyer-Moore的规则 把参考基因组做成索引  陈巍学基因A07-A09A07：应用Boyer-Moore 二规则">
+  <meta name="description" content="应用Boyer-Moore的规则 把参考基因组做成索引">
 <meta property="og:type" content="article">
 <meta property="og:title" content="陈巍学基因A07-A09">
 <meta property="og:url" content="http://yoursite.com/2018/04/13/陈巍学基因A07-A09/index.html">
 <meta property="og:site_name" content="读书笔记">
-<meta property="og:description" content="应用Boyer-Moore的规则 把参考基因组做成索引  陈巍学基因A07-A09A07：应用Boyer-Moore 二规则">
+<meta property="og:description" content="应用Boyer-Moore的规则 把参考基因组做成索引">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-12-1.jpg">
 <meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-12-2.jpg">
@@ -118,10 +118,10 @@
 <meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-12-10.jpg">
 <meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-12-11.jpg">
 <meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-12-12.jpg">
-<meta property="og:updated_time" content="2018-04-13T09:47:31.000Z">
+<meta property="og:updated_time" content="2018-04-13T10:03:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="陈巍学基因A07-A09">
-<meta name="twitter:description" content="应用Boyer-Moore的规则 把参考基因组做成索引  陈巍学基因A07-A09A07：应用Boyer-Moore 二规则">
+<meta name="twitter:description" content="应用Boyer-Moore的规则 把参考基因组做成索引">
 <meta name="twitter:image" content="http://yoursite.com/pic/2017-03/2017-03-12-1.jpg">
 
 
@@ -380,8 +380,8 @@
 <li>应用Boyer-Moore的规则</li>
 <li>把参考基因组做成索引</li>
 </ul>
-<h1 id="陈巍学基因A07-A09"><a href="#陈巍学基因A07-A09" class="headerlink" title="陈巍学基因A07-A09"></a>陈巍学基因A07-A09</h1><h2 id="A07：应用Boyer-Moore-二规则"><a href="#A07：应用Boyer-Moore-二规则" class="headerlink" title="A07：应用Boyer-Moore 二规则"></a>A07：应用Boyer-Moore 二规则</h2><a id="more"></a>
-<p>我们需要联合使用<code>坏字规则</code>和<code>好后缀规则</code>。只要碰到错配，我们就要同时使用这2个规则。两个规则都会告诉我们需要跳过的次数，我们只要选择最大的进行跳过就行了。</p>
+<a id="more"></a>
+<h1 id="陈巍学基因A07-A09"><a href="#陈巍学基因A07-A09" class="headerlink" title="陈巍学基因A07-A09"></a>陈巍学基因A07-A09</h1><h2 id="A07：应用Boyer-Moore-二规则"><a href="#A07：应用Boyer-Moore-二规则" class="headerlink" title="A07：应用Boyer-Moore 二规则"></a>A07：应用Boyer-Moore 二规则</h2><p>我们需要联合使用<code>坏字规则</code>和<code>好后缀规则</code>。只要碰到错配，我们就要同时使用这2个规则。两个规则都会告诉我们需要跳过的次数，我们只要选择最大的进行跳过就行了。</p>
 <p><img src="/pic/2017-03/2017-03-12-1.jpg" alt=""></p>
 <p>实际在实施Boyer-Moore算法时，要预先建一个查询表，这样每当我们要用任何一个规则时，就到这个表里去查找可以跳多少步。做这个表格只需要模式P而不需要文本T。好后缀，坏字都需要创建表格。</p>
 <p><img src="/pic/2017-03/2017-03-12-2.jpg" alt=""></p>

@@ -99,21 +99,21 @@
 
 
 
-  <meta name="description" content="简单序列比对 基础Boyer-Moore算法  陈巍学基因A04-A06A04 简单序列比对">
+  <meta name="description" content="简单序列比对 基础Boyer-Moore算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="陈巍学基因A04-A06">
 <meta property="og:url" content="http://yoursite.com/2018/04/13/陈巍学基因A04-A06/index.html">
 <meta property="og:site_name" content="读书笔记">
-<meta property="og:description" content="简单序列比对 基础Boyer-Moore算法  陈巍学基因A04-A06A04 简单序列比对">
+<meta property="og:description" content="简单序列比对 基础Boyer-Moore算法">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-11-11.png">
 <meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-11-12.png">
 <meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-11-13.png">
 <meta property="og:image" content="http://yoursite.com/pic/2017-03/2017-03-11-14.png">
-<meta property="og:updated_time" content="2018-04-13T09:46:52.000Z">
+<meta property="og:updated_time" content="2018-04-13T10:03:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="陈巍学基因A04-A06">
-<meta name="twitter:description" content="简单序列比对 基础Boyer-Moore算法  陈巍学基因A04-A06A04 简单序列比对">
+<meta name="twitter:description" content="简单序列比对 基础Boyer-Moore算法">
 <meta name="twitter:image" content="http://yoursite.com/pic/2017-03/2017-03-11-11.png">
 
 
@@ -372,8 +372,8 @@
 <li>简单序列比对</li>
 <li>基础Boyer-Moore算法</li>
 </ul>
-<h1 id="陈巍学基因A04-A06"><a href="#陈巍学基因A04-A06" class="headerlink" title="陈巍学基因A04-A06"></a>陈巍学基因A04-A06</h1><h2 id="A04-简单序列比对"><a href="#A04-简单序列比对" class="headerlink" title="A04 简单序列比对"></a>A04 简单序列比对</h2><a id="more"></a>
-<p>在这个实践中，会写一个(碱基)完全匹配的算法，并用它把人工做出来的read比对到基因组上。</p>
+<a id="more"></a>
+<h1 id="陈巍学基因A04-A06"><a href="#陈巍学基因A04-A06" class="headerlink" title="陈巍学基因A04-A06"></a>陈巍学基因A04-A06</h1><h2 id="A04-简单序列比对"><a href="#A04-简单序列比对" class="headerlink" title="A04 简单序列比对"></a>A04 简单序列比对</h2><p>在这个实践中，会写一个(碱基)完全匹配的算法，并用它把人工做出来的read比对到基因组上。</p>
 <p>首先先下载一个PhiX生物体(PhiX是一种噬菌体)的基因组开始：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check https://d28rh4a8wq0iu5.cloudfront.net/ads1/data/phix.fa</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">#encoding:utf-8</span><br><span class="line">def readGenome(filename):</span><br><span class="line">    genome = &apos;&apos;</span><br><span class="line">    with open(filename,&apos;r&apos;) as f:</span><br><span class="line">        for line in f:</span><br><span class="line">            if not line[0] == &apos;&gt;&apos;:</span><br><span class="line">                genome += line.rstrip()</span><br><span class="line">    return genome</span><br><span class="line"></span><br><span class="line">genome = readGenome(&apos;phix.fa&apos;)</span><br><span class="line"></span><br><span class="line">#p作为read，t作为基因组</span><br><span class="line">def naive(p,t):</span><br><span class="line">    occurrences = []</span><br><span class="line">    for i in range(len(t) - len(p) + 1):</span><br><span class="line">        match = True</span><br><span class="line">        for j in range(len(p)):</span><br><span class="line">            if not t[i+j] == p[j]:</span><br><span class="line">                match = False</span><br><span class="line">                break</span><br><span class="line">        if match:</span><br><span class="line">            occurrences.append(i)</span><br><span class="line">    return occurrences</span><br><span class="line"> </span><br><span class="line">t = &apos;AGCTTAGAtAGC&apos;</span><br><span class="line">p = &apos;AG&apos;</span><br><span class="line">print(naive(p,t))</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"># 从genome中随机产生子序列</span><br><span class="line">import random</span><br><span class="line">def generateReads(genome,numReads,readLen):</span><br><span class="line">    &apos;&apos;&apos;Generate reads from random positions in the given genome.&apos;&apos;&apos;</span><br><span class="line"></span><br><span class="line">    reads = []</span><br><span class="line">    for _ in range(numReads):</span><br><span class="line">        start = random.randint(0,len(genome)-readLen) - 1</span><br><span class="line">        reads.append(genome[start : start+readLen])</span><br><span class="line">    return reads</span><br><span class="line"></span><br><span class="line">reads = generateReads(genome,100,100)</span><br><span class="line"></span><br><span class="line">numMatched = 0</span><br><span class="line">for r in reads:</span><br><span class="line">    matches = naive(r,genome)</span><br><span class="line">    if len(matches)&gt;0:</span><br><span class="line">        numMatched +=1</span><br><span class="line"></span><br><span class="line">print(&quot;%d / %d reads matched exactly!&quot; % (numMatched,len(reads)))</span><br></pre></td></tr></table></figure>
