@@ -99,17 +99,17 @@
 
 
 
-  <meta name="description" content="How big are pig exons?当我坐在办公室，我需要研究一下猪的exon的信息。那么猪的exon有多大？我们可以用R轻松的实现：(请保存Rstudio中的其他信息防止R崩溃) 12345678910111213141516171819202122232425262728# load the biomaRt library# install it if it doesn&apos;t exist">
+  <meta name="description" content="How big are pig exons?">
 <meta property="og:type" content="article">
 <meta property="og:title" content="猪的exon有多大(R版本)">
 <meta property="og:url" content="http://yoursite.com/2017/09/26/猪的exon有多大-R版本/index.html">
 <meta property="og:site_name" content="读书笔记">
-<meta property="og:description" content="How big are pig exons?当我坐在办公室，我需要研究一下猪的exon的信息。那么猪的exon有多大？我们可以用R轻松的实现：(请保存Rstudio中的其他信息防止R崩溃) 12345678910111213141516171819202122232425262728# load the biomaRt library# install it if it doesn&apos;t exist">
+<meta property="og:description" content="How big are pig exons?">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-26T09:01:43.000Z">
+<meta property="og:updated_time" content="2018-04-14T04:53:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猪的exon有多大(R版本)">
-<meta name="twitter:description" content="How big are pig exons?当我坐在办公室，我需要研究一下猪的exon的信息。那么猪的exon有多大？我们可以用R轻松的实现：(请保存Rstudio中的其他信息防止R崩溃) 12345678910111213141516171819202122232425262728# load the biomaRt library# install it if it doesn&apos;t exist">
+<meta name="twitter:description" content="How big are pig exons?">
 
 
 
@@ -363,7 +363,8 @@
       
 
       
-        <h1 id="How-big-are-pig-exons"><a href="#How-big-are-pig-exons" class="headerlink" title="How big are pig exons?"></a>How big are pig exons?</h1><p>当我坐在办公室，我需要研究一下猪的exon的信息。那么猪的exon有多大？我们可以用R轻松的实现：(请保存Rstudio中的其他信息防止R崩溃)</p>
+        <h1 id="How-big-are-pig-exons"><a href="#How-big-are-pig-exons" class="headerlink" title="How big are pig exons?"></a>How big are pig exons?</h1><a id="more"></a>
+<p>当我坐在办公室，我需要研究一下猪的exon的信息。那么猪的exon有多大？我们可以用R轻松的实现：(请保存Rstudio中的其他信息防止R崩溃)</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># load the biomaRt library</span></span><br><span class="line"><span class="comment"># install it if it doesn't exist</span></span><br><span class="line"><span class="comment"># source("http://www.bioconductor.org/biocLite.R")</span></span><br><span class="line"><span class="comment"># biocLite("biomaRt")</span></span><br><span class="line"><span class="keyword">library</span>(biomaRt)</span><br><span class="line"></span><br><span class="line"><span class="comment"># get data from Ensembl</span></span><br><span class="line">mart &lt;- useMart(<span class="string">"ensembl"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># we are interested in the S scrofa (pig) genome</span></span><br><span class="line">mart &lt;- useDataset(<span class="string">"sscrofa_gene_ensembl"</span>,mart)</span><br><span class="line"></span><br><span class="line"><span class="comment"># set the attributes we want and fetch them</span></span><br><span class="line">myatt &lt;- c(<span class="string">"ensembl_transcript_id"</span>, <span class="string">"chromosome_name"</span>,<span class="string">"ensembl_exon_id"</span>, <span class="string">"exon_chrom_start"</span>, <span class="string">"exon_chrom_end"</span>)</span><br><span class="line">mydat &lt;- getBM(myatt, mart=mart, uniqueRows=<span class="literal">TRUE</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># calculate the exon length</span></span><br><span class="line">mydat$el &lt;- mydat$exon_chrom_end - mydat$exon_chrom_start + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># get a unique set of exons</span></span><br><span class="line">exons &lt;- unique(mydat[,c(<span class="string">"ensembl_exon_id"</span>,<span class="string">"exon_chrom_start"</span>,<span class="string">"exon_chrom_end"</span>,<span class="string">"el"</span>)])</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot</span></span><br><span class="line">hist(exons$el, breaks=<span class="number">10000</span>, col=<span class="string">"blue"</span>, border=<span class="string">"blue"</span>, main=<span class="string">"Histogram of S scrofa exon lengths"</span>, xlab=<span class="string">"length"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># how long in Mb?</span></span><br><span class="line"></span><br><span class="line">sum(exons$el)/<span class="number">1000000</span></span><br></pre></td></tr></table></figure>
 
       

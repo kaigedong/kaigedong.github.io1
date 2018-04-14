@@ -99,18 +99,18 @@
 
 
 
-  <meta name="description" content="设置hexo 下next主题的404页面腾讯公益404页面，寻找丢失儿童，让大家一起关注此项公益事业！">
+  <meta name="description" content="设置hexo 下next主题的404页面   腾讯公益404页面，寻找丢失儿童，让大家一起关注此项公益事业！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo-NexT主题的404页面">
 <meta property="og:url" content="http://yoursite.com/2018/04/13/Hexo-NexT主题的404页面/index.html">
 <meta property="og:site_name" content="读书笔记">
-<meta property="og:description" content="设置hexo 下next主题的404页面腾讯公益404页面，寻找丢失儿童，让大家一起关注此项公益事业！">
+<meta property="og:description" content="设置hexo 下next主题的404页面   腾讯公益404页面，寻找丢失儿童，让大家一起关注此项公益事业！">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/pic/2017-09/figure_12.jpg">
-<meta property="og:updated_time" content="2018-04-13T09:52:54.000Z">
+<meta property="og:updated_time" content="2018-04-14T04:48:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-NexT主题的404页面">
-<meta name="twitter:description" content="设置hexo 下next主题的404页面腾讯公益404页面，寻找丢失儿童，让大家一起关注此项公益事业！">
+<meta name="twitter:description" content="设置hexo 下next主题的404页面   腾讯公益404页面，寻找丢失儿童，让大家一起关注此项公益事业！">
 <meta name="twitter:image" content="http://yoursite.com/pic/2017-09/figure_12.jpg">
 
 
@@ -365,10 +365,14 @@
       
 
       
-        <h1 id="设置hexo-下next主题的404页面"><a href="#设置hexo-下next主题的404页面" class="headerlink" title="设置hexo 下next主题的404页面"></a>设置hexo 下next主题的404页面</h1><p>腾讯公益404页面，寻找丢失儿童，让大家一起关注此项公益事业！</p>
-<p><img src="/pic/2017-09/figure_12.jpg" alt=""></p>
+        <ul>
+<li>设置hexo 下next主题的404页面</li>
+</ul>
+<blockquote>
+<p>腾讯公益404页面，寻找丢失儿童，让大家一起关注此项公益事业！</p>
+</blockquote>
 <a id="more"></a>
-<p>按照<a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="noopener">Next官网的做法</a>, 设置<code>404.html</code>，则每次<code>hexo generate</code>都会将这个html 重新生成。并不可行。</p>
+<h1 id="设置hexo-下next主题的404页面"><a href="#设置hexo-下next主题的404页面" class="headerlink" title="设置hexo 下next主题的404页面"></a>设置hexo 下next主题的404页面</h1><p>按照<a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="noopener">Next官网的做法</a>, 设置<code>404.html</code>，则每次<code>hexo generate</code>都会将这个html 重新生成。并不可行。</p>
 <p>查找github的解决办法，有个<strong><code>skip_render</code>参数</strong>，可以让hexo忽略某个文件，不进行生成，而直接拷贝(对我来说并不可行)。</p>
 <p>经过多番尝试，有了下面的解决办法：</p>
 <h2 id="腾讯404页面介绍："><a href="#腾讯404页面介绍：" class="headerlink" title="腾讯404页面介绍："></a>腾讯404页面介绍：</h2><p><a href="http://www.qq.com/404/" target="_blank" rel="noopener">腾讯404页面</a>中给了接入公益404的办法：</p>
@@ -385,6 +389,7 @@
 <h3 id="重新生成html文件，并发布"><a href="#重新生成html文件，并发布" class="headerlink" title="重新生成html文件，并发布"></a>重新生成html文件，并发布</h3><p>然后到一级目录执行：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy # 推送到github.</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>tips: 我在.bashrc进行了如下设置以简便命令：</span><br><span class="line">alias hexo1='hexo generate'</span><br><span class="line">alias hexo2='hexo deploy'</span><br></pre></td></tr></table></figure>
 <p>效果参见<a href="https://kaigedong.github.io/404.html" target="_blank" rel="noopener">https://kaigedong.github.io/404.html</a>：</p>
+<p><img src="/pic/2017-09/figure_12.jpg" alt="404效果"></p>
 <p>最后祝愿走失的孩子找到回家的路❤！</p>
 
       
