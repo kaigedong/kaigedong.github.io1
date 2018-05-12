@@ -102,14 +102,14 @@
   <meta name="description" content="Mac 下安装MySQL，碰到了很多坑，这里记录一下。">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac安装MySQL">
+<meta property="og:title" content="Mac安装MySQL &amp; Ubuntu下安装MySQL记录">
 <meta property="og:url" content="http://yoursite.com/2018/05/08/Mac安装MySQL/index.html">
 <meta property="og:site_name" content="读书笔记">
 <meta property="og:description" content="Mac 下安装MySQL，碰到了很多坑，这里记录一下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-12T07:35:29.000Z">
+<meta property="og:updated_time" content="2018-05-12T15:15:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac安装MySQL">
+<meta name="twitter:title" content="Mac安装MySQL &amp; Ubuntu下安装MySQL记录">
 <meta name="twitter:description" content="Mac 下安装MySQL，碰到了很多坑，这里记录一下。">
 
 
@@ -127,7 +127,7 @@
   };
 </script>
 
-  <title>Mac安装MySQL | 读书笔记</title>
+  <title>Mac安装MySQL & Ubuntu下安装MySQL记录 | 读书笔记</title>
   
 
 
@@ -308,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Mac安装MySQL
+          <h1 class="post-title" itemprop="name headline">Mac安装MySQL & Ubuntu下安装MySQL记录
               
             
           </h1>
@@ -372,6 +372,21 @@
 <p>之前的错误：使用官网下载的8.0版本，手动安装，导致各种文件夹权限问题，端口问题，my.cnf 不存在问题，PID not found问题，由于版本较新，网上教程很少。这里用brew 安装之前的稳定版本，其配置文件在通过 </p>
 <p>brew 安装的 MySQL 的配置文件为：<code>/usr/local/etc/my.cnf</code>，将<code>bind-address = 127.0.0.1</code>注释掉，然后在使用Navicat，连接成功。<br>过段时间在更新到8 ；）</p>
 </blockquote>
+<h2 id="Ubuntu部分："><a href="#Ubuntu部分：" class="headerlink" title="Ubuntu部分："></a>Ubuntu部分：</h2><ol>
+<li><p>安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br><span class="line">sudo apt install mysql-client</span><br><span class="line">sudo apt install libmysqlclient-dev</span><br><span class="line"></span><br><span class="line">sudo netstat -tap | grep mysql </span><br><span class="line">$ netstat -tap | grep mysql # 下面的信息，则显示安装成功。</span><br><span class="line">tcp        0      0 localhost:mysql         0.0.0.0:*               LISTEN      1082/mysqld</span><br><span class="line"></span><br><span class="line">vi /etc/mysql/mysql.conf.d/mysqld.cnf</span><br><span class="line">注释掉bind-address = 127.0.0.1； 使MySQL允许远程访问</span><br><span class="line"></span><br><span class="line">MySQL 初始用户名密码在：/etc/mysql/debian.cnf</span><br><span class="line">用mysql -u debian-sys-maint -p 进行登录；</span><br><span class="line">然后：set password for &apos;root&apos;@&apos;localhost&apos; = password(&apos;yourpass&apos;);</span><br><span class="line">然后进入mysql服务，执行授权命令：</span><br><span class="line">grant all on *.* to root@&apos;%&apos; identified by &apos;你的密码&apos; with grant option;</span><br><span class="line"></span><br><span class="line">flush privileges; //刷新配置</span><br><span class="line">然后退出mysql: exit</span><br><span class="line">然后重启服务：service mysql restart</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p><a href="https://www.linuxidc.com/Linux/2017-06/144805.htm" target="_blank" rel="noopener">Ubuntu 16.04下安装MySQL</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/theonegis/article/details/51810063" target="_blank" rel="noopener">Ubuntu安装MySQL密码初始化问题</a></p>
+</li>
+<li><p><a href="https://www.cnblogs.com/xyzdw/archive/2011/08/11/2135227.html" target="_blank" rel="noopener">报错:1130-host … is not allowed to connect to this MySql server 开放mysql远程连接 不使用localhost</a></p>
+</li>
+<li><p><a href="http://www.cnblogs.com/leolztang/p/5094930.html" target="_blank" rel="noopener">MySQL ERROR 1698 (28000) 错误</a></p>
+</li>
+</ul>
 
       
     </div>
@@ -466,8 +481,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -537,6 +561,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu部分："><span class="nav-number">1.</span> <span class="nav-text">Ubuntu部分：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
