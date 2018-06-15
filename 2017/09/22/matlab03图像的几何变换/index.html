@@ -149,6 +149,15 @@
         
         
         
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-comment-count">
+          <i class="far fa-comments"></i><span><a href="/2017/09/22/matlab03图像的几何变换/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2017/09/22/matlab03图像的几何变换/" itemprop="commentCount"></span></a></span>
+        </span>
+        
+        
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
@@ -248,7 +257,7 @@
 <blockquote>
 <p>其中A代表待旋转的原始图像，angle为旋转的角度，单位为度，如果指定一个正数，将按逆时针方向旋转图像。可选参数method为要使用的插值方法，在缺省时使用最邻近插值法。bbox也是可选的，缺省为<code>loose</code>,表示旋转后图像不会被截取，如果选择<code>crop</code>表示选择后图像大小将不会改变，超出边界部分会被截取。</p>
 </blockquote>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">I = imread('<span class="hljs-number">2017</span><span class="hljs-number">-03</span><span class="hljs-number">-18</span><span class="hljs-number">-10.</span>jpg');<br>A = imrotate(I,<span class="hljs-number">30</span>,'nearest');%旋转<span class="hljs-number">30</span>°，最邻近插值<br>figure(<span class="hljs-number">1</span>),imshow(A)<br>B = imrotate(I,<span class="hljs-number">45</span>,'bilinear','loose');%旋转<span class="hljs-number">45</span>°，二次线性插值，不截取<br>figure(<span class="hljs-number">2</span>),imshow(B)<br></code></pre></td></tr></table></figure>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">I = imread<span class="hljs-comment">('2017-03-18-10.jpg')</span>;<br>A = imrotate<span class="hljs-comment">(I,30,'nearest')</span>;<span class="hljs-meta">%</span>旋转<span class="hljs-number">30</span>°，最邻近插值<br>figure<span class="hljs-comment">(1)</span>,imshow<span class="hljs-comment">(A)</span><br>B = imrotate<span class="hljs-comment">(I,45,'bilinear','loose')</span>;<span class="hljs-meta">%</span>旋转<span class="hljs-number">45</span>°，二次线性插值，不截取<br>figure<span class="hljs-comment">(2)</span>,imshow<span class="hljs-comment">(B)</span><br></code></pre></td></tr></table></figure>
 <p><img src="/pic/2017-03/2017-03-19-2.jpg" alt=""></p>
 
     </main>
@@ -285,6 +294,32 @@
     </div>
   </div>
   
+  
+  
+
+<div class="comments" id="comments">
+  
+  <script defer id="dsq-count-scr" src="//kaigedong.disqus.com/count.js"></script>
+  
+  <div id="disqus_thread" class="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = "http://yoursite.com/2017/09/22/matlab03图像的几何变换/";
+    this.page.identifier = "2017/09/22/matlab03图像的几何变换/";
+  };
+  (function() {
+    var d = document, s = d.createElement("script");
+    s.src = "https://kaigedong.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  
+  
+</div>
+
+
+
   
 </div>
 
@@ -365,11 +400,11 @@
   <div><i class="far fa-address-card"></i>Social Links</p></div>
   <ul>
     
-    <li><i class="fas fa-envelope"></i><a href="mailto:youremail@youremailhost" target="_blank">E-Mail</a></li>
+    <li><i class="fas fa-envelope"></i><a href="mailto:dongkaige@gmail.com" target="_blank">E-Mail</a></li>
     
-    <li><i class="fab fa-github"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+    <li><i class="fab fa-github"></i><a href="https://github.com/kaigedong" target="_blank">GitHub</a></li>
     
-    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/" target="_blank">Weibo</a></li>
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/u/2264075493" target="_blank">Weibo</a></li>
     
   </ul>
 </div>
@@ -383,7 +418,7 @@
   <div><i class="fas fa-link"></i>Blogroll</div>
   <ul>
     
-    <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+    <li><a href="https://yiweiniu.github.io/" target="_blank">GitHub</a></li>
     
     <li><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
     
@@ -411,7 +446,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <div class="copyright">
-          <span class="author">Kaige Dong</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+          <span class="author">Kaige Dong</span><span class="year"><i class="far fa-copyright"></i>2016 - 2018</span>
         </div>
         
         

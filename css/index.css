@@ -491,6 +491,9 @@
   border-radius: 0.2em;
   line-height: 2em;
 }
+.comments .disqus_thread {
+  padding: 2em;
+}
 html,
 body,
 .container {
