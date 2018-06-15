@@ -102,15 +102,15 @@
   <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
   <ul id="menu">
     
-    <li><a href="/">Home</a></li>
+    <li><a href="/">首页</a></li>
     
-    <li><a href="/archives/">Archives</a></li>
+    <li><a href="/archives/">归档</a></li>
     
-    <li><a href="/categories/">Categories</a></li>
+    <li><a href="/categories/">分类</a></li>
     
-    <li><a href="/tags/">Tags</a></li>
+    <li><a href="/tags/">标签</a></li>
     
-    <li><a href="/about/">About</a></li>
+    <li><a href="/about/">关于</a></li>
     
   </ul>
 </nav>
@@ -283,12 +283,12 @@
   
 <div class="reward" id="reward">
   <p>坚持原创技术分享，您的支持是我前进的动力！</p>
-  <button id="reward-button" class="button" disable="enable">Reward</button>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
   <div id="qr" class="qr" style="display: none;">
     
     <div id="wechat">
-      <img id="wechat_qr" src="/images/WeChatPay.png" alt="WechatPay"/>
-      <span>WechatPay</span>
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付"/>
+      <span>微信支付</span>
     </div>
     
     
@@ -349,7 +349,7 @@
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -364,7 +364,7 @@
   <div class="site-count">
     
     <div class="archives-count">
-      <div class="site-count-title">Archives</div>
+      <div class="site-count-title">归档</div>
       <div><a href="/archives/">46</a></div>
     </div>
     
@@ -373,7 +373,7 @@
     <span class="site-count-divider divider">|</span>
     
     <div class="categories-count">
-      <div class="site-count-title">Categories</div>
+      <div class="site-count-title">分类</div>
       <div><a href="/categories/">0</a></div>
     </div>
     
@@ -382,7 +382,7 @@
     <span class="site-count-divider divider">|</span>
     
     <div class="tags-count">
-      <div class="site-count-title">Tags</div>
+      <div class="site-count-title">标签</div>
       <div><a href="/tags/">8</a></div>
     </div>
     
@@ -404,7 +404,7 @@
 
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
-  <div><i class="fas fa-list-ol"></i>Table of Contents</div>
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
   <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-学习笔记-ubuntu"><span class="toc-text">git 学习笔记(ubuntu)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#首次配置"><span class="toc-text">首次配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建版本库"><span class="toc-text">创建版本库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#把文件添加到版本库"><span class="toc-text">把文件添加到版本库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-用git-add告诉Git，把文件添加到仓库："><span class="toc-text">1. 用git add告诉Git，把文件添加到仓库：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-用git-commit告诉Git，把文件提交到仓库："><span class="toc-text">2. 用git commit告诉Git，把文件提交到仓库：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看文件状态"><span class="toc-text">查看文件状态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-git-status"><span class="toc-text">1. git status</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-git-diff-file"><span class="toc-text">2. git diff file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结-1"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#版本回退"><span class="toc-text">版本回退</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-log-–pretty-oneline-查看提交日志"><span class="toc-text">git log –pretty=oneline 查看提交日志</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git-reset-–hard-HEAD-回到上个版本"><span class="toc-text">git reset –hard HEAD^回到上个版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-reflog-查看版本的记录！"><span class="toc-text">git reflog 查看版本的记录！</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-撤销工作区、暂存区更改"><span class="toc-text">git 撤销工作区、暂存区更改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-直接丢弃工作区修改"><span class="toc-text">1. 直接丢弃工作区修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-先丢弃暂存区，在丢弃工作区修改"><span class="toc-text">2. 先丢弃暂存区，在丢弃工作区修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-版本回退"><span class="toc-text">3. 版本回退</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-rm-删除一个文件-并且git-commit"><span class="toc-text">git rm 删除一个文件 并且git commit</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#远程仓库"><span class="toc-text">远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#添加远程仓库"><span class="toc-text">添加远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结-2"><span class="toc-text">小结</span></a></li></ol></li></ol></li></ol></div>
 </div>
 
@@ -415,7 +415,7 @@
     
 <hr>
 <div class="social-link sidebar-item">
-  <div><i class="far fa-address-card"></i>Social Links</p></div>
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
   <ul>
     
     <li><i class="fas fa-envelope"></i><a href="mailto:dongkaige@gmail.com" target="_blank">E-Mail</a></li>
@@ -433,7 +433,7 @@
     
 <hr>
 <div class="blogroll sidebar-item">
-  <div><i class="fas fa-link"></i>Blogroll</div>
+  <div><i class="fas fa-link"></i>友情链接</div>
   <ul>
     
     <li><a href="https://yiweiniu.github.io/blog/" target="_blank">Yiweiniu's blog</a></li>
@@ -482,7 +482,7 @@
           
         </div>
         <div class="powered-by">
-          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>
