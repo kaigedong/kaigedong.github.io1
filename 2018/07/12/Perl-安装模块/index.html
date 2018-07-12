@@ -82,7 +82,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>WEB框架 | 读书笔记</title>
+    <title>Perl 安装模块 | 读书笔记</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"  data-spy="scroll" data-target=".list-group">
     
@@ -129,7 +129,7 @@
   
   <article class="post-container card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/22/WEB框架/">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/12/Perl-安装模块/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="Kaige Dong">
        <meta itemprop="description" content="">
@@ -140,11 +140,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">WEB框架</h1>
+      <h1 class="post-title" itemprop="name headline">Perl 安装模块</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2017-09-22T18:28:43+08:00">2017-09-22 18:28:43</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-12T09:51:09+08:00">2018-07-12 09:51:09</time></span>
         </span>
         
         
@@ -154,66 +154,50 @@
         <span class="post-meta-divider divider">|</span>
         
         <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="/2017/09/22/WEB框架/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2017/09/22/WEB框架/" itemprop="commentCount"></span></a></span>
+          <i class="far fa-comments"></i><span><a href="/2018/07/12/Perl-安装模块/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/07/12/Perl-安装模块/" itemprop="commentCount"></span></a></span>
         </span>
         
         
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h1 id="WEB框架"><a href="#WEB框架" class="headerlink" title="WEB框架"></a>WEB框架</h1><p>框架将浏览器划分为不同的部分，每一部分加载不同的网页，实现在同一浏览器窗口中加载多个页面的效果。</p>
+      <ul>
+<li>安装Perl 模块的不同方法</li>
+</ul>
 <a id="more"></a>
-<h2 id="lt-frameset-gt-划分框架标记"><a href="#lt-frameset-gt-划分框架标记" class="headerlink" title="&lt;frameset&gt;划分框架标记:"></a><code>&lt;frameset&gt;</code>划分框架标记:</h2><ol>
-<li><p>语法格式</p>
-<frameset>…</frameset>
-</li>
-<li><p>属性：</p>
+<blockquote>
 <ol>
-<li><p><code>cols</code> ：使用“像素数”和%分隔左右窗口，“*”表示剩余部分</p>
-<p>如果使用<code>&quot;*&quot;,&quot;*&quot;</code>表示框架平均分成2个</p>
-<p>如果使用<code>&quot;*&quot;,&quot;*&quot;,&quot;*&quot;</code>表示框架平均分成3个</p>
-</li>
-<li><p><code>rows</code>:使用像素数和%分隔上下窗口，<code>&quot;*&quot;</code>表示剩余部分</p>
-</li>
-<li><code>frameborder</code>:指定是否显示边框，0不显示，1显示 </li>
-<li><code>border</code>：设置边框的大小，默认值5像素</li>
+<li>使用<code>cpanm</code> 来安装模块</li>
 </ol>
-</li>
-<li><p><code>&lt;frame&gt;</code>子窗口标记，<strong>单标记</strong>，该标记必须放在<code>&lt;frameset&gt;</code>中使用，在<code>&lt;frameset&gt;</code>中设置了几个窗口，就必须对应使用几个<code>&lt;frame&gt;</code>框架，而且还必须使用<code>src属性</code>指定一个网页</p>
-<ol>
-<li><code>src</code>：加载网页文件的URL地址</li>
-<li><code>name</code>：框架名称，是链接标记的target所要参数</li>
-<li>noresize：表示不能调整框架大小，没有设置时就可以调整</li>
-<li>scrolling：是否需要滚动条：加在顶层<code>&quot;frameset&quot;</code>不管用，必须要加在每一个<code>&lt;frame&gt;</code>进行控制。<ul>
-<li>auto：根据需要自动出现</li>
-<li>yes：</li>
-<li>no：无</li>
-</ul>
-</li>
-<li>frameborder：是否需要边框<ul>
-<li><code>(1)</code>显示边框</li>
-<li>(0)不显示边框</li>
-</ul>
-</li>
+</blockquote>
+<p>首先安装<code>cpanm</code>, 在终端输入：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">cpan App::cpanminus<br></code></pre></td></tr></table></figure>
+<p>然后可安装你需要的模块：</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">cpanm <span class="hljs-keyword">Module</span>::<span class="hljs-keyword">Name</span><br></code></pre></td></tr></table></figure>
+<p>遇到了bug，cpanm 会详细的报告出来bug信息，这点很好，总的来说是gcc 版本太低：</p>
+<p><code>/lib64/libc.so.6: version GLIBC_2.14&#39; not found</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">$</span><span class="bash"><span class="hljs-built_in">which</span> perl</span><br>/home/dongkaige/.linuxbrew/bin/perl<br><span class="hljs-meta"><br>$</span><span class="bash"><span class="hljs-built_in">which</span> cpanm</span><br>/home/dongkaige/software/miniconda3/envs/BioEnv/bin/cpanm<br><span class="hljs-meta"><br>$</span><span class="bash"><span class="hljs-built_in">which</span> cpan</span><br>/home/dongkaige/.linuxbrew/bin/cpan<br>...<br></code></pre></td></tr></table></figure>
+<p>不知道<code>cpanm</code> 是根据什么变量安装的，安装到了conda 的目录下。</p>
+<p>虽然conda在遇到依赖特定版本的gcc的包时，也会安装到conda中，但很多程序在调用c动态库时，依然从服务器的动态库调用，就会导致版本错误<code>GLIBC_2.14 not found</code>。</p>
+<p>而linuxbrew 则是相对独立的包管理器，在费了很大功夫，在老服务器上安装好 linuxbrew 及高版本的 gcc， glibc之后，之后linuxbrew中，所有软件编译和运行都会调用linuxbrew下的动态库，这样就不会有上面的错误。</p>
+<p>只好用别的方法调用linuxbrew中的Perl进行安装：</p>
+<blockquote>
+<ol start="2">
+<li>cpan</li>
 </ol>
-</li>
+</blockquote>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">cpan<br><span class="hljs-keyword">install</span> <span class="hljs-keyword">Set</span>::IntervalTree<br></code></pre></td></tr></table></figure>
+<blockquote>
+<ol start="3">
+<li><code>perl -MCPAN -e &quot;shell&quot;</code></li>
 </ol>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>HTML框架<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">frameset</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">"90,*,90"</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">border</span>=<span class="hljs-string">"1"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">frame</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"top.html"</span> /&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">frameset</span> <span class="hljs-attr">cols</span>=<span class="hljs-string">"20%,80%"</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">frame</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"left"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"left.html"</span>/&gt;</span><br>    <span class="hljs-comment">&lt;!-- 其中几个框架的html代码没有显示。 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">frameset</span> <span class="hljs-attr">cols</span>=<span class="hljs-string">"50%,50%"</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">border</span>=<span class="hljs-string">"1"</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">frame</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"right1"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://bai.com"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">frame</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">frame</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"right2"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://kaigedong.github.io"</span> <span class="hljs-attr">scrolling</span>=<span class="hljs-string">"no"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">frame</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">frameset</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">frameset</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">frame</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"bottom"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"bottom.html"</span> /&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">frameset</span>&gt;</span>&gt;<br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p>效果：</p>
-<p><img src="/pic/2017-03/2017-03-03-1.jpg" alt=""></p>
+</blockquote>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">perl -MCPAN -e <span class="hljs-string">"shell"</span><br><span class="hljs-keyword">install</span> <span class="hljs-keyword">Set</span>::IntervalTree<br></code></pre></td></tr></table></figure>
+<p>第二种方法成功，第三种方法应该也没问题。</p>
 
     </main>
     <footer class="post-footer">
       
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/HTML-CSS/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>HTML CSS</a>
-        
-      </div>
       
     </footer>
   </article>
@@ -222,12 +206,10 @@
   <div class="post-nav">
     <div class="post-nav-next post-nav-item">
       
-      <a href="/2017/09/22/Affymetrix芯片原理/" rel="next" title="Affymetrix芯片原理"><i class="fas fa-angle-left"></i><span class="nav-title">Affymetrix芯片原理</span></a>
+      <a href="/2018/07/11/python批量转换exe视频/" rel="next" title="python批量转换exe视频"><i class="fas fa-angle-left"></i><span class="nav-title">python批量转换exe视频</span></a>
       
     </div>
     <div class="post-nav-prev post-nav-item">
-      
-      <a href="/2017/09/22/CSS层叠样式表/" rel="prev" title="CSS层叠样式表"><span class="nav-title">CSS层叠样式表</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </div>
@@ -242,8 +224,8 @@
   <div id="disqus_thread" class="disqus_thread"></div>
   <script type="text/javascript">
   var disqus_config = function () {
-    this.page.url = "http://yoursite.com/2017/09/22/WEB框架/";
-    this.page.identifier = "2017/09/22/WEB框架/";
+    this.page.url = "http://yoursite.com/2018/07/12/Perl-安装模块/";
+    this.page.identifier = "2018/07/12/Perl-安装模块/";
   };
   (function() {
     var d = document, s = d.createElement("script");
@@ -321,12 +303,6 @@
 
 
 
-
-<hr>
-<div class="post-toc sidebar-item" id="toc-div">
-  <div><i class="fas fa-list-ol"></i>文章目录</div>
-  <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#WEB框架"><span class="toc-text">WEB框架</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#lt-frameset-gt-划分框架标记"><span class="toc-text">&lt;frameset&gt;划分框架标记:</span></a></li></ol></li></ol></div>
-</div>
 
 
 

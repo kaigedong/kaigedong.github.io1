@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-11T13:49:59.536Z</updated>
+  <updated>2018-07-12T05:41:43.418Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Perl 安装模块</title>
+    <link href="http://yoursite.com/2018/07/12/Perl-%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97/"/>
+    <id>http://yoursite.com/2018/07/12/Perl-安装模块/</id>
+    <published>2018-07-12T01:51:09.000Z</published>
+    <updated>2018-07-12T05:41:43.418Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;安装Perl 模块的不同方法&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>python批量转换exe视频</title>
@@ -390,26 +408,6 @@
 &lt;li&gt;分屏&lt;/li&gt;
 &lt;li&gt;快捷键&lt;/li&gt;
 &lt;/ul&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>tmus指南</title>
-    <link href="http://yoursite.com/2018/04/13/tmus%E6%8C%87%E5%8D%97/"/>
-    <id>http://yoursite.com/2018/04/13/tmus指南/</id>
-    <published>2018-04-13T09:48:49.000Z</published>
-    <updated>2018-04-14T04:51:40.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;tmux的基本操作&lt;/p&gt;
-&lt;p&gt;在 tmux 之外如何进行控制&lt;/p&gt;
-&lt;p&gt;在 tmux 中直接控制&lt;/p&gt;
-&lt;p&gt;高效的结对编程&lt;/p&gt;
-&lt;p&gt;调整 Tmux 以增强其同 Vim 的集成度&lt;/p&gt;
     
     </summary>
     
