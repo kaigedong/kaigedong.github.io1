@@ -37,18 +37,11 @@
     <link href="http://yoursite.com/2018/07/19/shell-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%8Aset-env-export/"/>
     <id>http://yoursite.com/2018/07/19/shell-环境变量及set-env-export/</id>
     <published>2018-07-19T08:01:25.000Z</published>
-    <updated>2018-07-22T13:09:06.983Z</updated>
+    <updated>2018-08-07T06:54:57.709Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;shell-变量&quot;&gt;&lt;a href=&quot;#shell-变量&quot; class=&quot;headerlink&quot; title=&quot;shell 变量&quot;&gt;&lt;/a&gt;shell
-        
-      
+      &lt;p&gt;shell中，有三种变量：&lt;code&gt;系统变量&lt;/code&gt;，&lt;code&gt;环境变量&lt;/code&gt;，&lt;code&gt;用户变量&lt;/code&gt;。&lt;/p&gt;
     
     </summary>
     
@@ -78,17 +71,11 @@
     <link href="http://yoursite.com/2018/07/11/python%E6%89%B9%E9%87%8F%E8%BD%AC%E6%8D%A2exe%E8%A7%86%E9%A2%91/"/>
     <id>http://yoursite.com/2018/07/11/python批量转换exe视频/</id>
     <published>2018-07-11T13:44:29.000Z</published>
-    <updated>2018-07-11T13:49:59.536Z</updated>
+    <updated>2018-08-07T06:55:39.937Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;转自&lt;a href=&quot;https://blog.csdn.net/shawpan/article/details/78170871&quot; target=&quot;_blank&quot;
-        
-      
+      &lt;p&gt;如何使用python脚本在win上自动转换exe视频到MP4&lt;/p&gt;
     
     </summary>
     
