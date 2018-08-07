@@ -6,7 +6,7 @@
       <title>shadowsocks配置</title>
       <link href="/2018/08/07/shadowsocks%E9%85%8D%E7%BD%AE/"/>
       <url>/2018/08/07/shadowsocks%E9%85%8D%E7%BD%AE/</url>
-      <content type="html"><![CDATA[<p>获取了shadowsocks账号之后的配置</p><a id="more"></a><p>在获取了shadowsocks账号之后，会拥有: <code>IP地址</code>，<code>端口</code>，<code>加密方法</code>，<code>密码</code>的信息。</p><ul><li><p>安装Shadowsocks客户端</p><ul><li><a href="https://github.com/shadowsocks/ShadowsocksX-NG/releases" target="_blank" rel="noopener">Mac版本</a></li><li><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">Win版本</a></li><li><a href="https://github.com/Jigsaw-Code/outline-releases/blob/master/client/Outline.apk?raw=true" target="_blank" rel="noopener">Android版本_直接下载链接</a></li><li><a href="https://github.com/shadowsocks/shadowsocks-qt5/wiki/Installation" target="_blank" rel="noopener">Linux版本</a></li><li><a href="https://itunes.apple.com/us/app/wingy-http-s-socks5-proxy-utility/id1178584911" target="_blank" rel="noopener">ios版本_AppStore</a></li></ul></li><li><p>shadowsocks配置：</p><p><code>点击shadowsocks图标</code> —— <code>服务器-新服务器</code> —— <code>服务器设置</code>  —— <code>点击左下角添加</code> —— <code>填入获取的shadowskcks账号信息</code></p></li><li><p>浏览器代理插件设置</p><ul><li><p>chrome 可以安装SwitchyOmega <a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif" target="_blank" rel="noopener">chrome网上商店</a> <a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="noopener">crx格式离线安装</a></p></li><li><p>Firefox <a href="https://addons.mozilla.org/en-US/firefox/addon/switchyomega/" target="_blank" rel="noopener">SwitchyOmega地址</a></p></li><li><p>安装好之后，进行配置：</p></li></ul></li></ul><p><img src="/pic/2018-08/2018-08-07-01.png" width="26px" height="53px" alt="图片名称" align="center/"></p><p><img src="/pic/2018-08/2018-08-07-02.png" width="26px" height="53px" alt="图片名称" align="center/"></p><p><img src="/pic/2018-08/2018-08-07-03.png" width="26" height="53" alt="图片名称" align="center/"></p><p><img src="/pic/2018-08/2018-08-07-04.png" width="26" height="53" alt="图片名称" align="center/"></p><p><img src="/pic/2018-08/2018-08-07-05.png" width="26" height="53" alt="图片名称" align="center/"></p><p><img src="/pic/2018-08/2018-08-07-06.png" width="26" height="53" alt="图片名称" align="center/"></p><p><img src="/pic/2018-08/2018-08-07-07.png" width="26" height="53" alt="图片名称" align="center/"></p><blockquote><p>规则列表网址：<code>https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</code></p></blockquote><p>最后，启用shadowsocks自动代理：</p><p><img src="/pic/2018-08/2018-08-07-08.png" width="26" height="53" alt="图片名称" align="center/"></p><blockquote><p>为什么SwitchyOmega端口要设置成1086?</p></blockquote><p>从shadowsocks <code>偏好设置</code> – <code>高级</code> 中可以看到，监听IP是1086</p><p><img src="/pic/2018-08/2018-08-07-05.png" alt=""></p>]]></content>
+      <content type="html"><![CDATA[<p>获取了shadowsocks账号之后的配置</p><a id="more"></a><p>在获取了shadowsocks账号之后，会拥有: <code>IP地址</code>，<code>端口</code>，<code>加密方法</code>，<code>密码</code>的信息。</p><ul><li><p>安装Shadowsocks客户端</p><ul><li><a href="https://github.com/shadowsocks/ShadowsocksX-NG/releases" target="_blank" rel="noopener">Mac版本</a></li><li><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">Win版本</a></li><li><a href="https://github.com/Jigsaw-Code/outline-releases/blob/master/client/Outline.apk?raw=true" target="_blank" rel="noopener">Android版本_直接下载链接</a></li><li><a href="https://github.com/shadowsocks/shadowsocks-qt5/wiki/Installation" target="_blank" rel="noopener">Linux版本</a></li><li><a href="https://itunes.apple.com/us/app/wingy-http-s-socks5-proxy-utility/id1178584911" target="_blank" rel="noopener">ios版本_AppStore</a></li></ul></li><li><p>shadowsocks配置：</p><p><code>点击shadowsocks图标</code> —— <code>服务器-新服务器</code> —— <code>服务器设置</code>  —— <code>点击左下角添加</code> —— <code>填入获取的shadowskcks账号信息</code></p></li><li><p>浏览器代理插件设置</p><ul><li><p>chrome 可以安装SwitchyOmega <a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif" target="_blank" rel="noopener">chrome网上商店</a> <a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="noopener">crx格式离线安装</a></p></li><li><p>Firefox <a href="https://addons.mozilla.org/en-US/firefox/addon/switchyomega/" target="_blank" rel="noopener">SwitchyOmega地址</a></p></li><li><p>安装好之后，进行配置：</p></li></ul></li></ul><p><img src="/pic/2018-08/2018-08-07-01.png" width="2px" height="5px" alt="图片名称" align="center/"></p><p><img src="/pic/2018-08/2018-08-07-02.png" width="26px" height="53px" alt="图片名称" align="center/"></p><p><img src="/pic/2018-08/2018-08-07-03.png" width="26" height="53" alt="图片名称" align="center/"></p><p><img src="/pic/2018-08/2018-08-07-04.png" width="26" height="53" alt="图片名称" align="center/"></p><p><img src="/pic/2018-08/2018-08-07-05.png" width="26" height="53" alt="图片名称" align="center/"></p><p><img src="/pic/2018-08/2018-08-07-06.png" width="26" height="53" alt="图片名称" align="center/"></p><p><img src="/pic/2018-08/2018-08-07-07.png" width="26" height="53" alt="图片名称" align="center/"></p><blockquote><p>规则列表网址：<code>https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</code></p></blockquote><p>最后，启用shadowsocks自动代理：</p><p><img src="/pic/2018-08/2018-08-07-08.png" width="26" height="53" alt="图片名称" align="center/"></p><blockquote><p>为什么SwitchyOmega端口要设置成1086?</p></blockquote><p>从shadowsocks <code>偏好设置</code> – <code>高级</code> 中可以看到，监听IP是1086</p><p><img src="/pic/2018-08/2018-08-07-05.png" alt=""></p>]]></content>
       
       
     </entry>
@@ -534,16 +534,16 @@
   
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
