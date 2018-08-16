@@ -193,6 +193,13 @@
 <blockquote>
 <p>表示顶级域名为.onion 的HTTP请求都转发给本机(localhost也可以用来表示本机，相当与127.0.0.1 的TOR SOCKS端口)</p>
 </blockquote>
+<ul>
+<li><p>Privoxy 将 socks转发HTTP代理：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sudo pacman -S privoxy # arch linux<br>mkdir -p ~/.config/privoxy # 默认打开privoxy的位置，其实也可以编辑 /etc/privoxy<span class="hljs-built_in">/config </span>这个文件，但是要在运行时指定这个位置；否则prifoxy自动去找~/.config/privoxy这个文件<br><br><span class="hljs-comment"># 向~/.config/prifoxy/config 写入：</span><br>listen-address 127.0.0.1:8118 # 开启监听端口<br>forward-socks5 / 127.0.0.1:1080 . # socks5代理端口,注意最后的点。<br><br><span class="hljs-comment">#启动代理</span><br>privoxy ~/.config/privoxy<span class="hljs-built_in">/config<br></span><span class="hljs-comment">#开机启动服务：</span><br>sudo systemctl <span class="hljs-builtin-name">enable</span> privoxy.service<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>参考: <a href="https://www.cnblogs.com/zhuxiaoxi/p/9010753.html" target="_blank" rel="noopener">Privoxy将Socks代理转化HTTP代理</a></p>
+</li>
+</ul>
 
     </main>
     <footer class="post-footer">
