@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-16T08:40:26.925Z</updated>
+  <updated>2018-08-16T12:23:10.117Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="http://yoursite.com/2018/08/16/Curses-python3-7/"/>
     <id>http://yoursite.com/2018/08/16/Curses-python3-7/</id>
     <published>2018-08-16T07:50:00.000Z</published>
-    <updated>2018-08-16T08:40:26.925Z</updated>
+    <updated>2018-08-16T12:23:10.117Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;参考：&lt;a href=&quot;https://docs.python.org/3/howto/curses.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://docs.python.org/3/howto/curses.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;版本：Release 2.04&lt;/p&gt;
-&lt;p&gt;Python版本：3.7.0&lt;/p&gt;
+      &lt;p&gt;Python curses模块：控制终端&lt;/p&gt;
     
     </summary>
     
+    
+      <category term="curses" scheme="http://yoursite.com/tags/curses/"/>
     
   </entry>
   
