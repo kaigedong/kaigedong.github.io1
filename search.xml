@@ -3,6 +3,15 @@
   
     
     <entry>
+      <title>Curses_python3.7</title>
+      <link href="/2018/08/16/Curses-python3-7/"/>
+      <url>/2018/08/16/Curses-python3-7/</url>
+      <content type="html"><![CDATA[<p>参考：<a href="https://docs.python.org/3/howto/curses.html" target="_blank" rel="noopener">https://docs.python.org/3/howto/curses.html</a></p><p>版本：Release 2.04</p><p>Python版本：3.7.0</p><a id="more"></a><h2 id="什么是curses"><a href="#什么是curses" class="headerlink" title="什么是curses?"></a>什么是curses?</h2><p>curses库提供许多基本功能：更改窗口内容：添加为本，擦除文本，改变外观等。但curses不提供用户界面如按钮、复选框或对话框，如果你要使用这些，请考虑<code>Urwid</code>.</p><p>curses最初是为BSD Unix编写的，AT&amp;T的第五个版本的Unix添加了很多增强和新功能。BSD curses已经被ncurses所替代。</p><p>Win版本的curses不包含curses，但可使用<code>UniCurses</code>这个移植版本。</p><h2 id="Python-curses"><a href="#Python-curses" class="headerlink" title="Python curses"></a>Python curses</h2><p>curses 的python模块是curses提供的C函数的简单包装。最大的区别是Python接口将不同的C函数（如addstr(）,mvaddstr(),mvwaddstr()) 合并到了单个的addstr()方法中了。</p><h2 id="开始和结束curses"><a href="#开始和结束curses" class="headerlink" title="开始和结束curses"></a>开始和结束curses</h2><p>开始之前，curses必须先调用<code>initscr</code>进行初始化，这将确定终端类型、向终端发送需要的设置代码、创建内部数据结构。如果成功，将返回一个windows 类代表整个屏幕，根据C变量这通常命名为<code>stdscr</code>。</p><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">import</span> curses<br><span class="hljs-title">stdscr</span> = curses.initscr()<br></code></pre></td></tr></table></figure><p>通常情况下，curses会关闭对屏幕对按键的自动显示(自动回显)，以便读取它们并在特定时候显示。这需要调用<code>noecho()</code>函数。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-selector-tag">curses</span><span class="hljs-selector-class">.noecho</span>()<br></code></pre></td></tr></table></figure><p>也需要对按键立即做出回应，而不需要按下<code>Enter</code>键，这称为<code>cbreak模式</code>，与通常的缓冲输入模式(buffered input mode)相反。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-selector-tag">curses</span><span class="hljs-selector-class">.cbreak</span>()<br></code></pre></td></tr></table></figure><p>终端通常返回特殊键，如光标键或导航键(如Page Up 和 Home)，作为多字节转移序列。你可以自己定义这样的序列，并进行处理，curses也能自动为你处理，返回一个特殊的值比如<code>curses.KEY_LEFT</code>. 为了让curses 使用这个功能，你需要开启键盘模式(keypad mode)：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">stdscr.keypad(<span class="hljs-literal">True</span>)<br></code></pre></td></tr></table></figure><p>终止curses需要调用：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-selector-tag">curses</span><span class="hljs-selector-class">.nocbreak</span>()<br><span class="hljs-selector-tag">stdscr</span><span class="hljs-selector-class">.keypad</span>(<span class="hljs-selector-tag">False</span>)<br><span class="hljs-selector-tag">curses</span><span class="hljs-selector-class">.echo</span>()<br></code></pre></td></tr></table></figure><p>来恢复前面的设置，并调用<code>endwin()</code>恢复终端之前的操作模式。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-selector-tag">curses</span><span class="hljs-selector-class">.endwin</span>()<br></code></pre></td></tr></table></figure><p>Python中，可能会因为bug使得终端无法恢复到初始状态，而对键盘无响应。可以通过调用<code>curses.wrapper()</code>来避免：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">from</span> curses <span class="hljs-keyword">import</span> wrapper<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">(stdscr)</span>:</span><br>    <span class="hljs-comment"># Clear screen</span><br>    stdscr.clear()<br><br>    <span class="hljs-comment"># This raises ZeroDivisionError when i == 10.</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, <span class="hljs-number">11</span>):<br>        v = i<span class="hljs-number">-10</span><br>        stdscr.addstr(i, <span class="hljs-number">0</span>, <span class="hljs-string">'10 divided by &#123;&#125; is &#123;&#125;'</span>.format(v, <span class="hljs-number">10</span>/v))<br><br>    stdscr.refresh()<br>    stdscr.getkey()<br><br>wrapper(main)<br></code></pre></td></tr></table></figure><p><code>wrapper()</code>函数接受一个可调用对象并进行上述初始化，如果存在颜色支持，也会初始化颜色。当可调用对象运行完毕，<code>wrapper()</code>会将终端恢复到原始状态,如果出错，会报出错误(内部通过try…except实现)，最后恢复终端。</p><h2 id="Windows-和-Pads"><a href="#Windows-和-Pads" class="headerlink" title="Windows 和 Pads"></a>Windows 和 Pads</h2>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
       <title>Acer中Arch安装Secure boot EFI 设置</title>
       <link href="/2018/08/13/Acer%E4%B8%ADArch%E5%AE%89%E8%A3%85Secure-boot-EFI-%E8%AE%BE%E7%BD%AE/"/>
       <url>/2018/08/13/Acer%E4%B8%ADArch%E5%AE%89%E8%A3%85Secure-boot-EFI-%E8%AE%BE%E7%BD%AE/</url>
@@ -556,16 +565,16 @@
     </entry>
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     

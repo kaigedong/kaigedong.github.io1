@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-16T01:55:34.534Z</updated>
+  <updated>2018-08-16T08:40:26.925Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Curses_python3.7</title>
+    <link href="http://yoursite.com/2018/08/16/Curses-python3-7/"/>
+    <id>http://yoursite.com/2018/08/16/Curses-python3-7/</id>
+    <published>2018-08-16T07:50:00.000Z</published>
+    <updated>2018-08-16T08:40:26.925Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;参考：&lt;a href=&quot;https://docs.python.org/3/howto/curses.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://docs.python.org/3/howto/curses.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;版本：Release 2.04&lt;/p&gt;
+&lt;p&gt;Python版本：3.7.0&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Acer中Arch安装Secure boot EFI 设置</title>
@@ -377,24 +395,6 @@
 &lt;li&gt;CSS部分:掌握&lt;code&gt;CSS三种选择器&lt;/code&gt;的使用,明白如何使用&lt;code&gt;DIV+CSS&lt;/code&gt;进行网页布局，搞清楚&lt;code&gt;浮动问题&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;HTML的语法、HTML的基本结构、文档设置标记&lt;/li&gt;
 &lt;/ol&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>数据可视化之柱状图</title>
-    <link href="http://yoursite.com/2018/04/13/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8B%E6%9F%B1%E7%8A%B6%E5%9B%BE/"/>
-    <id>http://yoursite.com/2018/04/13/数据可视化之柱状图/</id>
-    <published>2018-04-13T09:54:09.000Z</published>
-    <updated>2018-04-14T04:45:54.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;Python柱状图📊&lt;/li&gt;
-&lt;/ul&gt;
     
     </summary>
     
