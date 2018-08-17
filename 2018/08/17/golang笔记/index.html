@@ -47,7 +47,7 @@
     
     
 <link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/archive.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
@@ -82,7 +82,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>归档 | 读书笔记</title>
+    <title>golang笔记 | 读书笔记</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"  data-spy="scroll" data-target=".list-group">
     
@@ -125,143 +125,109 @@
         <div class="main-container">
           <div class="content">
             
-<div id="archive" class="archive">
-  <div class="archive-container">
-    <h1 class="archive-counter">
-      
-      你已经写了 53 篇文章！
-      
-    </h1>
-    
-    
-    
-    
-    <h1 class="archive-title">2018</h1>
-    
-    <article class="archive-post card animate" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/05/08/Mac安装MySQL/" itemprop="url">Mac安装MySQL & Ubuntu下安装MySQL记录</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-05-08T14:16:00+08:00">05-08</time>
+<div id="post" class="post">
+  
+  <article class="post-container card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/golang笔记/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="Kaige Dong">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.png">
       </span>
-      
-    </article>
-    
-    
-    <article class="archive-post card animate" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/19/强化学习实战：从零开始下五子棋/" itemprop="url">强化学习实战：从零开始下五子棋</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-19T09:07:00+08:00">04-19</time>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="读书笔记">
       </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">golang笔记</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-08-17T13:42:57+08:00">2018-08-17 13:42:57</time></span>
+        </span>
+        
+        
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-comment-count">
+          <i class="far fa-comments"></i><span><a href="/2018/08/17/golang笔记/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/08/17/golang笔记/" itemprop="commentCount"></span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <a id="more"></a>
+<p>##初识</p>
+<blockquote>
+<p>编辑器</p>
+</blockquote>
+<p>推荐<a href="https://github.com/visualfc/liteide/releases/tag/x34.1" target="_blank" rel="noopener">liteide</a></p>
+<blockquote>
+<p>统一代码风格：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">$</span><span class="bash">gofmt -w program.go <span class="hljs-comment"># 格式化该源文件的代码并覆盖源文件</span></span><br><span class="hljs-meta">$</span><span class="bash">gofmt map1 <span class="hljs-comment"># 格式化并重写map1文件夹下所有的go源文件</span></span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>生成代码文档</p>
+</blockquote>
+<p>go doc 工具会从 Go 程序和包文件中提取顶级声明的首行注释以及每个对象的相关注释，并生成相关文档。</p>
+<blockquote>
+<p>GO自带的其他工具</p>
+</blockquote>
+<p><code>go install</code>: 安装GO包的工具；<code>go fix</code>：将GO代码从旧的发行版迁移到新的发行版; <code>go test</code>是轻量级的单元测试框架。</p>
+<h2 id="了解"><a href="#了解" class="headerlink" title="了解"></a>了解</h2><p>工具<code>cgo</code>退工了对FFI(外部函数接口)的支持，能够使用Go代码安全的调用C语言库。</p>
+<p>如要在Go中使用cgo，需在单独一行使用<code>import &quot;C&quot;</code> ，一般还要<code>import &quot;unsafe&quot;</code>. 然后可以在<code>import &quot;C&quot;</code>之前使用注释(单行或多行注释均可)的形式导入C语言库(甚至是有效的C语言代码)，它们之间没有空行。</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">// <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br>// <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span><br>import <span class="hljs-string">"C"</span><br></code></pre></td></tr></table></figure>
+
+    </main>
+    <footer class="post-footer">
       
-    </article>
-    
-    
-    <article class="archive-post card animate" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/17/增强学习之DQN-算法/" itemprop="url">增强学习之DQN 算法</a>
-      </h1>
       
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-17T15:40:32+08:00">04-17</time>
-      </span>
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
       
-    </article>
-    
-    
-    <article class="archive-post card animate" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/17/增强学习之DQN/" itemprop="url">增强学习之DQN介绍</a>
-      </h1>
+      <a href="/2018/08/16/Curses-python3-7/" rel="next" title="Curses_python3.7"><i class="fas fa-angle-left"></i><span class="nav-title">Curses_python3.7</span></a>
       
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-17T10:03:53+08:00">04-17</time>
-      </span>
+    </div>
+    <div class="post-nav-prev post-nav-item">
       
-    </article>
-    
-    
-    <article class="archive-post card animate" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/17/增强学习之Sarsa-lambda/" itemprop="url">增强学习之Sarsa(lambda)</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-17T09:42:46+08:00">04-17</time>
-      </span>
-      
-    </article>
-    
-    
-    <article class="archive-post card animate" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/17/强化学习之Sarsa/" itemprop="url">强化学习之Sarsa</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-17T09:05:48+08:00">04-17</time>
-      </span>
-      
-    </article>
-    
-    
-    <article class="archive-post card animate" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/16/深度学习之Q-learning/" itemprop="url">深度学习02之Q-learning介绍</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-16T15:52:20+08:00">04-16</time>
-      </span>
-      
-    </article>
-    
-    
-    <article class="archive-post card animate" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/16/强化学习入门/" itemprop="url">强化学习介绍与分类01</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-16T14:18:12+08:00">04-16</time>
-      </span>
-      
-    </article>
-    
-    
-    <article class="archive-post card animate" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/13/HTML与CSS基础03-Web框架与表单设计/" itemprop="url">HTML与CSS基础03-Web框架与表单设计</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-13T18:25:14+08:00">04-13</time>
-      </span>
-      
-    </article>
-    
-    
-    <article class="archive-post card animate" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/13/HTML和CSS基础02-图像超链接和表格/" itemprop="url">HTML和CSS基础02-图像超链接和表格</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-13T17:56:14+08:00">04-13</time>
-      </span>
-      
-    </article>
-    
+    </div>
   </div>
   
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2018/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/page/3/">3</a><a class="extend next" rel="next" href="/archives/2018/page/3/"><i class="fas fa-angle-right"></i></a>
-  </nav>
+  
+  
+
+<div class="comments" id="comments">
+  
+  <script defer id="dsq-count-scr" src="//kaigedong.disqus.com/count.js"></script>
+  
+  <div id="disqus_thread" class="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = "http://yoursite.com/2018/08/17/golang笔记/";
+    this.page.identifier = "2018/08/17/golang笔记/";
+  };
+  (function() {
+    var d = document, s = d.createElement("script");
+    s.src = "https://kaigedong.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  
+  
+</div>
+
+
+
   
 </div>
 
@@ -320,6 +286,20 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#了解"><span class="toc-text">了解</span></a></li></ol></div>
+</div>
+
+
+
     
     
     

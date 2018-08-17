@@ -125,7 +125,73 @@
 
 <div id="index" class="index">
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+  <article class="index-post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/golang笔记/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Kaige Dong">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/myavatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="读书笔记">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/08/17/golang笔记/" itemprop="url">golang笔记</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-08-17T13:42:57+08:00">2018-08-17 13:42:57</time></span>
+        </span>
+        
+        
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-comment-count">
+          <i class="far fa-comments"></i><span><a href="/2018/08/17/golang笔记/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/08/17/golang笔记/" itemprop="commentCount"></span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <a id="more"></a>
+<p>##初识</p>
+<blockquote>
+<p>编辑器</p>
+</blockquote>
+<p>推荐<a href="https://github.com/visualfc/liteide/releases/tag/x34.1" target="_blank" rel="noopener">liteide</a></p>
+<blockquote>
+<p>统一代码风格：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">$</span><span class="bash">gofmt -w program.go <span class="hljs-comment"># 格式化该源文件的代码并覆盖源文件</span></span><br><span class="hljs-meta">$</span><span class="bash">gofmt map1 <span class="hljs-comment"># 格式化并重写map1文件夹下所有的go源文件</span></span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>生成代码文档</p>
+</blockquote>
+<p>go doc 工具会从 Go 程序和包文件中提取顶级声明的首行注释以及每个对象的相关注释，并生成相关文档。</p>
+<blockquote>
+<p>GO自带的其他工具</p>
+</blockquote>
+<p><code>go install</code>: 安装GO包的工具；<code>go fix</code>：将GO代码从旧的发行版迁移到新的发行版; <code>go test</code>是轻量级的单元测试框架。</p>
+<h2 id="了解"><a href="#了解" class="headerlink" title="了解"></a>了解</h2><p>工具<code>cgo</code>退工了对FFI(外部函数接口)的支持，能够使用Go代码安全的调用C语言库。</p>
+<p>如要在Go中使用cgo，需在单独一行使用<code>import &quot;C&quot;</code> ，一般还要<code>import &quot;unsafe&quot;</code>. 然后可以在<code>import &quot;C&quot;</code>之前使用注释(单行或多行注释均可)的形式导入C语言库(甚至是有效的C语言代码)，它们之间没有空行。</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">// <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br>// <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span><br>import <span class="hljs-string">"C"</span><br></code></pre></td></tr></table></figure>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="index-post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/Curses-python3-7/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -179,7 +245,7 @@
     </footer>
   </article>
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+  <article class="index-post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/Acer中Arch安装Secure-boot-EFI-设置/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -233,7 +299,7 @@
     </footer>
   </article>
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+  <article class="index-post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/07/shadowsocks配置/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -278,7 +344,7 @@
     </footer>
   </article>
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+  <article class="index-post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/19/shell-环境变量及set-env-export/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -323,7 +389,7 @@
     </footer>
   </article>
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+  <article class="index-post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/12/Perl-安装模块/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -370,7 +436,7 @@
     </footer>
   </article>
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+  <article class="index-post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/11/python批量转换exe视频/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -415,7 +481,7 @@
     </footer>
   </article>
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+  <article class="index-post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/14/Django项目实战2-xadmin/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -469,7 +535,7 @@
     </footer>
   </article>
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+  <article class="index-post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/13/Django项目实战1：数据库/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -514,7 +580,7 @@
     </footer>
   </article>
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+  <article class="index-post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/12/搬瓦工笔记/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -568,60 +634,6 @@
     </footer>
   </article>
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/08/Mac安装MySQL/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Kaige Dong">
-        <meta itemprop="description" content="">
-        <meta itemprop="image" content="/images/myavatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="读书笔记">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/05/08/Mac安装MySQL/" itemprop="url">Mac安装MySQL & Ubuntu下安装MySQL记录</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-05-08T14:16:00+08:00">2018-05-08 14:16:00</time></span>
-        </span>
-        
-        
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="/2018/05/08/Mac安装MySQL/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/05/08/Mac安装MySQL/" itemprop="commentCount"></span></a></span>
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>Mac 下安装MySQL，碰到了很多坑，这里记录一下。<br>
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/MySQL/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>MySQL</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a>
@@ -666,7 +678,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">52</a></div>
+      <div><a href="/archives/">53</a></div>
     </div>
     
     
