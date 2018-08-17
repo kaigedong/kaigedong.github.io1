@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-17T05:57:58.121Z</updated>
+  <updated>2018-08-17T06:21:15.006Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,22 +21,11 @@
     <link href="http://yoursite.com/2018/08/17/golang%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2018/08/17/golang笔记/</id>
     <published>2018-08-17T05:42:57.000Z</published>
-    <updated>2018-08-17T05:57:58.121Z</updated>
+    <updated>2018-08-17T06:21:15.006Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;##初识&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;编辑器&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;推荐&lt;a href=&quot;https://github.com/visualfc/liteide/releases/tag/x34.1&quot;
-        
-      
+      &lt;p&gt;记录一些Golang&lt;/p&gt;
     
     </summary>
     
