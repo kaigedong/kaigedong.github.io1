@@ -3,6 +3,30 @@
   
     
     <entry>
+      <title>搬瓦工v2ray</title>
+      <link href="/2018/12/06/%E6%90%AC%E7%93%A6%E5%B7%A5v2ray/"/>
+      <url>/2018/12/06/%E6%90%AC%E7%93%A6%E5%B7%A5v2ray/</url>
+      <content type="html"><![CDATA[<ul><li><p>系统：centos7 64bit with bbs</p></li><li><p><a href="https://www.v2ray.com/chapter_00/install.html" target="_blank" rel="noopener">https://www.v2ray.com/chapter_00/install.html</a></p></li><li><p><a href="https://toutyrater.github.io/prep/install.html" target="_blank" rel="noopener">https://toutyrater.github.io/prep/install.html</a></p></li><li><p>安装日志</p>  <figure class="hljs highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta"># bash &lt;(curl -L -s https:<span class="hljs-comment">//install.direct/go.sh)</span></span><br><span class="hljs-meta">## 安装位置</span><br><span class="hljs-meta-keyword">/usr/</span>bin<span class="hljs-meta-keyword">/v2ray/</span>v2ray：V2Ray 程序；<br><span class="hljs-meta-keyword">/usr/</span>bin<span class="hljs-meta-keyword">/v2ray/</span>v2ctl：V2Ray 工具；<br><span class="hljs-meta-keyword">/etc/</span>v2ray/config.json：配置文件；<br><span class="hljs-meta-keyword">/usr/</span>bin<span class="hljs-meta-keyword">/v2ray/</span>geoip.dat：IP 数据文件<br><span class="hljs-meta-keyword">/usr/</span>bin<span class="hljs-meta-keyword">/v2ray/</span>geosite.dat：域名数据文件<br></code></pre></td></tr></table></figure></li></ul>]]></content>
+      
+      
+        <tags>
+            
+            <tag> 搬瓦工 v2ray shadowsocks </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>python的decode/encode 与 r/b/u</title>
+      <link href="/2018/08/17/python%E7%9A%84decode-encode-%E4%B8%8E-r-b-u/"/>
+      <url>/2018/08/17/python%E7%9A%84decode-encode-%E4%B8%8E-r-b-u/</url>
+      <content type="html"><![CDATA[<p>python中的decode/encode 与 r/b/u</p><a id="more"></a><h2 id="1-decode-与-encode"><a href="#1-decode-与-encode" class="headerlink" title="1.decode 与 encode"></a>1.<code>decode</code> 与 <code>encode</code></h2><blockquote><p>字符串在Python内部是<code>unicode</code>编码，在做编码转换时，通常要以unicode作为中间编码；即先将其它编码的字符串解码(decode)成unicode，然后再编码<code>encode</code>成另一种编码。</p><p><strong>在计算机内存中，统一使用<code>Unicode</code>编码，当需要保存到硬盘或者需要传输的时候，就转换为<code>utf-8</code>编码。</strong></p></blockquote><p><code>decode</code>：将其他编码的字符串<strong>转成<code>unicode</code></strong>编码，如<code>str1.decode(&#39;gb2312&#39;)</code>; 表示将<code>gb2312</code>编码的字符串<code>str1</code>转换成<code>unicode</code>编码；</p><p><code>encode</code>：将<strong><code>unicode</code></strong>编码转换成其他编码的字符串，如<code>str2.encode(&#39;gb2312&#39;)</code>; 表示将<code>unicode</code>编码的字符串转成<code>gb2312</code>编码。</p><p><code>sys.getdefaultencoding()</code>：查看系统默认编码</p><p><code>ord()</code>获取字符的整数表示</p><p><code>chr()</code>把编码转换成对应的字符</p><h2 id="2-u-r-b"><a href="#2-u-r-b" class="headerlink" title="2.u/r/b"></a>2.<code>u</code>/<code>r</code>/<code>b</code></h2><h2 id="3-utf-8-与-unicode"><a href="#3-utf-8-与-unicode" class="headerlink" title="3.utf-8 与 unicode"></a>3.<code>utf-8</code> 与 <code>unicode</code></h2><ul><li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431664106267f12e9bef7ee14cf6a8776a479bdec9b9000" target="_blank" rel="noopener">字符编码</a></li></ul>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
       <title>golang笔记</title>
       <link href="/2018/08/17/golang%E7%AC%94%E8%AE%B0/"/>
       <url>/2018/08/17/golang%E7%AC%94%E8%AE%B0/</url>
@@ -573,16 +597,16 @@
   
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     

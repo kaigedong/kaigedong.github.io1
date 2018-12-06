@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-17T06:21:15.006Z</updated>
+  <updated>2018-12-06T05:00:50.024Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搬瓦工v2ray</title>
+    <link href="http://yoursite.com/2018/12/06/%E6%90%AC%E7%93%A6%E5%B7%A5v2ray/"/>
+    <id>http://yoursite.com/2018/12/06/搬瓦工v2ray/</id>
+    <published>2018-12-06T01:26:42.000Z</published>
+    <updated>2018-12-06T05:00:50.024Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;系统：centos7 64bit with bbs&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.v2ray.com/chapter_00/install.html&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="搬瓦工 v2ray shadowsocks" scheme="http://yoursite.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5-v2ray-shadowsocks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python的decode/encode 与 r/b/u</title>
+    <link href="http://yoursite.com/2018/08/17/python%E7%9A%84decode-encode-%E4%B8%8E-r-b-u/"/>
+    <id>http://yoursite.com/2018/08/17/python的decode-encode-与-r-b-u/</id>
+    <published>2018-08-17T08:45:19.000Z</published>
+    <updated>2018-08-19T07:48:11.353Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;python中的decode/encode 与 r/b/u&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>golang笔记</title>
@@ -353,46 +396,6 @@
     
     
       <category term="强化学习" scheme="http://yoursite.com/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML与CSS基础03-Web框架与表单设计</title>
-    <link href="http://yoursite.com/2018/04/13/HTML%E4%B8%8ECSS%E5%9F%BA%E7%A1%8003-Web%E6%A1%86%E6%9E%B6%E4%B8%8E%E8%A1%A8%E5%8D%95%E8%AE%BE%E8%AE%A1/"/>
-    <id>http://yoursite.com/2018/04/13/HTML与CSS基础03-Web框架与表单设计/</id>
-    <published>2018-04-13T10:25:14.000Z</published>
-    <updated>2018-04-14T04:43:11.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;框架将浏览器划分为不同的部分，每一部分加载不同的网页，实现在同一浏览器窗口中加载多个页面的效果。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="HTML CSS" scheme="http://yoursite.com/tags/HTML-CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML和CSS基础02-图像超链接和表格</title>
-    <link href="http://yoursite.com/2018/04/13/HTML%E5%92%8CCSS%E5%9F%BA%E7%A1%8002-%E5%9B%BE%E5%83%8F%E8%B6%85%E9%93%BE%E6%8E%A5%E5%92%8C%E8%A1%A8%E6%A0%BC/"/>
-    <id>http://yoursite.com/2018/04/13/HTML和CSS基础02-图像超链接和表格/</id>
-    <published>2018-04-13T09:56:14.000Z</published>
-    <updated>2018-04-14T04:44:52.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;图像标记&lt;/li&gt;
-&lt;li&gt;超链接&lt;/li&gt;
-&lt;li&gt;表格:可以用来进行简单网页布局&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
     
   </entry>
   
