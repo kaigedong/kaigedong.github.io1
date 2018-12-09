@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-09T05:20:42.151Z</updated>
+  <updated>2018-12-09T14:42:37.029Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>无root安装Apache</title>
-    <link href="http://yoursite.com/2018/12/09/%E6%97%A0root%E5%AE%89%E8%A3%85Apache/"/>
-    <id>http://yoursite.com/2018/12/09/无root安装Apache/</id>
-    <published>2018-12-09T05:10:55.000Z</published>
-    <updated>2018-12-09T05:20:42.151Z</updated>
+    <title>无root安装UCSC genome browser</title>
+    <link href="http://yoursite.com/2018/12/09/%E6%97%A0root%E5%AE%89%E8%A3%85UCSC-genome-browser/"/>
+    <id>http://yoursite.com/2018/12/09/无root安装UCSC-genome-browser/</id>
+    <published>2018-12-09T05:25:32.000Z</published>
+    <updated>2018-12-09T14:42:37.029Z</updated>
     
     <summary type="html">
     
@@ -30,9 +30,27 @@
         
         
           &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h1 id=&quot;无root安装Apache&quot;&gt;&lt;a href=&quot;#无root安装Apache&quot; class=&quot;headerlink&quot;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;rsync&lt;/code&gt;查看大小&lt;/p&gt;
+&lt;figure class=&quot;hljs highlight awk&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
         
       
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>无root安装Apache</title>
+    <link href="http://yoursite.com/2018/12/09/%E6%97%A0root%E5%AE%89%E8%A3%85Apache/"/>
+    <id>http://yoursite.com/2018/12/09/无root安装Apache/</id>
+    <published>2018-12-09T05:10:55.000Z</published>
+    <updated>2018-12-09T14:58:29.301Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;简单的操作&lt;/p&gt;
     
     </summary>
     
@@ -66,18 +84,13 @@
     <link href="http://yoursite.com/2018/12/07/GIVE%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2018/12/07/GIVE安装笔记/</id>
     <published>2018-12-07T13:38:32.000Z</published>
-    <updated>2018-12-08T09:19:29.844Z</updated>
+    <updated>2018-12-09T14:57:50.166Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;Github-地址&quot;&gt;&lt;a href=&quot;#Github-地址&quot; class=&quot;headerlink&quot; title=&quot;Github 地址&quot;&gt;&lt;/a&gt;Github 地址&lt;/h2&gt;&lt;p&gt;&lt;a
-        
-      
+      &lt;ul&gt;
+&lt;li&gt;革命尚未成功&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -89,25 +102,16 @@
     <link href="http://yoursite.com/2018/12/06/%E6%90%AC%E7%93%A6%E5%B7%A5v2ray/"/>
     <id>http://yoursite.com/2018/12/06/搬瓦工v2ray/</id>
     <published>2018-12-06T01:26:42.000Z</published>
-    <updated>2018-12-06T15:51:39.206Z</updated>
+    <updated>2018-12-09T14:54:50.944Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;系统：centos7 64bit with bbs&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.v2ray.com/chapter_00/install.html&quot; target=&quot;_blank&quot;
-        
-      
+      &lt;p&gt;搬瓦工搭建v2ray 一键搭建wireguard&lt;/p&gt;
     
     </summary>
     
     
-      <category term="搬瓦工 v2ray shadowsocks" scheme="http://yoursite.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5-v2ray-shadowsocks/"/>
+      <category term="搬瓦工 v2ray shadowsocks wireguard" scheme="http://yoursite.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5-v2ray-shadowsocks-wireguard/"/>
     
   </entry>
   
@@ -373,29 +377,6 @@
 &lt;li&gt;神经网络的作用&lt;/li&gt;
 &lt;li&gt;Deep Q Network(DQN算法)&lt;/li&gt;
 &lt;li&gt;后续改进方法&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="增强学习" scheme="http://yoursite.com/tags/%E5%A2%9E%E5%BC%BA%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>增强学习之Sarsa(lambda)</title>
-    <link href="http://yoursite.com/2018/04/17/%E5%A2%9E%E5%BC%BA%E5%AD%A6%E4%B9%A0%E4%B9%8BSarsa-lambda/"/>
-    <id>http://yoursite.com/2018/04/17/增强学习之Sarsa-lambda/</id>
-    <published>2018-04-17T01:42:46.000Z</published>
-    <updated>2018-04-17T02:04:34.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;基于Sarsa的一种提速方法&lt;/li&gt;
-&lt;li&gt;回合更新的优势&lt;/li&gt;
-&lt;li&gt;Lambda 参数&lt;/li&gt;
-&lt;li&gt;Sarsa 算法步骤&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
