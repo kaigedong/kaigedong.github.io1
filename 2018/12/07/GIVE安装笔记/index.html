@@ -82,7 +82,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>python批量转换exe视频 | 读书笔记</title>
+    <title>GIVE安装笔记 | 读书笔记</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"  data-spy="scroll" data-target=".list-group">
     
@@ -131,7 +131,7 @@
   
   <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/11/python批量转换exe视频/">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/07/GIVE安装笔记/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="Kaige Dong">
        <meta itemprop="description" content="">
@@ -142,11 +142,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">python批量转换exe视频</h1>
+      <h1 class="post-title" itemprop="name headline">GIVE安装笔记</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-11T21:44:29+08:00">2018-07-11 21:44:29</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-07T21:38:32+08:00">2018-12-07 21:38:32</time></span>
         </span>
         
         
@@ -156,24 +156,61 @@
         <span class="post-meta-divider divider">|</span>
         
         <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="/2018/07/11/python批量转换exe视频/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/07/11/python批量转换exe视频/" itemprop="commentCount"></span></a></span>
+          <i class="far fa-comments"></i><span><a href="/2018/12/07/GIVE安装笔记/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/12/07/GIVE安装笔记/" itemprop="commentCount"></span></a></span>
         </span>
         
         
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>如何使用python脚本在win上自动转换exe视频到MP4</p>
-<a id="more"></a>
-<p>转自<a href="https://blog.csdn.net/shawpan/article/details/78170871" target="_blank" rel="noopener">python自动化工具之pywinauto(四)——批量转换exe视频</a></p>
-<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-comment"># -*- coding: utf-8 -*-</span><br><span class="hljs-string">"""<br>Created on Wed Oct  4 16:52:13 2017<br><br>@author: x<br>"""</span><br><span class="hljs-keyword">from</span> pywinauto.application <span class="hljs-keyword">import</span> Application<br><br>program_path = <span class="hljs-string">r"D:\Program Files (x86)\tlxsoft\屏幕录像专家 共享版 V2017\屏录专家.exe"</span><br>app = Application().start(program_path)<br>dlg_spec = app.window(title_re=<span class="hljs-string">'屏幕录像专家.*'</span>,class_name=<span class="hljs-string">'TMainForm'</span>)<br><span class="hljs-comment">#dlg_spec.type_keys('%TP')</span><br>dlg_spec.menu_select(<span class="hljs-string">r"转换工具-&gt;EXE/LXE转成MP4"</span>)<br>dlg_spec = app[<span class="hljs-string">r'EXE/EXE 转 MP4'</span>]<br>dlg_spec.print_control_identifiers()    <span class="hljs-comment"># 打印该窗体下的所有控件结构</span><br><br><br><span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> open(<span class="hljs-string">'ToBeConvert.txt'</span>):<br>    filename = line.strip()     <span class="hljs-comment"># 去掉读取每一行时最后带着的空格和回车符</span><br>    dlg_spec.Button3.click()    <span class="hljs-comment"># 点击“浏览”按钮</span><br>    dlg_open = app.window(title=<span class="hljs-string">r'打开'</span>)  <span class="hljs-comment"># 获取“打开”对话框句柄</span><br>    dlg_open.Edit.type_keys(filename,with_spaces = <span class="hljs-keyword">True</span>)<br><span class="hljs-comment">#    dlg_open.Edit.set_text(filename)     # 将文件绝对路径写入编辑框中</span><br>    dlg_open.Button0.click()             <span class="hljs-comment"># 点击“打开”按钮</span><br>    dlg_open.wait_not(<span class="hljs-string">'visible'</span>)<br><br>    dlg_spec.CheckBox0.check()          <span class="hljs-comment"># 勾选自动扩帧</span><br>    dlg_spec.Button0.click()            <span class="hljs-comment"># 点击“转换”</span><br><br>    app[<span class="hljs-string">'另存为'</span>].Button0.click()        <span class="hljs-comment"># 点击“另存为”对话框的“保存”按钮</span><br><br>    app.window(title=<span class="hljs-string">r'屏幕录像专家'</span>,class_name=<span class="hljs-string">'TMessageForm'</span>).Wait(<span class="hljs-string">'enabled'</span>,timeout=<span class="hljs-number">300</span>)       <span class="hljs-comment"># 等待转换结束</span><br>    app.window(title=<span class="hljs-string">r'屏幕录像专家'</span>,class_name=<span class="hljs-string">'TMessageForm'</span>).Ok.click()        <span class="hljs-comment"># 关闭转换完成后弹出的对话框</span><br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>用法:</p>
-</blockquote>
+      <a id="more"></a>
+<h2 id="Github-地址"><a href="#Github-地址" class="headerlink" title="Github 地址"></a>Github 地址</h2><p><a href="https://github.com/Zhong-Lab-UCSD/Genomic-Interactive-Visualization-Engine" target="_blank" rel="noopener">https://github.com/Zhong-Lab-UCSD/Genomic-Interactive-Visualization-Engine</a></p>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><ul>
+<li>包含两个主要部分：<ul>
+<li><strong>GIVE Web Components</strong>： 也就是网页部分**</li>
+<li><strong>GIVE server</strong>： 服务器部分，包括<strong>GIVE server-side</strong>（主要由PHP实现） 和 <strong>GIVE data source</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ol>
+<li><p>克隆源代码</p>
+<figure class="hljs highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/Zhong-Lab-UCSD/Genomic-Interactive-Visualization-Engine.git<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>安装Web Server</p>
 <ol>
-<li>根据屏幕录像专家程序的安装位置修改变量<code>program_path</code>的值。</li>
-<li>在当前目录新建一个 ToBeConvert.txt 文档，每行写上一个带转换的源文件，目标文件目录默认与源文件相同。 </li>
+<li><p>安装MySQL</p>
+</li>
+<li><p>Apache </p>
+</li>
+<li><p>PHP + cURL</p>
+<figure class="hljs highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-symbol">https:</span><span class="hljs-comment">//curl.haxx.se/download.html 获取最新curl,并安装。</span><br><span class="hljs-meta"># 编译PHP：</span><br>./configure --prefix=<span class="hljs-meta-keyword">/picb/</span>rnomics2/RBP_database<span class="hljs-meta-keyword">/dbweb/</span>Softwares/php_7<span class="hljs-number">.2</span><span class="hljs-number">.12</span> --with-apxs2=<span class="hljs-meta-keyword">/picb/</span>rnomics2/RBP_database<span class="hljs-meta-keyword">/dbweb/</span>Softwares/apache_2<span class="hljs-number">.4</span><span class="hljs-number">.37</span><span class="hljs-meta-keyword">/bin/</span>apxs --with-mysqli --with-curl=<span class="hljs-meta-keyword">/home/</span>dongkaige<span class="hljs-meta-keyword">/rnomics2/</span>RBP_database<span class="hljs-meta-keyword">/dbweb/</span>Softwares/curl_7<span class="hljs-number">.62</span> --with-config-file-path=<span class="hljs-meta-keyword">/picb/</span>rnomics2/RBP_database<span class="hljs-meta-keyword">/dbweb/</span>Softwares/php_7<span class="hljs-number">.2</span><span class="hljs-number">.12</span>/php.ini<br>/RBP_database<span class="hljs-meta-keyword">/dbweb/</span>Softwares/curl_7<span class="hljs-number">.62</span><br>make test<br>make -j <span class="hljs-number">40</span><br>make install<br><span class="hljs-meta"># 然后把编译文件夹里的 php.ini-development 复制成 php.ini 上面的-with-config-file-path 指定的原来是dir路径。</span><br>cp php.ini-development <span class="hljs-meta-keyword">/picb/</span>rnomics2/RBP_database<span class="hljs-meta-keyword">/dbweb/</span>Softwares/php_7<span class="hljs-number">.2</span><span class="hljs-number">.12</span><br><span class="hljs-meta"># 测试：</span><br>$ ./php -ini | grep Configuration<br>Configuration File (php.ini) Path =&gt; <span class="hljs-meta-keyword">/picb/</span>rnomics2/RBP_database<span class="hljs-meta-keyword">/dbweb/</span>Softwares/php_7<span class="hljs-number">.2</span><span class="hljs-number">.12</span>/php.ini<br>Loaded Configuration File =&gt; <span class="hljs-meta-keyword">/picb/</span>rnomics2/RBP_database<span class="hljs-meta-keyword">/dbweb/</span>Softwares/php_7<span class="hljs-number">.2</span><span class="hljs-number">.12</span>/php.ini/php.ini<br>Configuration<br><span class="hljs-meta"># 修改http.conf: 添加php.ini 位置</span><br></code></pre></td></tr></table></figure>
+<p><img src="GIVE安装笔记.assets/20170419151014605.png" alt="修改配置：添加php.ini位置"></p>
+</li>
 </ol>
+</li>
+<li><p>安装GIVE Server</p>
+</li>
+</ol>
+<ol start="4">
+<li><p>使用<code>GIVE-toolbox</code>管理数据track</p>
+<blockquote>
+<p>GIVE 支持<code>gene annotation</code>, <code>bed</code>, <code>bigWig</code>, <code>interaction</code> data track类型。</p>
+<p><code>GIVE-toolbox</code>包含9个脚本，用来管理数据。</p>
+</blockquote>
+<ul>
+<li><code>config_host.sh</code>: 对 GIVE service 进行设置</li>
+<li><code>initial_ref.sh</code>: 初始化MySQL数据库结构并建立genome reference</li>
+<li><code>add_track_geneAnnot.sh</code>: 从UCSC gene table 文件添加基因注释</li>
+<li><code>add_trackGroup.sh</code>: 添加track组</li>
+<li><code>add_track_bed.sh</code>: 添加bed注释</li>
+<li><code>add_track_bigWig.sh</code>: 添加bigwig 注释</li>
+<li><code>add_track_interaction.sh</code>: 添加interaction注释</li>
+<li><code>list_tracks.sh</code>: 列出GIVE数据结构或特定的track组，或特定track的设置</li>
+<li><code>remove_data.sh</code>: 删除一个track，或track group，或整个参考基因组</li>
+</ul>
+</li>
+</ol>
+<p>4.1 演示：</p>
 
     </main>
     <footer class="post-footer">
@@ -185,12 +222,12 @@
   <div class="post-nav">
     <div class="post-nav-next post-nav-item">
       
-      <a href="/2018/05/14/Django项目实战2-xadmin/" rel="next" title="Django项目实战2: xadmin"><i class="fas fa-angle-left"></i><span class="nav-title">Django项目实战2: xadmin</span></a>
+      <a href="/2018/12/06/搬瓦工v2ray/" rel="next" title="搬瓦工v2ray"><i class="fas fa-angle-left"></i><span class="nav-title">搬瓦工v2ray</span></a>
       
     </div>
     <div class="post-nav-prev post-nav-item">
       
-      <a href="/2018/07/12/Perl-安装模块/" rel="prev" title="Perl 安装模块与卸载"><span class="nav-title">Perl 安装模块与卸载</span><i class="fas fa-angle-right"></i></a>
+      <a href="/2018/12/09/服务器无root安装MySQL/" rel="prev" title="服务器无root安装MySQL"><span class="nav-title">服务器无root安装MySQL</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </div>
@@ -205,8 +242,8 @@
   <div id="disqus_thread" class="disqus_thread"></div>
   <script type="text/javascript">
   var disqus_config = function () {
-    this.page.url = "http://yoursite.com/2018/07/11/python批量转换exe视频/";
-    this.page.identifier = "2018/07/11/python批量转换exe视频/";
+    this.page.url = "http://yoursite.com/2018/12/07/GIVE安装笔记/";
+    this.page.identifier = "2018/12/07/GIVE安装笔记/";
   };
   (function() {
     var d = document, s = d.createElement("script");
@@ -284,6 +321,12 @@
 
 
 
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Github-地址"><span class="toc-text">Github 地址</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#组件"><span class="toc-text">组件</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#要求"><span class="toc-text">要求</span></a></li></ol></div>
+</div>
 
 
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-06T05:00:50.024Z</updated>
+  <updated>2018-12-09T05:02:38.664Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,54 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>服务器无root安装MySQL</title>
+    <link href="http://yoursite.com/2018/12/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0root%E5%AE%89%E8%A3%85MySQL/"/>
+    <id>http://yoursite.com/2018/12/09/服务器无root安装MySQL/</id>
+    <published>2018-12-09T04:32:14.000Z</published>
+    <updated>2018-12-09T05:02:38.664Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;无root安装MySQL&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GIVE安装笔记</title>
+    <link href="http://yoursite.com/2018/12/07/GIVE%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2018/12/07/GIVE安装笔记/</id>
+    <published>2018-12-07T13:38:32.000Z</published>
+    <updated>2018-12-08T09:19:29.844Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;Github-地址&quot;&gt;&lt;a href=&quot;#Github-地址&quot; class=&quot;headerlink&quot; title=&quot;Github 地址&quot;&gt;&lt;/a&gt;Github 地址&lt;/h2&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>搬瓦工v2ray</title>
     <link href="http://yoursite.com/2018/12/06/%E6%90%AC%E7%93%A6%E5%B7%A5v2ray/"/>
     <id>http://yoursite.com/2018/12/06/搬瓦工v2ray/</id>
     <published>2018-12-06T01:26:42.000Z</published>
-    <updated>2018-12-06T05:00:50.024Z</updated>
+    <updated>2018-12-06T15:51:39.206Z</updated>
     
     <summary type="html">
     
@@ -349,48 +392,6 @@
       &lt;blockquote&gt;
 &lt;p&gt;Q-learning 与 Sarsa 区别&lt;/p&gt;
 &lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="强化学习" scheme="http://yoursite.com/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习02之Q-learning介绍</title>
-    <link href="http://yoursite.com/2018/04/16/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8BQ-learning/"/>
-    <id>http://yoursite.com/2018/04/16/深度学习之Q-learning/</id>
-    <published>2018-04-16T07:52:20.000Z</published>
-    <updated>2018-04-16T16:09:46.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;Q-learning 的概念&lt;/li&gt;
-&lt;li&gt;Q-learning 例子&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="强化学习" scheme="http://yoursite.com/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>强化学习介绍与分类01</title>
-    <link href="http://yoursite.com/2018/04/16/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/"/>
-    <id>http://yoursite.com/2018/04/16/强化学习入门/</id>
-    <published>2018-04-16T06:18:12.000Z</published>
-    <updated>2018-04-16T07:15:06.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;强化学习概念&lt;/li&gt;
-&lt;li&gt;分类&lt;/li&gt;
-&lt;/ul&gt;
     
     </summary>
     
