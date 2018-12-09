@@ -129,6 +129,77 @@
   
   <article class="index-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/09/无root安装Apache/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Kaige Dong">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/myavatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="读书笔记">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/12/09/无root安装Apache/" itemprop="url">无root安装Apache</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-09T13:10:55+08:00">2018-12-09 13:10:55</time></span>
+        </span>
+        
+        
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-comment-count">
+          <i class="far fa-comments"></i><span><a href="/2018/12/09/无root安装Apache/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/12/09/无root安装Apache/" itemprop="commentCount"></span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <a id="more"></a>
+<h1 id="无root安装Apache"><a href="#无root安装Apache" class="headerlink" title="无root安装Apache"></a>无root安装Apache</h1><p>无root安装Apache非常简单</p>
+<ol>
+<li><p>下载(看参考)</p>
+</li>
+<li><p>根据官网说明安装(参考)</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 需要下载APR 和 APR-Util,并放入特定位置，并需要安装pcre</span><br>wget -c https://www-eu.apache.org/dist//httpd/httpd-2.4.37.tar.bz2<br>wget https://www-us.apache.org/dist//apr/apr-1.6.5.tar.gz<br>wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.42.zip # 注意！不是pcre2!<br>wget https://www-us.apache.org/dist//apr/apr-util-1.6.1.tar.gz<br><span class="hljs-meta"><br>#</span><span class="bash"> 将 apr, apr-util 解压去掉版本号，移动到 apache的 srclib 下</span><br><br>./configure --prefix=/picb/rnomics2/RBP_database/dbweb/Softwares/httpd_2.4.37 --with-included-apr --with-pcre=/home/dongkaige/rnomics2/RBP_database/dbweb/Softwares/pcre_8.42<br>make<br>make install<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>启动、关闭与重启</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">./apachectl start<br>./apachectl stop<br>./apachectl restart<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://httpd.apache.org/download.cgi#apache24" target="_blank" rel="noopener">Apache24下载位置</a></li>
+<li><a href="http://httpd.apache.org/docs/current/" target="_blank" rel="noopener">http://httpd.apache.org/docs/current/</a></li>
+<li>Apache <a href="https://www.jianshu.com/p/c36dd3946e74" target="_blank" rel="noopener">配置与优化–之乎专栏</a></li>
+</ul>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/Apache/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Apache</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/09/服务器无root安装MySQL/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="Kaige Dong">
@@ -643,53 +714,6 @@
     </footer>
   </article>
   
-  <article class="index-article card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/12/Perl-安装模块/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="Kaige Dong">
-        <meta itemprop="description" content="">
-        <meta itemprop="image" content="/images/myavatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="读书笔记">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/07/12/Perl-安装模块/" itemprop="url">Perl 安装模块与卸载</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-12T09:51:09+08:00">2018-07-12 09:51:09</time></span>
-        </span>
-        
-        
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="/2018/07/12/Perl-安装模块/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/07/12/Perl-安装模块/" itemprop="commentCount"></span></a></span>
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <ul>
-<li>安装Perl 模块的不同方法</li>
-</ul>
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
   
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
@@ -734,7 +758,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">57</a></div>
+      <div><a href="/archives/">58</a></div>
     </div>
     
     
@@ -752,7 +776,7 @@
     
     <div class="tags-count">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">11</a></div>
+      <div><a href="/tags/">12</a></div>
     </div>
     
   </div>

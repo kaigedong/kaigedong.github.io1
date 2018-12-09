@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title>无root安装Apache</title>
+      <link href="/2018/12/09/%E6%97%A0root%E5%AE%89%E8%A3%85Apache/"/>
+      <url>/2018/12/09/%E6%97%A0root%E5%AE%89%E8%A3%85Apache/</url>
+      <content type="html"><![CDATA[<a id="more"></a><h1 id="无root安装Apache"><a href="#无root安装Apache" class="headerlink" title="无root安装Apache"></a>无root安装Apache</h1><p>无root安装Apache非常简单</p><ol><li><p>下载(看参考)</p></li><li><p>根据官网说明安装(参考)</p><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 需要下载APR 和 APR-Util,并放入特定位置，并需要安装pcre</span><br>wget -c https://www-eu.apache.org/dist//httpd/httpd-2.4.37.tar.bz2<br>wget https://www-us.apache.org/dist//apr/apr-1.6.5.tar.gz<br>wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.42.zip # 注意！不是pcre2!<br>wget https://www-us.apache.org/dist//apr/apr-util-1.6.1.tar.gz<br><span class="hljs-meta"><br>#</span><span class="bash"> 将 apr, apr-util 解压去掉版本号，移动到 apache的 srclib 下</span><br><br>./configure --prefix=/picb/rnomics2/RBP_database/dbweb/Softwares/httpd_2.4.37 --with-included-apr --with-pcre=/home/dongkaige/rnomics2/RBP_database/dbweb/Softwares/pcre_8.42<br>make<br>make install<br></code></pre></td></tr></table></figure></li><li><p>启动、关闭与重启</p><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">./apachectl start<br>./apachectl stop<br>./apachectl restart<br></code></pre></td></tr></table></figure></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="http://httpd.apache.org/download.cgi#apache24" target="_blank" rel="noopener">Apache24下载位置</a></li><li><a href="http://httpd.apache.org/docs/current/" target="_blank" rel="noopener">http://httpd.apache.org/docs/current/</a></li><li>Apache <a href="https://www.jianshu.com/p/c36dd3946e74" target="_blank" rel="noopener">配置与优化–之乎专栏</a></li></ul>]]></content>
+      
+      
+        <tags>
+            
+            <tag> Apache </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>服务器无root安装MySQL</title>
       <link href="/2018/12/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0root%E5%AE%89%E8%A3%85MySQL/"/>
       <url>/2018/12/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0root%E5%AE%89%E8%A3%85MySQL/</url>
@@ -621,16 +636,16 @@
   
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
