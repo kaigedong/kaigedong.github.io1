@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-09T14:42:37.029Z</updated>
+  <updated>2018-12-11T08:58:18.804Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,20 +21,11 @@
     <link href="http://yoursite.com/2018/12/09/%E6%97%A0root%E5%AE%89%E8%A3%85UCSC-genome-browser/"/>
     <id>http://yoursite.com/2018/12/09/无root安装UCSC-genome-browser/</id>
     <published>2018-12-09T05:25:32.000Z</published>
-    <updated>2018-12-09T14:42:37.029Z</updated>
+    <updated>2018-12-11T08:58:18.804Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;rsync&lt;/code&gt;查看大小&lt;/p&gt;
-&lt;figure class=&quot;hljs highlight awk&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
-        
-      
+      &lt;p&gt;如何在本地实现一个定制化的UCSC genome browser?&lt;/p&gt;
     
     </summary>
     
@@ -46,7 +37,7 @@
     <link href="http://yoursite.com/2018/12/09/%E6%97%A0root%E5%AE%89%E8%A3%85Apache/"/>
     <id>http://yoursite.com/2018/12/09/无root安装Apache/</id>
     <published>2018-12-09T05:10:55.000Z</published>
-    <updated>2018-12-09T14:58:29.301Z</updated>
+    <updated>2018-12-09T15:00:27.538Z</updated>
     
     <summary type="html">
     
