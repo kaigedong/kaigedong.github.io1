@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-11T11:15:25.428Z</updated>
+  <updated>2018-12-12T09:03:55.803Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Apache 部署 Django</title>
+    <link href="http://yoursite.com/2018/12/12/Apache-%E9%83%A8%E7%BD%B2-Django/"/>
+    <id>http://yoursite.com/2018/12/12/Apache-部署-Django/</id>
+    <published>2018-12-12T08:56:58.000Z</published>
+    <updated>2018-12-12T09:03:55.803Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;Apache 部署Django的尝试&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Apache版本：见前面博文&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Python环境：&lt;/p&gt;
+&lt;figure class=&quot;hljs highlight
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>无root安装UCSC genome browser</title>
     <link href="http://yoursite.com/2018/12/09/%E6%97%A0root%E5%AE%89%E8%A3%85UCSC-genome-browser/"/>
     <id>http://yoursite.com/2018/12/09/无root安装UCSC-genome-browser/</id>
     <published>2018-12-09T05:25:32.000Z</published>
-    <updated>2018-12-11T11:15:25.428Z</updated>
+    <updated>2018-12-11T11:26:27.662Z</updated>
     
     <summary type="html">
     
@@ -211,7 +239,7 @@
     <link href="http://yoursite.com/2018/07/12/Perl-%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97/"/>
     <id>http://yoursite.com/2018/07/12/Perl-安装模块/</id>
     <published>2018-07-12T01:51:09.000Z</published>
-    <updated>2018-07-15T13:32:10.226Z</updated>
+    <updated>2018-12-13T05:23:48.132Z</updated>
     
     <summary type="html">
     
@@ -346,29 +374,6 @@
       &lt;blockquote&gt;
 &lt;p&gt;DQN 是第一个成功地将深度学习和强化学习结合起来的模型，启发了后续一系列的工作。这些后续工作中比较有名的有 &lt;code&gt;Double DQN&lt;/code&gt;, &lt;code&gt;Prioritized Replay&lt;/code&gt; 和 &lt;code&gt;Dueling Network&lt;/code&gt;。&lt;/p&gt;
 &lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="增强学习" scheme="http://yoursite.com/tags/%E5%A2%9E%E5%BC%BA%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>增强学习之DQN介绍</title>
-    <link href="http://yoursite.com/2018/04/17/%E5%A2%9E%E5%BC%BA%E5%AD%A6%E4%B9%A0%E4%B9%8BDQN/"/>
-    <id>http://yoursite.com/2018/04/17/增强学习之DQN/</id>
-    <published>2018-04-17T02:03:53.000Z</published>
-    <updated>2018-04-17T07:39:06.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;强化学习和深度学习结合&lt;/li&gt;
-&lt;li&gt;神经网络的作用&lt;/li&gt;
-&lt;li&gt;Deep Q Network(DQN算法)&lt;/li&gt;
-&lt;li&gt;后续改进方法&lt;/li&gt;
-&lt;/ul&gt;
     
     </summary>
     
