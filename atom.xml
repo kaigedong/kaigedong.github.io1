@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-12T09:03:55.803Z</updated>
+  <updated>2018-12-13T06:45:28.394Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django+Apache wsgi 部署</title>
+    <link href="http://yoursite.com/2018/12/13/Django-Apache-wsgi-%E9%83%A8%E7%BD%B2/"/>
+    <id>http://yoursite.com/2018/12/13/Django-Apache-wsgi-部署/</id>
+    <published>2018-12-13T06:35:55.000Z</published>
+    <updated>2018-12-13T06:45:28.394Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;找对了文档非常简单…&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Apache 部署 Django</title>
@@ -49,7 +67,7 @@
     <link href="http://yoursite.com/2018/12/09/%E6%97%A0root%E5%AE%89%E8%A3%85UCSC-genome-browser/"/>
     <id>http://yoursite.com/2018/12/09/无root安装UCSC-genome-browser/</id>
     <published>2018-12-09T05:25:32.000Z</published>
-    <updated>2018-12-11T11:26:27.662Z</updated>
+    <updated>2018-12-14T07:23:37.093Z</updated>
     
     <summary type="html">
     
@@ -359,26 +377,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>增强学习之DQN 算法</title>
-    <link href="http://yoursite.com/2018/04/17/%E5%A2%9E%E5%BC%BA%E5%AD%A6%E4%B9%A0%E4%B9%8BDQN-%E7%AE%97%E6%B3%95/"/>
-    <id>http://yoursite.com/2018/04/17/增强学习之DQN-算法/</id>
-    <published>2018-04-17T07:40:32.000Z</published>
-    <updated>2018-04-19T01:11:11.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;DQN 是第一个成功地将深度学习和强化学习结合起来的模型，启发了后续一系列的工作。这些后续工作中比较有名的有 &lt;code&gt;Double DQN&lt;/code&gt;, &lt;code&gt;Prioritized Replay&lt;/code&gt; 和 &lt;code&gt;Dueling Network&lt;/code&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="增强学习" scheme="http://yoursite.com/tags/%E5%A2%9E%E5%BC%BA%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

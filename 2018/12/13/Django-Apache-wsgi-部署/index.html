@@ -82,7 +82,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>增强学习之Sarsa(lambda) | 读书笔记</title>
+    <title>Django+Apache wsgi 部署 | 读书笔记</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"  data-spy="scroll" data-target=".list-group">
     
@@ -131,7 +131,7 @@
   
   <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/增强学习之Sarsa-lambda/">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/13/Django-Apache-wsgi-部署/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="Kaige Dong">
        <meta itemprop="description" content="">
@@ -142,11 +142,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">增强学习之Sarsa(lambda)</h1>
+      <h1 class="post-title" itemprop="name headline">Django+Apache wsgi 部署</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-17T09:42:46+08:00">2018-04-17 09:42:46</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-13T14:35:55+08:00">2018-12-13 14:35:55</time></span>
         </span>
         
         
@@ -156,7 +156,7 @@
         <span class="post-meta-divider divider">|</span>
         
         <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="/2018/04/17/增强学习之Sarsa-lambda/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/04/17/增强学习之Sarsa-lambda/" itemprop="commentCount"></span></a></span>
+          <i class="far fa-comments"></i><span><a href="/2018/12/13/Django-Apache-wsgi-部署/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/12/13/Django-Apache-wsgi-部署/" itemprop="commentCount"></span></a></span>
         </span>
         
         
@@ -164,37 +164,27 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       <ul>
-<li>基于Sarsa的一种提速方法</li>
-<li>回合更新的优势</li>
-<li>Lambda 参数</li>
-<li>Sarsa 算法步骤</li>
+<li>找对了文档非常简单…</li>
 </ul>
 <a id="more"></a>
-<p>莫凡教程讲的很好，看<a href="https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/3-3-A-sarsa-lambda/" target="_blank" rel="noopener">参考</a>。</p>
-<h2 id="单步更新-and-回合更新"><a href="#单步更新-and-回合更新" class="headerlink" title="单步更新 and 回合更新"></a>单步更新 and 回合更新</h2><p>虽然Sarsa 每一步都在更新, 但是在没有达到终点的时候, 现在站着的这一步也没有得到任何更新, 也就是直到终点时, 我们才为上一步更新为；而上一步之前的所有步都被认为和终点无关。回合更新虽然我要等到这回合结束, 才开始对本回合所经历的所有步都添加更新, 但是这所有的步都是和终点有关系的, 都是为了到终点要学习的步, 所以每一个步骤在下回合被选则的几率又高了一些. 在这种角度来看, 回合更新似乎会有效率一些.</p>
-<h2 id="有时迷茫"><a href="#有时迷茫" class="headerlink" title="有时迷茫"></a>有时迷茫</h2><p><img src="/pic/2018-04/04-17-03.png" alt=""></p>
-<p> 还是使用单步更新的方法在每一步都进行更新, 但是同时记下之前的寻宝之路. 你可以想像, 每走一步, 插上一个小旗子, 这样我们就能清楚的知道除了最近的一步, 找到宝物时还需要更新哪些步了. 不过, 有时候情况可能没有这么乐观. 开始的几次, 因为完全没有头绪, 我可能在原地打转了很久, 然后才找到宝藏, 那些重复的脚步真的对我拿到宝藏很有必要吗? 答案我们都知道. 所以Sarsa(lambda)就来拯救你啦.</p>
-<h2 id="Lambda-的含义与取值"><a href="#Lambda-的含义与取值" class="headerlink" title="Lambda 的含义与取值"></a>Lambda 的含义与取值</h2><p><img src="/pic/2018-04/04-17-04.png" alt="Lambda的含义"></p>
-<p>其实 lambda 就是一个衰变值, 他可以让你知道离奖励越远的步可能并不是让你最快拿到奖励的步, 所以我们想象我们站在宝藏的位置, 回头看看我们走过的寻宝之路, 离宝藏越近的脚印越看得清, 远处的脚印太渺小, 我们都很难看清, 那我们就索性记下离宝藏越近的脚印越重要, 越需要被好好的更新. 和之前我们提到过的 奖励衰减值 gamma 一样, lambda 是脚步衰减值, 都是一个在 0 和 1 之间的数.</p>
-<p><img src="/pic/2018-04/04-17-05.png" alt="Lambda的取值"></p>
-<p>当 lambda 取0, 就变成了 Sarsa 的单步更新, 当 lambda 取 1, 就变成了回合更新, 对所有步更新的力度都是一样. 当 lambda 在 0 和 1 之间, 取值越大, 离宝藏越近的步更新力度越大. 这样我们就不用受限于单步更新的每次只能更新最近的一步, 我们可以更有效率的更新所有相关步了.</p>
-<h2 id="Sarsa-Lambda-算法步骤"><a href="#Sarsa-Lambda-算法步骤" class="headerlink" title="Sarsa Lambda 算法步骤"></a>Sarsa Lambda 算法步骤</h2><p><img src="/pic/2018-04/04-17-06.png" alt="Sarsa 算法步骤"></p>
+<blockquote>
+<p>官方文档非常简单，而且能确保正确。网上的博客质量参差不齐，或者因为软件发展太快，导致可能会有各种错误。</p>
+</blockquote>
+<h2 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h2><blockquote>
+<p>首先设置<code>http.conf</code> </p>
+</blockquote>
+<figure class="hljs highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs undefined">WSGIScriptAlias / /path/<span class="hljs-keyword">to</span>/mysite.<span class="hljs-keyword">com</span>/mysite/wsgi.<span class="hljs-keyword">py</span> # 这里 / 我设置成了 /dbweb<br>WSGIPythonHome /path/<span class="hljs-keyword">to</span>/venv<br>WSGIPythonPath /path/<span class="hljs-keyword">to</span>/mysite.<span class="hljs-keyword">com</span><br><br>&lt;Directory /path/<span class="hljs-keyword">to</span>/mysite.<span class="hljs-keyword">com</span>/mysite&gt;<br>&lt;Files wsgi.<span class="hljs-keyword">py</span>&gt;<br>Require <span class="hljs-keyword">all</span> granted<br>&lt;/Files&gt;<br>&lt;/Directory&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="使用mod-wsgi"><a href="#使用mod-wsgi" class="headerlink" title="使用mod_wsgi"></a>使用<code>mod_wsgi</code></h2><p>Django官方使用的是 <code>official mod_wsgi</code>, 我们直接去看看如何安装上这个模块。进入：<a href="https://modwsgi.readthedocs.io/en/develop/installation.html" target="_blank" rel="noopener">installation and configuration documentation</a> ,按照说明：</p>
+<figure class="hljs highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">wget https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/GrahamDumpleton/m</span>od_wsgi<span class="hljs-regexp">/archive/</span><span class="hljs-number">4.6</span>.<span class="hljs-number">5</span>.zip <span class="hljs-comment"># 更新很快，自己去看看新版本。</span><br>.<span class="hljs-regexp">/configure --with-apxs=/u</span>sr<span class="hljs-regexp">/local/</span>apache<span class="hljs-regexp">/bin/</span>apxs --with-python=<span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/bin/</span>python<br>make<br>make install<br></code></pre></td></tr></table></figure>
+<p>然后在<code>httpd.conf</code> 添加一行</p>
+<figure class="hljs highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute"><span class="hljs-nomarkup">LoadModule</span></span> wsgi_module modules/mod_wsgi.so<br></code></pre></td></tr></table></figure>
+<p>并重启Apache服务。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/3-3-A-sarsa-lambda/" target="_blank" rel="noopener">什么是 Sarsa(lambda)</a></li>
-<li><a href="https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/3-3-tabular-sarsa-lambda/" target="_blank" rel="noopener">Sarsa-lambda</a></li>
+<li><a href="https://docs.djangoproject.com/zh-hans/2.1/howto/deployment/wsgi/modwsgi/#how-to-use-django-with-apache-and-mod-wsgi" target="_blank" rel="noopener">How to use Django with Apache and <code>mod_wsgi</code></a></li>
 </ul>
 
     </main>
     <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/增强学习/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>增强学习</a>
-        
-      </div>
       
     </footer>
   </article>
@@ -203,12 +193,10 @@
   <div class="post-nav">
     <div class="post-nav-next post-nav-item">
       
-      <a href="/2018/04/17/强化学习之Sarsa/" rel="next" title="强化学习之Sarsa"><i class="fas fa-angle-left"></i><span class="nav-title">强化学习之Sarsa</span></a>
+      <a href="/2018/12/12/Apache-部署-Django/" rel="next" title="Apache 部署 Django"><i class="fas fa-angle-left"></i><span class="nav-title">Apache 部署 Django</span></a>
       
     </div>
     <div class="post-nav-prev post-nav-item">
-      
-      <a href="/2018/04/17/增强学习之DQN/" rel="prev" title="增强学习之DQN介绍"><span class="nav-title">增强学习之DQN介绍</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </div>
@@ -223,8 +211,8 @@
   <div id="disqus_thread" class="disqus_thread"></div>
   <script type="text/javascript">
   var disqus_config = function () {
-    this.page.url = "http://yoursite.com/2018/04/17/增强学习之Sarsa-lambda/";
-    this.page.identifier = "2018/04/17/增强学习之Sarsa-lambda/";
+    this.page.url = "http://yoursite.com/2018/12/13/Django-Apache-wsgi-部署/";
+    this.page.identifier = "2018/12/13/Django-Apache-wsgi-部署/";
   };
   (function() {
     var d = document, s = d.createElement("script");
@@ -306,7 +294,7 @@
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
   <div><i class="fas fa-list-ol"></i>文章目录</div>
-  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#单步更新-and-回合更新"><span class="toc-text">单步更新 and 回合更新</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#有时迷茫"><span class="toc-text">有时迷茫</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Lambda-的含义与取值"><span class="toc-text">Lambda 的含义与取值</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Sarsa-Lambda-算法步骤"><span class="toc-text">Sarsa Lambda 算法步骤</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol></div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#基础设置"><span class="toc-text">基础设置</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#使用mod-wsgi"><span class="toc-text">使用mod_wsgi</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol></div>
 </div>
 
 
