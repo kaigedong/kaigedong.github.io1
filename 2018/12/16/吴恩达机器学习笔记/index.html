@@ -82,7 +82,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>Perl 安装模块与卸载 | 读书笔记</title>
+    <title>吴恩达机器学习笔记 | 读书笔记</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"  data-spy="scroll" data-target=".list-group">
     
@@ -131,7 +131,7 @@
   
   <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/12/Perl-安装模块/">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/16/吴恩达机器学习笔记/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="Kaige Dong">
        <meta itemprop="description" content="">
@@ -142,11 +142,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">Perl 安装模块与卸载</h1>
+      <h1 class="post-title" itemprop="name headline">吴恩达机器学习笔记</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-12T09:51:09+08:00">2018-07-12 09:51:09</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-16T17:06:47+08:00">2018-12-16 17:06:47</time></span>
         </span>
         
         
@@ -156,45 +156,34 @@
         <span class="post-meta-divider divider">|</span>
         
         <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="/2018/07/12/Perl-安装模块/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/07/12/Perl-安装模块/" itemprop="commentCount"></span></a></span>
+          <i class="far fa-comments"></i><span><a href="/2018/12/16/吴恩达机器学习笔记/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/12/16/吴恩达机器学习笔记/" itemprop="commentCount"></span></a></span>
         </span>
         
         
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <ul>
-<li>安装Perl 模块的不同方法</li>
+      <h1 id="初识机器学习"><a href="#初识机器学习" class="headerlink" title="初识机器学习"></a>初识机器学习</h1><p>机器学习无处不在：搜索引擎，排序算法，照片分类算法，垃圾邮件过滤等。</p>
+<p>应用：</p>
+<ul>
+<li>数据挖掘：更好的服务用户，医疗记录，生物学数据，工程领域；</li>
+<li>无法实现的算法：自动直升飞机，自然语言处理，手写字识别，计算机视觉等；</li>
+<li>网站推荐程序：亚马逊、YouTube的推荐算法；</li>
+<li>理解人类大脑</li>
 </ul>
-<a id="more"></a>
-<h2 id="1-使用cpanm-来安装模块"><a href="#1-使用cpanm-来安装模块" class="headerlink" title="1. 使用cpanm 来安装模块"></a>1. 使用<code>cpanm</code> 来安装模块</h2><p>首先安装<code>cpanm</code>, 在终端输入：</p>
-<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">cpan App::cpanminus<br></code></pre></td></tr></table></figure>
-<p>然后可安装你需要的模块：</p>
-<figure class="hljs highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">cpanm <span class="hljs-keyword">Module</span>::<span class="hljs-keyword">Name</span><br></code></pre></td></tr></table></figure>
-<p>遇到了bug，cpanm 会详细的报告出来bug信息，这点很好，总的来说是gcc 版本太低：</p>
-<p><code>/lib64/libc.so.6: version GLIBC_2.14&#39; not found</code></p>
-<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">$</span><span class="bash"><span class="hljs-built_in">which</span> perl</span><br>/home/dongkaige/.linuxbrew/bin/perl<br><span class="hljs-meta"><br>$</span><span class="bash"><span class="hljs-built_in">which</span> cpanm</span><br>/home/dongkaige/software/miniconda3/envs/BioEnv/bin/cpanm<br><span class="hljs-meta"><br>$</span><span class="bash"><span class="hljs-built_in">which</span> cpan</span><br>/home/dongkaige/.linuxbrew/bin/cpan<br>...<br></code></pre></td></tr></table></figure>
-<p>不知道<code>cpanm</code> 是根据什么变量安装的，安装到了conda 的目录下。</p>
-<p>虽然conda在遇到依赖特定版本的gcc的包时，也会安装到conda中，但很多程序在调用c动态库时，依然从服务器的动态库调用，就会导致版本错误<code>GLIBC_2.14 not found</code>。</p>
-<p>而linuxbrew 则是相对独立的包管理器，在费了很大功夫，在老服务器上安装好 linuxbrew 及高版本的 gcc， glibc之后，之后linuxbrew中，所有软件编译和运行都会调用linuxbrew下的动态库，这样就不会有上面的错误。</p>
-<p>只好用别的方法调用linuxbrew中的Perl进行安装：</p>
-<h2 id="2-cpan"><a href="#2-cpan" class="headerlink" title="2. cpan"></a>2. cpan</h2><figure class="hljs highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">cpan<br><span class="hljs-keyword">install</span> <span class="hljs-keyword">Set</span>::IntervalTree<br></code></pre></td></tr></table></figure>
-<h2 id="3-perl-MCPAN-e-quot-shell-quot"><a href="#3-perl-MCPAN-e-quot-shell-quot" class="headerlink" title="3. perl -MCPAN -e &quot;shell&quot;"></a>3. <code>perl -MCPAN -e &quot;shell&quot;</code></h2><figure class="hljs highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">perl -MCPAN -e <span class="hljs-string">"shell"</span><br><span class="hljs-keyword">install</span> <span class="hljs-keyword">Set</span>::IntervalTree<br></code></pre></td></tr></table></figure>
-<p>第二种方法成功，第三种方法应该也没问题。</p>
-<h2 id="4-测试是否已经安装成功"><a href="#4-测试是否已经安装成功" class="headerlink" title="4. 测试是否已经安装成功"></a>4. 测试是否已经安装成功</h2><figure class="hljs highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">perl -MHTTP::<span class="hljs-built_in">Date</span> -e <span class="hljs-string">"print\"</span><span class="hljs-keyword">module</span> installed\n\<span class="hljs-string">""</span><br></code></pre></td></tr></table></figure>
-<p><code>-M</code>后紧跟着模块名，如果输出<code>module installed</code>的结果，则是安装了的。</p>
-<h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><h4 id="列出已安装模块"><a href="#列出已安装模块" class="headerlink" title="列出已安装模块"></a>列出已安装模块</h4><figure class="hljs highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">perldoc perllocal<br><span class="hljs-comment"># 或</span><br><span class="hljs-keyword">instmodsh </span><span class="hljs-comment"># 推荐这一种</span><br></code></pre></td></tr></table></figure>
-<h4 id="查询perl模块安装路径"><a href="#查询perl模块安装路径" class="headerlink" title="查询perl模块安装路径"></a>查询perl模块安装路径</h4><figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">perldoc -l DBD::mysql<br></code></pre></td></tr></table></figure>
-<h4 id="查询模块版本"><a href="#查询模块版本" class="headerlink" title="查询模块版本"></a>查询模块版本</h4><p>(<code>-M</code>紧跟着跟着模块)<br><figure class="hljs highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">$ perl -MHTTP::Date -e <span class="hljs-symbol">'print</span> HTTP::Date-&gt;VERSION. <span class="hljs-string">"\n"</span>'<br><span class="hljs-number">6.02</span><br></code></pre></td></tr></table></figure></p>
-<h4 id="卸载模块："><a href="#卸载模块：" class="headerlink" title="卸载模块："></a>卸载模块：</h4><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><p><a href="https://blog.csdn.net/u010533843/article/details/54971428" target="_blank" rel="noopener">Linux 检查是否安装perl模块及列出所有已安装的perl模块(安装路径、版本号)</a></p>
-</li>
-<li><p><a href="https://blog.csdn.net/yuehedou/article/details/78406518" target="_blank" rel="noopener">非root用户安装perl模块</a></p>
-</li>
-</ul>
-
+<h2 id="什么是机器学习"><a href="#什么是机器学习" class="headerlink" title="什么是机器学习"></a>什么是机器学习</h2><p>实际上没有统一的定义。</p>
+<h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><h2 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h2>
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/机器学习/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>机器学习</a>
+        
+      </div>
       
     </footer>
   </article>
@@ -203,12 +192,10 @@
   <div class="post-nav">
     <div class="post-nav-next post-nav-item">
       
-      <a href="/2018/07/11/python批量转换exe视频/" rel="next" title="python批量转换exe视频"><i class="fas fa-angle-left"></i><span class="nav-title">python批量转换exe视频</span></a>
+      <a href="/2018/12/13/Django-Apache-wsgi-部署/" rel="next" title="Django+Apache wsgi 部署"><i class="fas fa-angle-left"></i><span class="nav-title">Django+Apache wsgi 部署</span></a>
       
     </div>
     <div class="post-nav-prev post-nav-item">
-      
-      <a href="/2018/07/19/shell-环境变量及set-env-export/" rel="prev" title="shell变量及进程及set,env,export"><span class="nav-title">shell变量及进程及set,env,export</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </div>
@@ -223,8 +210,8 @@
   <div id="disqus_thread" class="disqus_thread"></div>
   <script type="text/javascript">
   var disqus_config = function () {
-    this.page.url = "http://yoursite.com/2018/07/12/Perl-安装模块/";
-    this.page.identifier = "2018/07/12/Perl-安装模块/";
+    this.page.url = "http://yoursite.com/2018/12/16/吴恩达机器学习笔记/";
+    this.page.identifier = "2018/12/16/吴恩达机器学习笔记/";
   };
   (function() {
     var d = document, s = d.createElement("script");
@@ -306,7 +293,7 @@
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
   <div><i class="fas fa-list-ol"></i>文章目录</div>
-  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-使用cpanm-来安装模块"><span class="toc-text">1. 使用cpanm 来安装模块</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-cpan"><span class="toc-text">2. cpan</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#3-perl-MCPAN-e-quot-shell-quot"><span class="toc-text">3. perl -MCPAN -e &quot;shell&quot;</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#4-测试是否已经安装成功"><span class="toc-text">4. 测试是否已经安装成功</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#其他命令"><span class="toc-text">其他命令</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#列出已安装模块"><span class="toc-text">列出已安装模块</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#查询perl模块安装路径"><span class="toc-text">查询perl模块安装路径</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#查询模块版本"><span class="toc-text">查询模块版本</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#卸载模块："><span class="toc-text">卸载模块：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol></div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#初识机器学习"><span class="toc-text">初识机器学习</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#什么是机器学习"><span class="toc-text">什么是机器学习</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#监督学习"><span class="toc-text">监督学习</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#无监督学习"><span class="toc-text">无监督学习</span></a></li></ol></li></ol></div>
 </div>
 
 

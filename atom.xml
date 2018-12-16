@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-13T06:45:28.394Z</updated>
+  <updated>2018-12-16T09:17:50.311Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>吴恩达机器学习笔记</title>
+    <link href="http://yoursite.com/2018/12/16/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2018/12/16/吴恩达机器学习笔记/</id>
+    <published>2018-12-16T09:06:47.000Z</published>
+    <updated>2018-12-16T09:17:50.311Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;初识机器学习&quot;&gt;&lt;a href=&quot;#初识机器学习&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>Django+Apache wsgi 部署</title>
@@ -67,7 +91,7 @@
     <link href="http://yoursite.com/2018/12/09/%E6%97%A0root%E5%AE%89%E8%A3%85UCSC-genome-browser/"/>
     <id>http://yoursite.com/2018/12/09/无root安装UCSC-genome-browser/</id>
     <published>2018-12-09T05:25:32.000Z</published>
-    <updated>2018-12-14T07:23:37.093Z</updated>
+    <updated>2018-12-15T06:50:51.376Z</updated>
     
     <summary type="html">
     
@@ -101,7 +125,7 @@
     <link href="http://yoursite.com/2018/12/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0root%E5%AE%89%E8%A3%85MySQL/"/>
     <id>http://yoursite.com/2018/12/09/服务器无root安装MySQL/</id>
     <published>2018-12-09T04:32:14.000Z</published>
-    <updated>2018-12-09T05:02:38.664Z</updated>
+    <updated>2018-12-14T15:26:22.017Z</updated>
     
     <summary type="html">
     
@@ -353,30 +377,6 @@
     
     
       <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>强化学习实战：从零开始下五子棋</title>
-    <link href="http://yoursite.com/2018/04/19/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%B8%8B%E4%BA%94%E5%AD%90%E6%A3%8B/"/>
-    <id>http://yoursite.com/2018/04/19/强化学习实战：从零开始下五子棋/</id>
-    <published>2018-04-19T01:07:00.000Z</published>
-    <updated>2018-04-19T02:32:41.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
