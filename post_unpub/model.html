@@ -144,7 +144,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>R极客的情人节 | 读书笔记</title>
+    <title>这是文章题目 | 读书笔记</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"  data-spy="scroll" data-target=".list-group">
     
@@ -186,68 +186,30 @@
         <div class="main-container">
           <div class="content">
             
-<div id="post" class="page">
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/26/R极客的情人节/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-       <meta itemprop="name" content="Kaige Dong">
-       <meta itemprop="description" content="">
-       <meta itemprop="image" content="/images/myavatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-       <meta itemprop="name" content="读书笔记">
-      </span>
-    </div>
+<div id="page" class="page">
+  <article class="article post card animate">
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">R极客的情人节</h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2017-09-26T10:58:22+08:00">2017-09-26 10:58:22</time></span>
-        </span>
-        
-        
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="/2017/09/26/R极客的情人节/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2017/09/26/R极客的情人节/" itemprop="commentCount"></span></a></span>
-        </span>
-        
-        
-      </div>
+      <h1 class="post-title" itemprop="name headline">
+        <span>这是文章题目</span>
+      </h1>
     </header>
-    <main class="post-main" itemprop="articleBody">
-      <p><img src="/pic/2017-09/figure_16.png" alt=""></p>
+    <main class="post-main">
+      <blockquote>
+<p>hexo模板</p>
+</blockquote>
+<p><code>&lt;!-- more--&gt;</code>上面的将会显示在预览中。</p>
 <a id="more"></a>
-<figure class="hljs highlight R"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs R">a &lt;- seq(<span class="hljs-number">0</span>,<span class="hljs-number">6</span>,by=<span class="hljs-number">0.05</span>)<br>x&lt;- <span class="hljs-number">10</span>* (sin(a)^<span class="hljs-number">3</span>)<br>y &lt;- <span class="hljs-number">10</span> * cos(a) - <span class="hljs-number">3</span>*cos(<span class="hljs-number">2</span>*a) - <span class="hljs-number">2</span>*cos(<span class="hljs-number">3</span>*a)<br>plot(x,y)<br><br><span class="hljs-comment"># suggested update from @jokereumers on Twitter:</span><br>plot(x,y, type = <span class="hljs-string">'l'</span>, col = <span class="hljs-string">'red'</span>, lwd = <span class="hljs-number">10</span>, axes = <span class="hljs-literal">FALSE</span>)<br><br><span class="hljs-comment"># more updates from @BioMickWatson</span><br>plot(x,y, type = <span class="hljs-string">'l'</span>, col = <span class="hljs-string">'red'</span>, lwd = <span class="hljs-number">10</span>, axes = <span class="hljs-literal">FALSE</span>)<br>lines(-<span class="hljs-number">9</span>:-<span class="hljs-number">1</span>, -<span class="hljs-number">9</span>:-<span class="hljs-number">1</span>, col=<span class="hljs-string">"pink"</span>, lwd=<span class="hljs-number">10</span>)<br>lines(<span class="hljs-number">8</span>:<span class="hljs-number">10</span>, <span class="hljs-number">8</span>:<span class="hljs-number">10</span>, col=<span class="hljs-string">"pink"</span>, lwd=<span class="hljs-number">10</span>)<br>lines(rep(-<span class="hljs-number">9</span>,<span class="hljs-number">4</span>), -<span class="hljs-number">9</span>:-<span class="hljs-number">6</span>, col=<span class="hljs-string">"pink"</span>, lwd=<span class="hljs-number">10</span>)<br>lines(-<span class="hljs-number">9</span>:-<span class="hljs-number">6</span>, rep(-<span class="hljs-number">9</span>,<span class="hljs-number">4</span>), col=<span class="hljs-string">"pink"</span>, lwd=<span class="hljs-number">10</span>)<br></code></pre></td></tr></table></figure>
-<p>You’re welcome ;)</p>
-<p>转自 <a href="http://www.ark-genomics.org/events-online-training/r-geeks-valentines-day" target="_blank" rel="noopener">here</a></p>
+<p><code>&lt;!-- more--&gt;</code>下面的将会显示在正文里。</p>
+<blockquote>
+<h2 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h2><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">&gt;</span><span class="bash">  categories:</span><br><span class="hljs-meta">&gt;</span><span class="bash">  - Diary</span><br><span class="hljs-meta">&gt;</span><span class="bash">  - Life</span><br><span class="hljs-meta">&gt;</span><span class="bash"></span><br></code></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>会使分类<code>Life</code>成为<code>Diary</code>的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p>
+</blockquote>
 
     </main>
-    <footer class="post-footer">
-      
-    </footer>
+    <footer class="post-footer"></footer>
   </article>
-  
-  
-  <nav class="page-nav">
-    <div class="page-nav-next page-nav-item">
-      
-      <a href="/2017/09/26/Counting-known-microRNAs-in-five-easy-steps/" rel="next" title="Counting known microRNAs in five easy steps"><i class="fas fa-angle-left"></i><span class="nav-title">Counting known microRNAs in five easy steps</span></a>
-      
-    </div>
-    <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2017/09/26/猪的exon有多大-R版本/" rel="prev" title="猪的exon有多大(R版本)"><span class="nav-title">猪的exon有多大(R版本)</span><i class="fas fa-angle-right"></i></a>
-      
-    </div>
-  </nav>
-  
   
   
 
@@ -258,8 +220,8 @@
   <div id="disqus_thread" class="disqus_thread"></div>
   <script type="text/javascript">
   var disqus_config = function () {
-    this.page.url = "http://yoursite.com/2017/09/26/R极客的情人节/";
-    this.page.identifier = "2017/09/26/R极客的情人节/";
+    this.page.url = "http://yoursite.com/post_unpub/model.html";
+    this.page.identifier = "post_unpub/model.html";
   };
   (function() {
     var d = document, s = d.createElement("script");
@@ -338,6 +300,12 @@
     
     
     
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#注意点："><span class="toc-text">注意点：</span></a></li></ol></div>
+    </div>
     
     
     
