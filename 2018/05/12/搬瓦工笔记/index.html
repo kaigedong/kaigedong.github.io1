@@ -144,7 +144,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>搬瓦工笔记 | 读书笔记</title>
+    <title>搬瓦工笔记1：ssr | 读书笔记</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"  data-spy="scroll" data-target=".list-group">
     
@@ -201,7 +201,7 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">搬瓦工笔记</h1>
+      <h1 class="post-title" itemprop="name headline">搬瓦工笔记1：ssr</h1>
       <div class="post-meta">
         
         <span class="post-date">
@@ -235,7 +235,7 @@
 </li>
 <li><p>搭建shadowsocks</p>
 <blockquote>
-<p><strong><em> pip install –upgrade pip #pip安装完之后，不要运行这个命令。</em></strong></p>
+<p><strong> pip install –upgrade pip #pip安装完之后，不要运行这个命令。</strong></p>
 </blockquote>
 <figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs undefined">❌ 错误经过：<br><span class="hljs-meta">&gt;</span><span class="bash">apt-get update</span><br><span class="hljs-meta">&gt;</span><span class="bash">apt install python-pip <span class="hljs-comment"># v9.0.1</span></span><br><span class="hljs-meta">&gt;</span><span class="bash">pip install --upgrade pip <span class="hljs-comment"># 10.0.1</span></span><br><span class="hljs-meta">&gt;</span><span class="bash">pip --version</span><br>Traceback (most recent call last):<br>  File "/usr/bin/pip", line 9, in &lt;module&gt;<br>    from pip import main<br>ImportError: cannot import name main<br><span class="hljs-meta"><br>&gt;</span><span class="bash">apt uninstall python-pip</span><br><span class="hljs-meta">&gt;</span><span class="bash">apt install python-pip <span class="hljs-comment"># 又是9.0.1</span></span><br><span class="hljs-meta">&gt;</span><span class="bash">pip --version 错误信息同上。</span><br>🏡 在之前，我只好重新安装了虚拟机，重新安装上面的pip 9.0.1； 这次我只是点了reset；结果pip竟然变成了新版10.0.1，pip的位置似乎变了。不管他<br>🏡 reset 之后：<br><span class="hljs-meta">&gt;</span><span class="bash"><span class="hljs-built_in">which</span> pip</span><br>/usr/local/bin/pip<br><span class="hljs-meta">&gt;</span><span class="bash">pip --version</span><br>pip 10.0.1 from /usr/local/lib/python2.7/dist-packages/pip (python 2.7）<br><span class="hljs-meta">&gt;</span><span class="bash">pip install setuptools</span><br><span class="hljs-meta">&gt;</span><span class="bash">pip install shadowsocks</span><br><span class="hljs-meta">&gt;</span><span class="bash">apt install npm <span class="hljs-comment">#准备安装shadowsocks-manager，进行多用户管理，一步到位。</span></span><br><span class="hljs-meta">&gt;</span><span class="bash">npm i -g shadowsocks-manager</span><br><span class="hljs-meta">&gt;</span><span class="bash">apt-get install shadowsocks-libev <span class="hljs-comment">#安装这个来启动shadowsocks-manager；还可以安装shadowsocks-python</span></span><br><span class="hljs-meta"><br>#</span><span class="bash"> 启动服务：</span><br><span class="hljs-meta">&gt;</span><span class="bash">ss-manager -m aes-256-cfb -u --manager-address 127.0.0.1:6001</span><br><span class="hljs-meta">#</span><span class="bash"> 或者：</span><br><span class="hljs-meta">&gt;</span><span class="bash">ssserver -m aes-256-cfb -p 12345 -k abcedf --manager-address 127.0.0.1:6001 <span class="hljs-comment"># 出错</span></span><br><span class="hljs-meta">#</span><span class="bash"> 解决错误：看下面的参考链接: Kali 2.0 update...</span><br></code></pre></td></tr></table></figure>
 </li>
@@ -289,7 +289,11 @@
       
       <div class="post-tags">
         
-        <a class="post-tag button" href="/tags/搬瓦工-VPN-VPS/" rel="tag"><i class="fas fa-tags"></i>搬瓦工, VPN, VPS</a>
+        <a class="post-tag button" href="/tags/搬瓦工/" rel="tag"><i class="fas fa-tags"></i>搬瓦工</a>
+        
+        <a class="post-tag button" href="/tags/VPN/" rel="tag"><i class="fas fa-tags"></i>VPN</a>
+        
+        <a class="post-tag button" href="/tags/VPS/" rel="tag"><i class="fas fa-tags"></i>VPS</a>
         
       </div>
       
@@ -380,7 +384,7 @@
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">13</a></div>
+      <div><a href="/tags/">17</a></div>
     </div>
     
     

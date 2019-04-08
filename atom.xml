@@ -189,20 +189,26 @@
   </entry>
   
   <entry>
-    <title>搬瓦工v2ray</title>
+    <title>搬瓦工2: v2ray</title>
     <link href="http://yoursite.com/2018/12/06/%E6%90%AC%E7%93%A6%E5%B7%A5v2ray/"/>
     <id>http://yoursite.com/2018/12/06/搬瓦工v2ray/</id>
     <published>2018-12-06T01:26:42.000Z</published>
-    <updated>2018-12-09T14:54:50.944Z</updated>
+    <updated>2019-04-08T09:13:35.941Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;搬瓦工搭建v2ray 一键搭建wireguard&lt;/p&gt;
+      &lt;p&gt;搬瓦工搭建v2ray 一键搭建wireguard (centos7)&lt;/p&gt;
     
     </summary>
     
     
-      <category term="搬瓦工 v2ray shadowsocks wireguard" scheme="http://yoursite.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5-v2ray-shadowsocks-wireguard/"/>
+      <category term="搬瓦工" scheme="http://yoursite.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
+    
+      <category term="v2ray" scheme="http://yoursite.com/tags/v2ray/"/>
+    
+      <category term="shadowsocks" scheme="http://yoursite.com/tags/shadowsocks/"/>
+    
+      <category term="wireguard" scheme="http://yoursite.com/tags/wireguard/"/>
     
   </entry>
   
