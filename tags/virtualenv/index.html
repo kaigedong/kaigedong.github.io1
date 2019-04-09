@@ -144,7 +144,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>陈巍学基因A07-A09 | 读书笔记</title>
+    <title>标签: virtualenv | 读书笔记</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"  data-spy="scroll" data-target=".list-group">
     
@@ -186,149 +186,22 @@
         <div class="main-container">
           <div class="content">
             
-<div id="post" class="page">
+<div id="tag" class="tag page">
+  <h1 class="page-title">virtualenv</h1>
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/陈巍学基因A07-A09/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-       <meta itemprop="name" content="Kaige Dong">
-       <meta itemprop="description" content="">
-       <meta itemprop="image" content="/images/myavatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-       <meta itemprop="name" content="读书笔记">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">陈巍学基因A07-A09</h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-13T17:44:51+08:00">2018-04-13 17:44:51</time></span>
-        </span>
-        
-        
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="/2018/04/13/陈巍学基因A07-A09/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/04/13/陈巍学基因A07-A09/" itemprop="commentCount"></span></a></span>
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      <ul>
-<li>应用Boyer-Moore的规则</li>
-<li>把参考基因组做成索引</li>
-</ul>
-<a id="more"></a>
-<h1 id="陈巍学基因A07-A09"><a href="#陈巍学基因A07-A09" class="headerlink" title="陈巍学基因A07-A09"></a>陈巍学基因A07-A09</h1><h2 id="A07：应用Boyer-Moore-二规则"><a href="#A07：应用Boyer-Moore-二规则" class="headerlink" title="A07：应用Boyer-Moore 二规则"></a>A07：应用Boyer-Moore 二规则</h2><p>我们需要联合使用<code>坏字规则</code>和<code>好后缀规则</code>。只要碰到错配，我们就要同时使用这2个规则。两个规则都会告诉我们需要跳过的次数，我们只要选择最大的进行跳过就行了。</p>
-<p><img src="/pic/2017-03/2017-03-12-1.jpg" alt=""></p>
-<p>实际在实施Boyer-Moore算法时，要预先建一个查询表，这样每当我们要用任何一个规则时，就到这个表里去查找可以跳多少步。做这个表格只需要模式P而不需要文本T。好后缀，坏字都需要创建表格。</p>
-<p><img src="/pic/2017-03/2017-03-12-2.jpg" alt=""></p>
-<h2 id="A08："><a href="#A08：" class="headerlink" title="A08："></a>A08：</h2><p><img src="/pic/2017-03/2017-03-12-3.jpg" alt=""></p>
-<p>预处理可能会花费较多的时间，但均摊到每次比对，消耗就比较少了。</p>
-<p>同样的，我们可以<code>预处理T</code>，解决重复比对的问题。</p>
-<p>把文本<code>T</code>进行预处理版本的算法，叫做<code>离线算法(offline algorithm)</code>，而不处理文本的算法，被称为<code>online</code>。在线算法还是离线算法，与我们是否预处理P无关。区别在于，是否预处理文本T</p>
-<p><img src="/pic/2017-03/2017-03-12-4.jpg" alt=""></p>
-<ul>
-<li>naive算法是在线算法，还是离线算法？在线。naive算法完全不做任何预处理。</li>
-<li>Boyer-Moore算法是在线还是离线？在线。只对P进行了预处理。</li>
-<li>Web search engine？离线算法。</li>
-<li>Read alignment 基因序列比对问题？离线算法</li>
-</ul>
-<h2 id="A09：把参考基因组做成索引"><a href="#A09：把参考基因组做成索引" class="headerlink" title="A09：把参考基因组做成索引"></a>A09：把参考基因组做成索引</h2><p>把参考基因组看成是一本书，我们可以给书加上索引。当想查找某个单词，直接看索引就行了。是根据字母进行排序的。</p>
-<p>另一个例子：到杂货店买牛奶，找到奶制品，再找牛奶。是按照分类进行排序的。</p>
-<ul>
-<li>做一个长度为5的子字符串的偏移值串的索引。在一张表中，放下所有<code>K-mer</code>的偏移量。</li>
-</ul>
-<p><img src="/pic/2017-03/2017-03-12-5.jpg" alt=""></p>
-<p>关于第二个3，是按照字典顺序，将第三个索引插到了0和1之间。</p>
-<p>关于第一行的4，是添加一个新的值。</p>
-<p>做好索引：</p>
-<p><img src="/pic/2017-03/2017-03-12-6.jpg" alt=""></p>
-<p>我们用<code>K-mer:substring of length K</code>用<code>K-mer</code>来指代长度为<code>K</code>的子字符串。对于长度为5的子字符串，我们说<code>5-mer</code>。</p>
-<ul>
-<li>如何查询这个索引？query the index</li>
-</ul>
-<p><img src="/pic/2017-03/2017-03-12-7.jpg" alt=""></p>
-<blockquote>
-<p>我们找到了3</p>
-</blockquote>
-<p><img src="/pic/2017-03/2017-03-12-8.jpg" alt=""></p>
-<blockquote>
-<p>下一步验证第六个碱基是否与T相同。相同，我们可以得出结论，P在T偏移3个碱基的位置。</p>
-</blockquote>
-<ul>
-<li>同样的，我们也可以从右边开始进行查询：</li>
-</ul>
-<p><img src="/pic/2017-03/2017-03-12-9.jpg" alt=""></p>
-<blockquote>
-<p>当查询到偏移为0的时候，由于0左边没有碱基，不能与P的第一位match，所以查询失败。</p>
-<p>在查询偏移值为4：match！</p>
-</blockquote>
-<p><img src="/pic/2017-03/2017-03-12-10.jpg" alt=""></p>
-<blockquote>
-<p>说明在使用该模式时，用哪个<code>5-mer</code>并不重要，它们中的任何一个都会引导出正确的P和T匹配的偏移值。</p>
-</blockquote>
-<ul>
-<li>一个修改的例子：修改后P不再match T。</li>
-</ul>
-<p><img src="/pic/2017-03/2017-03-12-11.jpg" alt=""></p>
-<p><img src="/pic/2017-03/2017-03-12-12.jpg" alt=""></p>
-<p>定义index 相匹配为<code>hit</code>，<code>hit</code>说明有可能match ，也有可能不match。</p>
-
-    </main>
-    <footer class="post-footer">
+    <header id="post-header" class="post-header">
+      <h1 class="post-title-simple" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/12/25/python虚拟环境/" itemprop="url">python虚拟环境</a>
+      </h1>
       
-    </footer>
+      <span class="post-date">
+        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-25T09:56:46+08:00">12-25</time>
+      </span>
+      
+    </header>
   </article>
   
-  
-  <nav class="page-nav">
-    <div class="page-nav-next page-nav-item">
-      
-      <a href="/2018/04/13/陈巍学基因A04-A06/" rel="next" title="陈巍学基因A04-A06"><i class="fas fa-angle-left"></i><span class="nav-title">陈巍学基因A04-A06</span></a>
-      
-    </div>
-    <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2018/04/13/tmus指南/" rel="prev" title="tmus指南"><span class="nav-title">tmus指南</span><i class="fas fa-angle-right"></i></a>
-      
-    </div>
-  </nav>
-  
-  
-  
-
-<div class="comments" id="comments">
-  
-  <script defer id="dsq-count-scr" src="//kaigedong.disqus.com/count.js"></script>
-  
-  <div id="disqus_thread" class="disqus_thread"></div>
-  <script type="text/javascript">
-  var disqus_config = function () {
-    this.page.url = "http://yoursite.com/2018/04/13/陈巍学基因A07-A09/";
-    this.page.identifier = "2018/04/13/陈巍学基因A07-A09/";
-  };
-  (function() {
-    var d = document, s = d.createElement("script");
-    s.src = "https://kaigedong.disqus.com/embed.js";
-    s.setAttribute("data-timestamp", +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-  </script>
-  
-  
-</div>
-
-
-
   
 </div>
 
@@ -389,17 +262,6 @@
 
 
   <div class="sidebar-sticky">
-    
-    
-    
-    
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#陈巍学基因A07-A09"><span class="toc-text">陈巍学基因A07-A09</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#A07：应用Boyer-Moore-二规则"><span class="toc-text">A07：应用Boyer-Moore 二规则</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#A08："><span class="toc-text">A08：</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#A09：把参考基因组做成索引"><span class="toc-text">A09：把参考基因组做成索引</span></a></li></ol></li></ol></div>
-    </div>
-    
     
     
     <hr>

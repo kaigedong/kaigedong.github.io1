@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-09T03:52:55.905Z</updated>
+  <updated>2019-04-09T03:56:35.733Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2018/12/25/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
     <id>http://yoursite.com/2018/12/25/python虚拟环境/</id>
     <published>2018-12-25T01:56:46.000Z</published>
-    <updated>2019-04-09T03:52:55.905Z</updated>
+    <updated>2019-04-09T03:56:35.733Z</updated>
     
     <summary type="html">
     
@@ -29,6 +29,12 @@
     
     </summary>
     
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="pyenv" scheme="http://yoursite.com/tags/pyenv/"/>
+    
+      <category term="virtualenv" scheme="http://yoursite.com/tags/virtualenv/"/>
     
   </entry>
   
