@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-09T08:03:43.285Z</updated>
+  <updated>2019-04-09T09:12:32.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>饥荒mod1</title>
+    <link href="http://yoursite.com/2019/04/09/%E9%A5%A5%E8%8D%92mod1/"/>
+    <id>http://yoursite.com/2019/04/09/饥荒mod1/</id>
+    <published>2019-04-09T09:07:10.682Z</published>
+    <updated>2019-04-09T09:12:32.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;如何制作饥荒mod教程&lt;br&gt;快速开始&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;如何安装并使用mod？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;从steam 创意工坊安装并启用
+        
+      
+    
+    </summary>
+    
+      <category term="游戏" scheme="http://yoursite.com/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="饥荒" scheme="http://yoursite.com/categories/%E6%B8%B8%E6%88%8F/%E9%A5%A5%E8%8D%92/"/>
+    
+    
+      <category term="饥荒" scheme="http://yoursite.com/tags/%E9%A5%A5%E8%8D%92/"/>
+    
+  </entry>
   
   <entry>
     <title>Python排序算法</title>
@@ -349,24 +381,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Django项目实战2: xadmin</title>
-    <link href="http://yoursite.com/2018/05/14/Django%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%982-xadmin/"/>
-    <id>http://yoursite.com/2018/05/14/Django项目实战2-xadmin/</id>
-    <published>2018-05-14T13:19:26.000Z</published>
-    <updated>2018-05-15T05:56:09.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Xadmin 实战&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Django" scheme="http://yoursite.com/tags/Django/"/>
     
   </entry>
   

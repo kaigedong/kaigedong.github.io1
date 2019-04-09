@@ -144,7 +144,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>同步服务器文件夹 | 读书笔记</title>
+    <title>饥荒mod1 | 读书笔记</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"  data-spy="scroll" data-target=".list-group">
     
@@ -190,7 +190,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/22/同步服务器文件夹/">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/饥荒mod1/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="Kaige Dong">
        <meta itemprop="description" content="">
@@ -201,13 +201,21 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">同步服务器文件夹</h1>
+      <h1 class="post-title" itemprop="name headline">饥荒mod1</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2017-09-22T18:37:01+08:00">2017-09-22 18:37:01</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-09T17:07:10+08:00">2019-04-09 17:07:10</time></span>
         </span>
         
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/游戏/" itemprop="url" rel="index"><span itemprop="name">游戏</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/游戏/饥荒/" itemprop="url" rel="index"><span itemprop="name">饥荒</span></a></span>
+        </span>
         
         
         
@@ -215,25 +223,50 @@
         <span class="post-meta-divider divider">|</span>
         
         <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="/2017/09/22/同步服务器文件夹/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2017/09/22/同步服务器文件夹/" itemprop="commentCount"></span></a></span>
+          <i class="far fa-comments"></i><span><a href="/2019/04/09/饥荒mod1/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2019/04/09/饥荒mod1/" itemprop="commentCount"></span></a></span>
         </span>
         
         
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>一个简单的脚本，将本地文件夹和服务器文件夹内容互相同步。</p>
-<a id="more"></a>
-<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-comment">#!/usr/bin/env python3</span><br><span class="hljs-comment"># -*- coding:utf-8 -*- </span><br><span class="hljs-keyword">import</span> os,paramiko,time<br> <br><br><span class="hljs-string">'''<br>需要安装paramiko! Python3下已测试通过。<br>部分代码参考：http://www.cnblogs.com/kex1n/p/6021445.html<br>已知问题：不能文件夹内的文件夹。<br>'''</span><br><br><span class="hljs-comment">###############################</span><br><span class="hljs-comment">#####      参数设置      ######</span><br><span class="hljs-comment">###############################</span><br>synPath = <span class="hljs-string">'/home/***/Syn'</span> <span class="hljs-comment"># 远程文件夹</span><br>localSynPath = <span class="hljs-string">'/home/***/Downloads/Syn'</span> <span class="hljs-comment"># 本地文件夹</span><br>sleepTime = <span class="hljs-number">300</span> <span class="hljs-comment"># 设置同步时间间隔(秒)</span><br>ip = <span class="hljs-string">'10.10.***.***'</span> <span class="hljs-comment">#设置服务器IP地址</span><br>usrName = <span class="hljs-string">''</span><br>passwd = <span class="hljs-string">''</span> <span class="hljs-comment"># 服务器账号密码</span><br><span class="hljs-comment">###############################</span><br><br>ssh = paramiko.SSHClient()<br>ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())<br>ssh.connect(ip,username=usrName,password=passwd,timeout=<span class="hljs-number">300</span>)<br><br><br>sftp = paramiko.SFTPClient.from_transport(ssh.get_transport())<br>sftp = ssh.open_sftp()<br><br><span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:<br>    fileList = set(sftp.listdir(synPath)) <span class="hljs-comment"># 服务器同步文件夹中的内容</span><br>    localFileList = set(os.listdir(localSynPath))<br><br>    <span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> fileList:  <span class="hljs-comment"># 将远程文件下载到本地</span><br>        <span class="hljs-keyword">if</span> file <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> localFileList:<br>            remotName = synPath +<span class="hljs-string">'/'</span>+ file<br>            localName = localSynPath +<span class="hljs-string">'/'</span>+ file<br>            <span class="hljs-keyword">try</span>:<br>                sftp.get(remotName,localName)<br>            <span class="hljs-keyword">except</span>:<br>                print(<span class="hljs-string">'err:下载到本地出错！'</span>)<br>                next<br><br><br>    <span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> localFileList: <span class="hljs-comment"># 将本地文件上传到服务器</span><br>        <span class="hljs-keyword">if</span> file <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> fileList:<br>            remotName = synPath +<span class="hljs-string">'/'</span>+ file<br>            localName = localSynPath +<span class="hljs-string">'/'</span>+ file<br>            <span class="hljs-keyword">try</span>:<br>                sftp.put(localName,remotName)<br>            <span class="hljs-keyword">except</span>:<br>                print(<span class="hljs-string">'err:上传到服务器出错！'</span>)<br>                next<br>    <br>    time.sleep(sleepTime)<br></code></pre></td></tr></table></figure>
-<h3 id="使用方法："><a href="#使用方法：" class="headerlink" title="使用方法："></a>使用方法：</h3><ul>
-<li>在本地运行该脚本。<blockquote>
-<p>建议加入环境变量：alias syn=’nohup python3 scpFile.py 1&gt;.log 2&gt;&amp;1 &amp;’</p>
-</blockquote>
+      <p>如何制作饥荒mod教程<br>快速开始</p>
+<ol>
+<li><p>如何安装并使用mod？</p>
+<ul>
+<li><p>从steam 创意工坊安装并启用 略。</p>
+</li>
+<li><p>从Klei下载并安装：</p>
+<ul>
+<li><p>首先转到下载页面：<a href="https://forums.kleientertainment.com/files/，" target="_blank" rel="noopener">https://forums.kleientertainment.com/files/，</a> 下载喜欢的mod</p>
+</li>
+<li><p>然后双击打开下载的压缩包，并将文件夹拷贝到mod文件夹：</p>
+<figure class="hljs highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">Steam/Windows: C:<span class="hljs-tag">\<span class="hljs-name">Program</span></span> Files (x86)<span class="hljs-tag">\<span class="hljs-name">Steam</span></span><span class="hljs-tag">\<span class="hljs-name">SteamApps</span></span><span class="hljs-tag">\<span class="hljs-name">common</span></span><span class="hljs-tag">\<span class="hljs-name">dont</span></span>_starve<span class="hljs-tag">\<span class="hljs-name">mods</span></span><span class="hljs-tag">\<span class="hljs-name"><br></span></span>Standalone/Windows: C:<span class="hljs-tag">\<span class="hljs-name">Program</span></span> Files<span class="hljs-tag">\<span class="hljs-name">dontstarve</span></span><span class="hljs-tag">\<span class="hljs-name">mods</span></span><br>Standalone/Mac: /Applications/Don't Starve/Don't Starve.app/Contents/mods/<br>Steam/Linux: /home/username/.local/share/Steam/SteamApps/common/dont_starve/mods<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>然后打开饥荒，并在饥荒中启用该mod</p>
 </li>
 </ul>
+</li>
+</ul>
+</li>
+<li><p>开始之前</p>
+<p>  需要对困难有一定的认知。</p>
+<p>  要学一点lua语言。</p>
+</li>
+<li><p>Mod API更新(API V6, 2014)</p>
+</li>
+</ol>
+<p>点击收起功能</p>
+<p>点击时的区域标题</p>
 
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/饥荒/" rel="tag"><i class="fas fa-tags"></i>饥荒</a>
+        
+      </div>
       
     </footer>
   </article>
@@ -242,12 +275,10 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2017/09/22/matlab04图像的增强处理/" rel="next" title="matlab04图像的增强处理"><i class="fas fa-angle-left"></i><span class="nav-title">matlab04图像的增强处理</span></a>
+      <a href="/2019/04/09/Python排序算法/" rel="next" title="Python排序算法"><i class="fas fa-angle-left"></i><span class="nav-title">Python排序算法</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2017/09/22/pytorch01/" rel="prev" title="pytorch01"><span class="nav-title">pytorch01</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -262,8 +293,8 @@
   <div id="disqus_thread" class="disqus_thread"></div>
   <script type="text/javascript">
   var disqus_config = function () {
-    this.page.url = "http://yoursite.com/2017/09/22/同步服务器文件夹/";
-    this.page.identifier = "2017/09/22/同步服务器文件夹/";
+    this.page.url = "http://yoursite.com/2019/04/09/饥荒mod1/";
+    this.page.identifier = "2019/04/09/饥荒mod1/";
   };
   (function() {
     var d = document, s = d.createElement("script");
@@ -342,12 +373,6 @@
     
     
     
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#使用方法："><span class="toc-text">使用方法：</span></a></li></ol></div>
-    </div>
     
     
     
