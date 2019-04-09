@@ -3,16 +3,14 @@
   
     
     <entry>
-      <title>这是文章题目</title>
+      <title>软件定义网络目录</title>
       <link href="/2019/04/09/%E8%BD%AF%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C(SND)%E7%9B%AE%E5%BD%95/"/>
       <url>/2019/04/09/%E8%BD%AF%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C(SND)%E7%9B%AE%E5%BD%95/</url>
       <content type="html"><![CDATA[<p>软件定义网络技术 Software Defined Networking，SDN 课程笔记</p><a id="more"></a><ol><li><p>概述</p><p><a href="">软件定义网络技术的产生，发展与标准化</a></p></li><li><p>基本原理</p><p>2.1 <a href="">软件定义网络的基本架构—ONF的三层架构</a><br>2.2 <a href="">软件定义网络的核心思想</a><br>2.3 <a href="">实验一：Mininet应用实践</a></p></li><li><p>数据平面</p><p>3.1 <a href="">SDN数据平面</a><br>3.2 <a href="">Openflow概述</a><br>3.3 <a href="">OpenFlow流表</a><br>3.4 <a href="">SDN交换机</a><br>3.5 <a href="">实验二：Open vSwitch 应用实践</a></p></li><li><p>南向结构协议</p><p>4.1 <a href="">南向结构协议概述</a><br>4.2 <a href="">OpenFlow协议</a><br>4.3 <a href="">OF-CONFIG协议</a><br>4.4 <a href="">NetConf协议</a><br>4.5 <a href="">实验三：OpenFlow协议分析</a></p></li><li><p>控制平面</p><p>5.1. <a href="">SDN控制平面</a><br>5.2. <a href="">开源SDN控制器</a></p></li><li><p>北向接口</p><p>6.1 <a href="">北向结构概述</a><br>6.2 <a href="">什么是REST API</a><br>6.3 <a href="">REST API设计规范</a></p></li><li><p>NX-OS与DNA-C API开发技术</p><p>7.1 <a href="">DNA及SDA解决方案</a><br>7.2 <a href="">Nexus 9000v</a><br>7.3 <a href="">NX-OS API</a><br>7.4 <a href="">DNA-C RESTful API</a></p></li></ol><p>课程链接： <a href="https://www.icourse163.org/course/WZU-1205809832" target="_blank" rel="noopener">中国慕课大学</a></p>]]></content>
       
       <categories>
           
-          <category> Diary </category>
-          
-          <category> Life </category>
+          <category> 网络技术 </category>
           
       </categories>
       
@@ -20,8 +18,6 @@
         <tags>
             
             <tag> SDN </tag>
-            
-            <tag> Games </tag>
             
         </tags>
       
@@ -31,7 +27,7 @@
       <title>python虚拟环境</title>
       <link href="/2018/12/25/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
       <url>/2018/12/25/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</url>
-      <content type="html"><![CDATA[<p>virtualenv 和 pyenv的使用</p><a id="more"></a><h2 id="第一部分：virtualenv的使用"><a href="#第一部分：virtualenv的使用" class="headerlink" title="第一部分：virtualenv的使用"></a>第一部分：virtualenv的使用</h2><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">#</span><span class="bash"> 首先用pip3安装virtualenv</span><br>pip3 install virtualenv<br><span class="hljs-meta"><br>#</span><span class="bash"> 创建独立的python运行环境：</span><br>virtualenv --no-site-packages venv<br><span class="hljs-meta"><br>#</span><span class="bash"> --always-copy 默认行为是符号链接需要的文件， 可以强制复制，而非拷贝。</span><br><span class="hljs-meta">#</span><span class="bash"> -p PYTHON_EXE 指定python解析器</span><br><span class="hljs-meta"><br><br>#</span><span class="bash"> 激活</span><br>source venv/bin/activate<br><span class="hljs-meta"><br>#</span><span class="bash"> 退出</span><br>deactivate<br></code></pre></td></tr></table></figure><figure class="hljs highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-selector-tag">pip</span> <span class="hljs-selector-tag">freeze</span> &gt; <span class="hljs-selector-tag">requirements</span><span class="hljs-selector-class">.txt</span><br><span class="hljs-selector-tag">pip</span> <span class="hljs-selector-tag">install</span> <span class="hljs-selector-tag">-r</span> <span class="hljs-selector-tag">requirements</span><span class="hljs-selector-class">.txt</span><br></code></pre></td></tr></table></figure><h2 id="第二部分：pyenv的使用"><a href="#第二部分：pyenv的使用" class="headerlink" title="第二部分：pyenv的使用"></a>第二部分：pyenv的使用</h2>]]></content>
+      <content type="html"><![CDATA[<p>virtualenv 和 pyenv的使用</p><a id="more"></a><h2 id="第一部分：virtualenv的使用"><a href="#第一部分：virtualenv的使用" class="headerlink" title="第一部分：virtualenv的使用"></a>第一部分：virtualenv的使用</h2><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">#</span><span class="bash"> 首先用pip3安装virtualenv</span><br>pip3 install virtualenv<br><span class="hljs-meta"><br>#</span><span class="bash"> 创建独立的python运行环境：</span><br>virtualenv --no-site-packages venv<br><span class="hljs-meta"><br>#</span><span class="bash"> 其他参数：</span><br><span class="hljs-meta">#</span><span class="bash"> --always-copy 默认行为是符号链接需要的文件， 可以强制复制，而非拷贝。</span><br><span class="hljs-meta">#</span><span class="bash"> -p PYTHON_EXE 指定python解析器</span><br><span class="hljs-meta"><br><br>#</span><span class="bash"> 激活</span><br>source venv/bin/activate<br><span class="hljs-meta"><br>#</span><span class="bash"> 退出</span><br>deactivate<br></code></pre></td></tr></table></figure><figure class="hljs highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-comment"># python环境的备份</span><br>pip freeze &gt; requirements.txt<br>pip <span class="hljs-keyword">install</span> -r requirements.txt<br></code></pre></td></tr></table></figure><h2 id="第二部分：pyenv的使用"><a href="#第二部分：pyenv的使用" class="headerlink" title="第二部分：pyenv的使用"></a>第二部分：pyenv的使用</h2><h3 id="pyenv的工作原理"><a href="#pyenv的工作原理" class="headerlink" title="pyenv的工作原理"></a>pyenv的工作原理</h3><p>当我们使用命令比如<code>pip</code> 或者<code>python</code>时，Linux通过<code>PATH</code>环境变量来查找这个可执行程序。比如<code>PATH</code> 是<code>/usr/local/bin:/usr/bin:/bin</code>，则Linux从左到右查找是否存在<code>python</code>命令，在第一个文件夹<code>/usr/local/bin</code>下找到了<code>python</code>，就不再继续查找了。</p><p><strong>pyenv的工作原理</strong>就是基于<code>PATH</code>变量。</p><p><code>pyenv</code>在<code>PATH</code>前面插入一个目录，变成了<code>$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin</code>。</p><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><br><br></code></pre></td></tr></table></figure>]]></content>
       
       
     </entry>
@@ -722,13 +718,6 @@
   
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
       <title>about</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
@@ -736,10 +725,17 @@
     </entry>
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>这是文章题目</title>
+      <link href="/post_unpub/model.html"/>
+      <url>/post_unpub/model.html</url>
+      <content type="html"><![CDATA[<blockquote><p>hexo模板</p></blockquote><p><code>&lt;!-- more--&gt;</code>上面的将会显示在预览中。</p><a id="more"></a><p><code>&lt;!-- more--&gt;</code>下面的将会显示在正文里。</p><blockquote><h2 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h2><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">&gt;</span><span class="bash">  categories:</span><br><span class="hljs-meta">&gt;</span><span class="bash">  - Diary</span><br><span class="hljs-meta">&gt;</span><span class="bash">  - Life</span><br><span class="hljs-meta">&gt;</span><span class="bash"></span><br></code></pre></td></tr></table></figure></blockquote><blockquote><p>会使分类<code>Life</code>成为<code>Diary</code>的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p></blockquote>]]></content>
     </entry>
     
     <entry>
@@ -750,10 +746,10 @@
     </entry>
     
     <entry>
-      <title>这是文章题目</title>
-      <link href="/post_unpub/model.html"/>
-      <url>/post_unpub/model.html</url>
-      <content type="html"><![CDATA[<blockquote><p>hexo模板</p></blockquote><p><code>&lt;!-- more--&gt;</code>上面的将会显示在预览中。</p><a id="more"></a><p><code>&lt;!-- more--&gt;</code>下面的将会显示在正文里。</p><blockquote><h2 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h2><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">&gt;</span><span class="bash">  categories:</span><br><span class="hljs-meta">&gt;</span><span class="bash">  - Diary</span><br><span class="hljs-meta">&gt;</span><span class="bash">  - Life</span><br><span class="hljs-meta">&gt;</span><span class="bash"></span><br></code></pre></td></tr></table></figure></blockquote><blockquote><p>会使分类<code>Life</code>成为<code>Diary</code>的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p></blockquote>]]></content>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      <content type="html"><![CDATA[]]></content>
     </entry>
     
   
