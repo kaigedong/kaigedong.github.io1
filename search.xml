@@ -721,7 +721,7 @@
       <title>about</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
-      <content type="html"><![CDATA[]]></content>
+      <content type="html"><![CDATA[<p>站点目录</p><details><br>  <summary>软件定义网络()</summary><br>  <p>1. 概述</p><br>  <p><a href="">软件定义网络技术的产生，发展与标准化</a></p><br>  <p>2. 基本原理</p><br>  <p>2.1 <a href="">软件定义网络的基本架构—ONF的三层架构</a></p><br>  <p>2.2 <a href="">软件定义网络的核心思想</a></p><br>  <p>2.3 <a href="">实验一：Mininet应用实践</a></p><br>  <p>3. 数据平面</p><br>  <p>3.1 <a href="">SDN数据平面</a></p><br>  <p>3.2 <a href="">Openflow概述</a></p><br>  <p>3.3 <a href="">OpenFlow流表</a></p><br>  <p>3.4 <a href="">SDN交换机</a></p><br>  <p>3.5 <a href="">实验二：Open vSwitch 应用实践</a></p><br>  <p>4. 南向结构协议</p><br>  <p>4.1 <a href="">南向结构协议概述</a></p><br>  <p>4.2 <a href="">OpenFlow协议</a></p><br>  <p>4.3 <a href="">OF-CONFIG协议</a></p><br>  <p>4.4 <a href="">NetConf协议</a></p><br>  <p>4.5 <a href="">实验三：OpenFlow协议分析</a></p><br>  <p>5. 控制平面</p><br>  <p>5.1. <a href="">SDN控制平面</a></p><br>  <p>5.2. <a href="">开源SDN控制器</a></p><br>  <p>6. 北向接口</p><br>  <p>6.1 <a href="">北向结构概述</a></p><br>  <p>6.2 <a href="">什么是REST API</a></p><br>  <p>6.3 <a href="">REST API设计规范</a></p><br>  <p>7. NX-OS与DNA-C API开发技术</p><br>  <p>7.1 <a href="">DNA及SDA解决方案</a></p><br>  <p>7.2 <a href="">Nexus 9000v</a></p><br>  <p>7.3 <a href="">NX-OS API</a></p><br>  <p>7.4 <a href="">DNA-C RESTful API</a></p><br>  <p> - 测试 测试测试</p><br>  <p> 测试二 测试三 。。。。。 .</p><br></details>]]></content>
     </entry>
     
     <entry>
@@ -732,17 +732,17 @@
     </entry>
     
     <entry>
-      <title>这是文章题目</title>
-      <link href="/post_unpub/model.html"/>
-      <url>/post_unpub/model.html</url>
-      <content type="html"><![CDATA[<blockquote><p>hexo模板</p></blockquote><p><code>&lt;!-- more--&gt;</code>上面的将会显示在预览中。</p><a id="more"></a><p><code>&lt;!-- more--&gt;</code>下面的将会显示在正文里。</p><blockquote><h2 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h2><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">&gt;</span><span class="bash">  categories:</span><br><span class="hljs-meta">&gt;</span><span class="bash">  - Diary</span><br><span class="hljs-meta">&gt;</span><span class="bash">  - Life</span><br><span class="hljs-meta">&gt;</span><span class="bash"></span><br></code></pre></td></tr></table></figure></blockquote><blockquote><p>会使分类<code>Life</code>成为<code>Diary</code>的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p></blockquote>]]></content>
-    </entry>
-    
-    <entry>
       <title>eCLIP-pipeline</title>
       <link href="/post_unpub/eCLIP-pipeline.html"/>
       <url>/post_unpub/eCLIP-pipeline.html</url>
       <content type="html"><![CDATA[<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir software &amp;&amp; cd software<br>wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda2-latest-Linux-x86_64.sh # 安装到software/python2，不用添加环境变量。<br><br>mkdir packages &amp;&amp; cd packages<br>wget https://github.com/YeoLab/gscripts/archive/1.1.zip -O gscripts-1.1.zip<br>wget https://github.com/YeoLab/clipper/archive/1.1.zip -O clipper-1.1.zip<br>wget https://github.com/YeoLab/merge_peaks/archive/0.0.6.zip -O merge_peaks-0.0.6.zip<br><span class="hljs-meta"><br>#</span><span class="bash"> 解压上面三个文件</span><br>source python2/bin/activate<br>pip install Cython<br><br>cd clipper-1.1 &amp;&amp; python setup.py install<br>cd gscripts-1.1 &amp;&amp; python setup.py install<br>cd merge_peaks-0.0.6 &amp;&amp; source create_environment.sh<br>source run_perlbrew_perl5.10.1.sh<br></code></pre></td></tr></table></figure>]]></content>
+    </entry>
+    
+    <entry>
+      <title>这是文章题目</title>
+      <link href="/post_unpub/model.html"/>
+      <url>/post_unpub/model.html</url>
+      <content type="html"><![CDATA[<blockquote><p>hexo模板</p></blockquote><p><code>&lt;!-- more--&gt;</code>上面的将会显示在预览中。</p><a id="more"></a><p><code>&lt;!-- more--&gt;</code>下面的将会显示在正文里。</p><blockquote><h2 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h2><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">&gt;</span><span class="bash">  categories:</span><br><span class="hljs-meta">&gt;</span><span class="bash">  - Diary</span><br><span class="hljs-meta">&gt;</span><span class="bash">  - Life</span><br><span class="hljs-meta">&gt;</span><span class="bash"></span><br></code></pre></td></tr></table></figure></blockquote><blockquote><p>会使分类<code>Life</code>成为<code>Diary</code>的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p></blockquote><figure class="hljs highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">点击收起功能<br><br><span class="hljs-tag">&lt;<span class="hljs-name">details</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>点击时的区域标题<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> - 测试 测试测试<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> 测试二 测试三 。。。。。 .<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
     </entry>
     
     <entry>
