@@ -3,9 +3,9 @@
   
     
     <entry>
-      <title>软件定义网络目录</title>
-      <link href="/2019/04/09/%E8%BD%AF%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C(SND)%E7%9B%AE%E5%BD%95/"/>
-      <url>/2019/04/09/%E8%BD%AF%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C(SND)%E7%9B%AE%E5%BD%95/</url>
+      <title>软件定义网络(SDN)目录</title>
+      <link href="/2019/04/09/%E8%BD%AF%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C(SDN)%E7%9B%AE%E5%BD%95/"/>
+      <url>/2019/04/09/%E8%BD%AF%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C(SDN)%E7%9B%AE%E5%BD%95/</url>
       <content type="html"><![CDATA[<p>软件定义网络技术 Software Defined Networking，SDN 课程笔记</p><a id="more"></a><ol><li><p>概述</p><p><a href="">软件定义网络技术的产生，发展与标准化</a></p></li><li><p>基本原理</p><p>2.1 <a href="">软件定义网络的基本架构—ONF的三层架构</a><br>2.2 <a href="">软件定义网络的核心思想</a><br>2.3 <a href="">实验一：Mininet应用实践</a></p></li><li><p>数据平面</p><p>3.1 <a href="">SDN数据平面</a><br>3.2 <a href="">Openflow概述</a><br>3.3 <a href="">OpenFlow流表</a><br>3.4 <a href="">SDN交换机</a><br>3.5 <a href="">实验二：Open vSwitch 应用实践</a></p></li><li><p>南向结构协议</p><p>4.1 <a href="">南向结构协议概述</a><br>4.2 <a href="">OpenFlow协议</a><br>4.3 <a href="">OF-CONFIG协议</a><br>4.4 <a href="">NetConf协议</a><br>4.5 <a href="">实验三：OpenFlow协议分析</a></p></li><li><p>控制平面</p><p>5.1. <a href="">SDN控制平面</a><br>5.2. <a href="">开源SDN控制器</a></p></li><li><p>北向接口</p><p>6.1 <a href="">北向结构概述</a><br>6.2 <a href="">什么是REST API</a><br>6.3 <a href="">REST API设计规范</a></p></li><li><p>NX-OS与DNA-C API开发技术</p><p>7.1 <a href="">DNA及SDA解决方案</a><br>7.2 <a href="">Nexus 9000v</a><br>7.3 <a href="">NX-OS API</a><br>7.4 <a href="">DNA-C RESTful API</a></p></li></ol><p>课程链接： <a href="https://www.icourse163.org/course/WZU-1205809832" target="_blank" rel="noopener">中国慕课大学</a></p>]]></content>
       
       <categories>
@@ -718,17 +718,17 @@
   
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      <content type="html"><![CDATA[<p>站点目录</p><details><br>  <summary>软件定义网络()</summary><br>  <p>1. 概述</p><br>  <p><a href="">软件定义网络技术的产生，发展与标准化</a></p><br>  <p>2. 基本原理</p><br>  <p>2.1 <a href="">软件定义网络的基本架构—ONF的三层架构</a></p><br>  <p>2.2 <a href="">软件定义网络的核心思想</a></p><br>  <p>2.3 <a href="">实验一：Mininet应用实践</a></p><br>  <p>3. 数据平面</p><br>  <p>3.1 <a href="">SDN数据平面</a></p><br>  <p>3.2 <a href="">Openflow概述</a></p><br>  <p>3.3 <a href="">OpenFlow流表</a></p><br>  <p>3.4 <a href="">SDN交换机</a></p><br>  <p>3.5 <a href="">实验二：Open vSwitch 应用实践</a></p><br>  <p>4. 南向结构协议</p><br>  <p>4.1 <a href="">南向结构协议概述</a></p><br>  <p>4.2 <a href="">OpenFlow协议</a></p><br>  <p>4.3 <a href="">OF-CONFIG协议</a></p><br>  <p>4.4 <a href="">NetConf协议</a></p><br>  <p>4.5 <a href="">实验三：OpenFlow协议分析</a></p><br>  <p>5. 控制平面</p><br>  <p>5.1. <a href="">SDN控制平面</a></p><br>  <p>5.2. <a href="">开源SDN控制器</a></p><br>  <p>6. 北向接口</p><br>  <p>6.1 <a href="">北向结构概述</a></p><br>  <p>6.2 <a href="">什么是REST API</a></p><br>  <p>6.3 <a href="">REST API设计规范</a></p><br>  <p>7. NX-OS与DNA-C API开发技术</p><br>  <p>7.1 <a href="">DNA及SDA解决方案</a></p><br>  <p>7.2 <a href="">Nexus 9000v</a></p><br>  <p>7.3 <a href="">NX-OS API</a></p><br>  <p>7.4 <a href="">DNA-C RESTful API</a></p><br>  <p> - 测试 测试测试</p><br>  <p> 测试二 测试三 。。。。。 .</p><br></details>]]></content>
-    </entry>
-    
-    <entry>
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
       <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      <content type="html"><![CDATA[<p>站点目录</p><details><br>  <summary>软件定义网络()</summary><br><p>1. 概述</p><br><br>   1.1 <a href="">软件定义网络技术的产生，发展与标准化</a><br><br><p>2. 基本原理</p><br><br>   2.1 <a href="">软件定义网络的基本架构—ONF的三层架构</a><br>   2.2 <a href="">软件定义网络的核心思想</a><br>   2.3 <a href="">实验一：Mininet应用实践</a><br><br><p>3. 数据平面</p><br><br>   3.1 <a href="">SDN数据平面</a><br>   3.2 <a href="">Openflow概述</a><br>   3.3 <a href="">OpenFlow流表</a><br>   3.4 <a href="">SDN交换机</a><br>   3.5 <a href="">实验二：Open vSwitch 应用实践</a><br><br><p>4. 南向结构协议</p><br><br>   4.1 <a href="">南向结构协议概述</a><br>   4.2 <a href="">OpenFlow协议</a><br>   4.3 <a href="">OF-CONFIG协议</a><br>   4.4 <a href="">NetConf协议</a><br>   4.5 <a href="">实验三：OpenFlow协议分析</a><br><br><p>5. 控制平面</p><br><br>   5.1. <a href="">SDN控制平面</a><br>   5.2. <a href="">开源SDN控制器</a><br><br><p>6. 北向接口</p><br><br>   6.1 <a href="">北向结构概述</a><br>   6.2 <a href="">什么是REST API</a><br>   6.3 <a href="">REST API设计规范</a><br><br><p>7. NX-OS与DNA-C API开发技术</p><br><br>   7.1 <a href="">DNA及SDA解决方案</a><br>   7.2 <a href="">Nexus 9000v</a><br>   7.3 <a href="">NX-OS API</a><br>   7.4 <a href="">DNA-C RESTful API</a><br></details>]]></content>
     </entry>
     
     <entry>

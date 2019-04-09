@@ -144,7 +144,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>python虚拟环境 | 读书笔记</title>
+    <title>软件定义网络(SDN)目录 | 读书笔记</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"  data-spy="scroll" data-target=".list-group">
     
@@ -190,7 +190,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/python虚拟环境/">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/软件定义网络(SDN)目录/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="Kaige Dong">
        <meta itemprop="description" content="">
@@ -201,13 +201,21 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">python虚拟环境</h1>
+      <h1 class="post-title" itemprop="name headline">软件定义网络(SDN)目录</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-25T09:56:46+08:00">2018-12-25 09:56:46</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-09T09:17:18+08:00">2019-04-09 09:17:18</time></span>
         </span>
         
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络技术/" itemprop="url" rel="index"><span itemprop="name">网络技术</span></a></span>
+        </span>
         
         
         
@@ -215,24 +223,48 @@
         <span class="post-meta-divider divider">|</span>
         
         <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="/2018/12/25/python虚拟环境/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/12/25/python虚拟环境/" itemprop="commentCount"></span></a></span>
+          <i class="far fa-comments"></i><span><a href="/2019/04/09/软件定义网络(SDN)目录/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2019/04/09/软件定义网络(SDN)目录/" itemprop="commentCount"></span></a></span>
         </span>
         
         
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>virtualenv 和 pyenv的使用</p>
+      <p>软件定义网络技术 Software Defined Networking，SDN 课程笔记</p>
 <a id="more"></a>
-<h2 id="第一部分：virtualenv的使用"><a href="#第一部分：virtualenv的使用" class="headerlink" title="第一部分：virtualenv的使用"></a>第一部分：virtualenv的使用</h2><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">#</span><span class="bash"> 首先用pip3安装virtualenv</span><br>pip3 install virtualenv<br><span class="hljs-meta"><br>#</span><span class="bash"> 创建独立的python运行环境：</span><br>virtualenv --no-site-packages venv<br><span class="hljs-meta"><br>#</span><span class="bash"> 其他参数：</span><br><span class="hljs-meta">#</span><span class="bash"> --always-copy 默认行为是符号链接需要的文件， 可以强制复制，而非拷贝。</span><br><span class="hljs-meta">#</span><span class="bash"> -p PYTHON_EXE 指定python解析器</span><br><span class="hljs-meta"><br><br>#</span><span class="bash"> 激活</span><br>source venv/bin/activate<br><span class="hljs-meta"><br>#</span><span class="bash"> 退出</span><br>deactivate<br></code></pre></td></tr></table></figure>
-<figure class="hljs highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-comment"># python环境的备份</span><br>pip freeze &gt; requirements.txt<br>pip <span class="hljs-keyword">install</span> -r requirements.txt<br></code></pre></td></tr></table></figure>
-<h2 id="第二部分：pyenv的使用"><a href="#第二部分：pyenv的使用" class="headerlink" title="第二部分：pyenv的使用"></a>第二部分：pyenv的使用</h2><h3 id="pyenv的工作原理"><a href="#pyenv的工作原理" class="headerlink" title="pyenv的工作原理"></a>pyenv的工作原理</h3><p>当我们使用命令比如<code>pip</code> 或者<code>python</code>时，Linux通过<code>PATH</code>环境变量来查找这个可执行程序。比如<code>PATH</code> 是<code>/usr/local/bin:/usr/bin:/bin</code>，则Linux从左到右查找是否存在<code>python</code>命令，在第一个文件夹<code>/usr/local/bin</code>下找到了<code>python</code>，就不再继续查找了。</p>
-<p><strong>pyenv的工作原理</strong>就是基于<code>PATH</code>变量。</p>
-<p><code>pyenv</code>在<code>PATH</code>前面插入一个目录，变成了<code>$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin</code>。</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><br><br></code></pre></td></tr></table></figure>
+<ol>
+<li><p>概述</p>
+<p><a href="">软件定义网络技术的产生，发展与标准化</a></p>
+</li>
+<li><p>基本原理</p>
+<p>2.1 <a href="">软件定义网络的基本架构—ONF的三层架构</a><br>2.2 <a href="">软件定义网络的核心思想</a><br>2.3 <a href="">实验一：Mininet应用实践</a></p>
+</li>
+<li><p>数据平面</p>
+<p>3.1 <a href="">SDN数据平面</a><br>3.2 <a href="">Openflow概述</a><br>3.3 <a href="">OpenFlow流表</a><br>3.4 <a href="">SDN交换机</a><br>3.5 <a href="">实验二：Open vSwitch 应用实践</a></p>
+</li>
+<li><p>南向结构协议</p>
+<p>4.1 <a href="">南向结构协议概述</a><br>4.2 <a href="">OpenFlow协议</a><br>4.3 <a href="">OF-CONFIG协议</a><br>4.4 <a href="">NetConf协议</a><br>4.5 <a href="">实验三：OpenFlow协议分析</a></p>
+</li>
+<li><p>控制平面</p>
+<p>5.1. <a href="">SDN控制平面</a><br>5.2. <a href="">开源SDN控制器</a></p>
+</li>
+<li><p>北向接口</p>
+<p>6.1 <a href="">北向结构概述</a><br>6.2 <a href="">什么是REST API</a><br>6.3 <a href="">REST API设计规范</a></p>
+</li>
+<li><p>NX-OS与DNA-C API开发技术</p>
+<p>7.1 <a href="">DNA及SDA解决方案</a><br>7.2 <a href="">Nexus 9000v</a><br>7.3 <a href="">NX-OS API</a><br>7.4 <a href="">DNA-C RESTful API</a></p>
+</li>
+</ol>
+<p>课程链接： <a href="https://www.icourse163.org/course/WZU-1205809832" target="_blank" rel="noopener">中国慕课大学</a></p>
 
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/SDN/" rel="tag"><i class="fas fa-tags"></i>SDN</a>
+        
+      </div>
       
     </footer>
   </article>
@@ -241,12 +273,10 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2018/12/16/吴恩达机器学习笔记/" rel="next" title="吴恩达机器学习笔记"><i class="fas fa-angle-left"></i><span class="nav-title">吴恩达机器学习笔记</span></a>
+      <a href="/2018/12/25/python虚拟环境/" rel="next" title="python虚拟环境"><i class="fas fa-angle-left"></i><span class="nav-title">python虚拟环境</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2019/04/09/软件定义网络(SDN)目录/" rel="prev" title="软件定义网络(SDN)目录"><span class="nav-title">软件定义网络(SDN)目录</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -261,8 +291,8 @@
   <div id="disqus_thread" class="disqus_thread"></div>
   <script type="text/javascript">
   var disqus_config = function () {
-    this.page.url = "http://yoursite.com/2018/12/25/python虚拟环境/";
-    this.page.identifier = "2018/12/25/python虚拟环境/";
+    this.page.url = "http://yoursite.com/2019/04/09/软件定义网络(SDN)目录/";
+    this.page.identifier = "2019/04/09/软件定义网络(SDN)目录/";
   };
   (function() {
     var d = document, s = d.createElement("script");
@@ -341,12 +371,6 @@
     
     
     
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#第一部分：virtualenv的使用"><span class="toc-text">第一部分：virtualenv的使用</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#第二部分：pyenv的使用"><span class="toc-text">第二部分：pyenv的使用</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#pyenv的工作原理"><span class="toc-text">pyenv的工作原理</span></a></li></ol></li></ol></div>
-    </div>
     
     
     
