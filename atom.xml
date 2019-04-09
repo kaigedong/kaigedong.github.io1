@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-25T13:24:28.124Z</updated>
+  <updated>2019-12-11T11:12:32.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>这是文章题目</title>
+    <link href="http://yoursite.com/2019/04/09/%E8%BD%AF%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C(SND)%E7%9B%AE%E5%BD%95/"/>
+    <id>http://yoursite.com/2019/04/09/软件定义网络(SND)目录/</id>
+    <published>2019-04-09T01:17:18.566Z</published>
+    <updated>2019-12-11T11:12:32.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;软件定义网络技术 Software Defined Networking，SDN 课程笔记&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Diary" scheme="http://yoursite.com/categories/Diary/"/>
+    
+      <category term="Life" scheme="http://yoursite.com/categories/Diary/Life/"/>
+    
+    
+      <category term="SDN" scheme="http://yoursite.com/tags/SDN/"/>
+    
+      <category term="Games" scheme="http://yoursite.com/tags/Games/"/>
+    
+  </entry>
   
   <entry>
     <title>python虚拟环境</title>
@@ -37,17 +61,11 @@
     <link href="http://yoursite.com/2018/12/16/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2018/12/16/吴恩达机器学习笔记/</id>
     <published>2018-12-16T09:06:47.000Z</published>
-    <updated>2018-12-16T09:17:50.311Z</updated>
+    <updated>2019-04-09T01:35:16.786Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;初识机器学习&quot;&gt;&lt;a href=&quot;#初识机器学习&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;p&gt;占坑，待更新。&lt;/p&gt;
     
     </summary>
     
@@ -79,23 +97,11 @@
     <link href="http://yoursite.com/2018/12/12/Apache-%E9%83%A8%E7%BD%B2-Django/"/>
     <id>http://yoursite.com/2018/12/12/Apache-部署-Django/</id>
     <published>2018-12-12T08:56:58.000Z</published>
-    <updated>2018-12-12T09:03:55.803Z</updated>
+    <updated>2019-04-09T01:36:50.016Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;Apache 部署Django的尝试&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Apache版本：见前面博文&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Python环境：&lt;/p&gt;
-&lt;figure class=&quot;hljs highlight
-        
-      
+      &lt;p&gt;Apache + uwsgi部署Django&lt;/p&gt;
     
     </summary>
     
@@ -363,28 +369,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>搬瓦工笔记1：ssr</title>
-    <link href="http://yoursite.com/2018/05/12/%E6%90%AC%E7%93%A6%E5%B7%A5%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2018/05/12/搬瓦工笔记/</id>
-    <published>2018-05-12T05:16:33.000Z</published>
-    <updated>2019-04-08T10:39:47.252Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;搬瓦工搭建自由上网、多用户管理平台&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="搬瓦工" scheme="http://yoursite.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/"/>
-    
-      <category term="VPN" scheme="http://yoursite.com/tags/VPN/"/>
-    
-      <category term="VPS" scheme="http://yoursite.com/tags/VPS/"/>
     
   </entry>
   
