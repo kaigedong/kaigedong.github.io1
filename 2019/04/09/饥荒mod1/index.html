@@ -230,7 +230,9 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>如何制作饥荒mod教程<br>快速开始</p>
+      <p>如何制作饥荒mod教程</p>
+<a id="more"></a>
+<p>快速开始</p>
 <ol>
 <li><p>如何安装并使用mod？</p>
 <ul>
@@ -254,11 +256,19 @@
 <p>  要学一点lua语言。</p>
 </li>
 <li><p>Mod API更新(API V6, 2014)</p>
+<p><strong>MOD_API_VERSION</strong> 如名，当时的API版本是6，在Don’t Starve Together之前不会增加新API了。</p>
+<p><strong>Mod Capatibility</strong> Mod兼容性很重要，最好在modinfo.lua中指明兼容性，不指名会有警告的log。(我猜大概是<code>modinfo.lua</code> 中的<code>api_version</code>参数)</p>
 </li>
 </ol>
-<p>点击收起功能</p>
-<p>点击时的区域标题</p>
-
+<blockquote>
+<p>把你的mod升级到新的mod 兼容性</p>
+</blockquote>
+<p>3.1.打开modinfo.lua</p>
+<p>3.2.添加<code>dont_starve_compatible</code> 和 <code>reign_of_giants_compatible</code> 布尔变量到<code>modinfo</code>，比如<code>dont_starve_compatible = falsereign_of_giants_compatible = true</code>, 这些兼容性信息将会在mod列表的名字处显示。</p>
+<p>一个例子是(<code>modinfo.lua</code>)：</p>
+<p><img src="../pic/2019-04/image-20190410092130663.png" alt="image-20190410092130663"></p>
+<p><strong>Mod Configuration Options</strong> 是新特性，允许给他们的mod设一组选项。就是在modinfo.lua 中设置mod的一些参数。这些参数可以通过函数获得。</p>
+<h2 id="Art-篇"><a href="#Art-篇" class="headerlink" title="Art 篇"></a>Art 篇</h2>
     </main>
     <footer class="post-footer">
       
@@ -373,6 +383,12 @@
     
     
     
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Art-篇"><span class="toc-text">Art 篇</span></a></li></ol></div>
+    </div>
     
     
     
