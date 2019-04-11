@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-09T09:12:32.000Z</updated>
+  <updated>2019-04-11T02:17:36.063Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Manjaro-安装配置到GPU</title>
+    <link href="http://yoursite.com/2019/04/11/Manjaro-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%88%B0GPU/"/>
+    <id>http://yoursite.com/2019/04/11/Manjaro-安装配置到GPU/</id>
+    <published>2019-04-11T02:14:07.000Z</published>
+    <updated>2019-04-11T02:17:36.063Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Manjaro的安装、配置、设置steam使用GPU，pytorch使用GPU&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="Nvidia" scheme="http://yoursite.com/tags/Nvidia/"/>
+    
+      <category term="GPU" scheme="http://yoursite.com/tags/GPU/"/>
+    
+      <category term="Manjaro" scheme="http://yoursite.com/tags/Manjaro/"/>
+    
+      <category term="Arch" scheme="http://yoursite.com/tags/Arch/"/>
+    
+  </entry>
   
   <entry>
     <title>饥荒mod1</title>
@@ -43,7 +69,7 @@
     <link href="http://yoursite.com/2019/04/09/Python%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     <id>http://yoursite.com/2019/04/09/Python排序算法/</id>
     <published>2019-04-09T08:01:45.000Z</published>
-    <updated>2019-04-09T08:03:43.285Z</updated>
+    <updated>2019-04-10T03:16:31.160Z</updated>
     
     <summary type="html">
     
@@ -352,22 +378,6 @@
       &lt;ul&gt;
 &lt;li&gt;安装Perl 模块的不同方法&lt;/li&gt;
 &lt;/ul&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>python批量转换exe视频</title>
-    <link href="http://yoursite.com/2018/07/11/python%E6%89%B9%E9%87%8F%E8%BD%AC%E6%8D%A2exe%E8%A7%86%E9%A2%91/"/>
-    <id>http://yoursite.com/2018/07/11/python批量转换exe视频/</id>
-    <published>2018-07-11T13:44:29.000Z</published>
-    <updated>2018-08-07T06:55:39.937Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如何使用python脚本在win上自动转换exe视频到MP4&lt;/p&gt;
     
     </summary>
     
