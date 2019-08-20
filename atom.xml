@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-12T06:52:51.350Z</updated>
+  <updated>2019-08-20T01:19:50.990Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux crontab定时任务</title>
+    <link href="http://yoursite.com/2019/08/20/Linux%E4%B8%8Bcrontab%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
+    <id>http://yoursite.com/2019/08/20/Linux下crontab定时任务/</id>
+    <published>2019-08-20T01:08:00.000Z</published>
+    <updated>2019-08-20T01:19:50.990Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Linux crontab是用来定期执行程序的命令。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Manjaro-安装配置到GPU</title>
@@ -171,22 +189,6 @@
   </entry>
   
   <entry>
-    <title>无root安装UCSC genome browser</title>
-    <link href="http://yoursite.com/2018/12/09/%E6%97%A0root%E5%AE%89%E8%A3%85UCSC-genome-browser/"/>
-    <id>http://yoursite.com/2018/12/09/无root安装UCSC-genome-browser/</id>
-    <published>2018-12-09T05:25:32.000Z</published>
-    <updated>2018-12-15T06:50:51.376Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如何在本地实现一个定制化的UCSC genome browser?&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>PyTorch 60min教程</title>
     <link href="http://yoursite.com/2018/12/09/pytorch%2060min/"/>
     <id>http://yoursite.com/2018/12/09/pytorch 60min/</id>
@@ -196,6 +198,22 @@
     <summary type="html">
     
       &lt;p&gt;PyTorch 60min教程&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>无root安装UCSC genome browser</title>
+    <link href="http://yoursite.com/2018/12/09/%E6%97%A0root%E5%AE%89%E8%A3%85UCSC-genome-browser/"/>
+    <id>http://yoursite.com/2018/12/09/无root安装UCSC-genome-browser/</id>
+    <published>2018-12-09T05:25:32.000Z</published>
+    <updated>2018-12-15T06:50:51.376Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如何在本地实现一个定制化的UCSC genome browser?&lt;/p&gt;
     
     </summary>
     
@@ -360,22 +378,6 @@
     <summary type="html">
     
       &lt;p&gt;获取了shadowsocks账号之后的配置&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>shell变量及进程及set,env,export</title>
-    <link href="http://yoursite.com/2018/07/19/shell-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%8Aset-env-export/"/>
-    <id>http://yoursite.com/2018/07/19/shell-环境变量及set-env-export/</id>
-    <published>2018-07-19T08:01:25.000Z</published>
-    <updated>2018-08-07T06:54:57.709Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;shell中，有三种变量：&lt;code&gt;系统变量&lt;/code&gt;，&lt;code&gt;环境变量&lt;/code&gt;，&lt;code&gt;用户变量&lt;/code&gt;。&lt;/p&gt;
     
     </summary>
     
